@@ -1,0 +1,5119 @@
+{
+  "schemaVersion": 1,
+  "product": "Eventin",
+  "date": "2026-11-21",
+  "status": "proposed_implementation_contract",
+  "notice": "Propuesta técnica derivada del diseño. No hay router ni backend implementados. Los enlaces del prototipo no son comandos de producción.",
+  "figma": {
+    "fileKey": "LvT99td5UFBvyzpcJkq4Cf",
+    "sourceFrames": 120,
+    "documentationPage": "81:19",
+    "technicalIndex": "87:1564",
+    "technicalIndexUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=87-1564"
+  },
+  "stack": "React + TypeScript + Vite + Tailwind + Supabase (stack acordado; sin generar aplicación en esta tarea)",
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "area": "public",
+      "guard": "PUBLIC",
+      "title": "Inicio",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "home",
+          "nodeId": "6:2",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=6-2"
+        },
+        {
+          "surface": "desktop",
+          "key": "home",
+          "nodeId": "9:19",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=9-19"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "explore",
+      "path": "/explorar",
+      "area": "public",
+      "guard": "PUBLIC",
+      "title": "Explorar eventos",
+      "query": [
+        "q",
+        "categoria",
+        "zona",
+        "desde",
+        "hasta",
+        "precio"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "explore",
+          "nodeId": "6:76",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=6-76"
+        },
+        {
+          "surface": "desktop",
+          "key": "explore",
+          "nodeId": "9:110",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=9-110"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "map",
+      "path": "/mapa",
+      "area": "public",
+      "guard": "PUBLIC",
+      "title": "Mapa de eventos y proveedores",
+      "query": [
+        "tipo",
+        "q",
+        "categoria",
+        "zona",
+        "radioKm",
+        "desde",
+        "hasta",
+        "presupuesto",
+        "incluirPorCotizar",
+        "seleccion",
+        "panel"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "map",
+          "nodeId": "32:744",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=32-744"
+        },
+        {
+          "surface": "mobile",
+          "key": "filters",
+          "nodeId": "32:838",
+          "view": "panel_filters",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=32-838"
+        },
+        {
+          "surface": "mobile",
+          "key": "location",
+          "nodeId": "32:903",
+          "view": "panel_location",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=32-903"
+        },
+        {
+          "surface": "mobile",
+          "key": "supplierMap",
+          "nodeId": "34:1436",
+          "view": "selected_provider",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=34-1436"
+        },
+        {
+          "surface": "mobile",
+          "key": "providerFilters",
+          "nodeId": "37:1131",
+          "view": "provider_filters",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=37-1131"
+        },
+        {
+          "surface": "desktop",
+          "key": "map",
+          "nodeId": "34:242",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=34-242"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "provider.list",
+      "path": "/proveedores",
+      "area": "public",
+      "guard": "PUBLIC",
+      "title": "Catálogo de proveedores",
+      "query": [
+        "q",
+        "categoria",
+        "zona",
+        "presupuesto"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "providers",
+          "nodeId": "6:322",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=6-322"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "provider.detail",
+      "path": "/proveedores/:businessId",
+      "area": "public",
+      "guard": "PUBLIC_VISIBLE",
+      "title": "Ficha pública del proveedor",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "supplier",
+          "nodeId": "7:348",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=7-348"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "event.public",
+      "path": "/eventos/:publicEventId",
+      "area": "public",
+      "guard": "PUBLIC_VISIBLE",
+      "title": "Ficha de evento público",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "event",
+          "nodeId": "6:145",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=6-145"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "auth.login",
+      "path": "/acceder",
+      "area": "public",
+      "guard": "GUEST_OR_SESSION",
+      "title": "Acceder",
+      "query": [
+        "returnTo"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "login",
+          "nodeId": "7:718",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=7-718"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "auth.register",
+      "path": "/registro",
+      "area": "public",
+      "guard": "GUEST_OR_SESSION",
+      "title": "Crear cuenta",
+      "query": [
+        "returnTo"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "register",
+          "nodeId": "11:619",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=11-619"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "auth.recovery",
+      "path": "/recuperar-acceso",
+      "area": "public",
+      "guard": "PUBLIC",
+      "title": "Recuperar contraseña",
+      "query": [],
+      "status": "proposed_without_frame",
+      "bindings": [],
+      "params": []
+    },
+    {
+      "id": "auth.reset",
+      "path": "/restablecer-acceso",
+      "area": "public",
+      "guard": "RECOVERY_SESSION",
+      "title": "Restablecer contraseña",
+      "query": [],
+      "status": "proposed_without_frame",
+      "bindings": [],
+      "params": []
+    },
+    {
+      "id": "auth.callback",
+      "path": "/auth/callback",
+      "area": "public",
+      "guard": "AUTH_CALLBACK",
+      "title": "Retorno del proveedor de autenticación",
+      "query": [],
+      "status": "proposed_without_frame",
+      "bindings": [],
+      "params": []
+    },
+    {
+      "id": "account",
+      "path": "/cuenta",
+      "area": "personal",
+      "guard": "AUTH",
+      "title": "Mi cuenta",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "profile",
+          "nodeId": "7:558",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=7-558"
+        },
+        {
+          "surface": "desktop",
+          "key": "account",
+          "nodeId": "58:2823",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=58-2823"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "favorites",
+      "path": "/favoritos",
+      "area": "personal",
+      "guard": "AUTH",
+      "title": "Favoritos personales",
+      "query": [
+        "tipo"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "favorites",
+          "nodeId": "7:501",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=7-501"
+        },
+        {
+          "surface": "desktop",
+          "key": "favorites",
+          "nodeId": "34:385",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=34-385"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "notifications",
+      "path": "/notificaciones",
+      "area": "personal",
+      "guard": "AUTH",
+      "title": "Notificaciones propias",
+      "query": [
+        "estado"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "notifications",
+          "nodeId": "33:1032",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=33-1032"
+        },
+        {
+          "surface": "desktop",
+          "key": "notifications",
+          "nodeId": "38:351",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=38-351"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "private.list",
+      "path": "/mis-eventos",
+      "area": "personal",
+      "guard": "AUTH",
+      "title": "Mis eventos privados",
+      "query": [
+        "intent",
+        "proveedor"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "organize",
+          "nodeId": "6:195",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=6-195"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "private.create",
+      "path": "/mis-eventos/nuevo",
+      "area": "personal",
+      "guard": "AUTH",
+      "title": "Crear evento privado",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "create",
+          "nodeId": "6:253",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=6-253"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "private.detail",
+      "path": "/mis-eventos/:privateEventId",
+      "area": "personal",
+      "guard": "EVENT_MEMBER",
+      "title": "Presupuesto y tareas",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "budget",
+          "nodeId": "7:292",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=7-292"
+        },
+        {
+          "surface": "desktop",
+          "key": "planner",
+          "nodeId": "9:215",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=9-215"
+        }
+      ],
+      "params": [
+        "privateEventId"
+      ]
+    },
+    {
+      "id": "private.team",
+      "path": "/mis-eventos/:privateEventId/equipo",
+      "area": "personal",
+      "guard": "EVENT_MEMBER",
+      "title": "Equipo del evento",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "team",
+          "nodeId": "33:887",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=33-887"
+        },
+        {
+          "surface": "mobile",
+          "key": "pending",
+          "nodeId": "34:1473",
+          "view": "invitation_pending",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=34-1473"
+        },
+        {
+          "surface": "desktop",
+          "key": "team",
+          "nodeId": "34:331",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=34-331"
+        }
+      ],
+      "params": [
+        "privateEventId"
+      ]
+    },
+    {
+      "id": "private.invite",
+      "path": "/mis-eventos/:privateEventId/invitaciones/nueva",
+      "area": "personal",
+      "guard": "EVENT_OWNER",
+      "title": "Invitar coorganizador",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "invite",
+          "nodeId": "33:935",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=33-935"
+        }
+      ],
+      "params": [
+        "privateEventId"
+      ]
+    },
+    {
+      "id": "invite.accept",
+      "path": "/invitaciones/:inviteToken",
+      "area": "personal",
+      "guard": "INVITE_RECIPIENT",
+      "title": "Revisar y aceptar invitación",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "accept",
+          "nodeId": "33:988",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=33-988"
+        }
+      ],
+      "params": [
+        "inviteToken"
+      ]
+    },
+    {
+      "id": "quote.list",
+      "path": "/mis-eventos/:privateEventId/cotizaciones",
+      "area": "quotes",
+      "guard": "EVENT_MEMBER",
+      "title": "Cotizaciones del evento",
+      "query": [
+        "estado"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "quotes",
+          "nodeId": "7:448",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=7-448"
+        }
+      ],
+      "params": [
+        "privateEventId"
+      ]
+    },
+    {
+      "id": "quote.create",
+      "path": "/mis-eventos/:privateEventId/solicitudes/nueva",
+      "area": "quotes",
+      "guard": "EVENT_MEMBER",
+      "title": "Solicitar cotización",
+      "query": [
+        "proveedor"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "quote",
+          "nodeId": "7:393",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=7-393"
+        }
+      ],
+      "params": [
+        "privateEventId"
+      ]
+    },
+    {
+      "id": "quote.request",
+      "path": "/mis-eventos/:privateEventId/solicitudes/:requestId",
+      "area": "quotes",
+      "guard": "EVENT_MEMBER",
+      "title": "Estado de solicitud enviada",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "sent",
+          "nodeId": "11:719",
+          "view": "request_pending",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=11-719"
+        }
+      ],
+      "params": [
+        "privateEventId",
+        "requestId"
+      ]
+    },
+    {
+      "id": "quote.compare",
+      "path": "/mis-eventos/:privateEventId/propuestas/comparar",
+      "area": "quotes",
+      "guard": "EVENT_MEMBER",
+      "title": "Comparar propuestas",
+      "query": [
+        "ids"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "compare",
+          "nodeId": "16:705",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=16-705"
+        },
+        {
+          "surface": "desktop",
+          "key": "compare",
+          "nodeId": "12:253",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=12-253"
+        }
+      ],
+      "params": [
+        "privateEventId"
+      ]
+    },
+    {
+      "id": "quote.detail",
+      "path": "/mis-eventos/:privateEventId/propuestas/:proposalId",
+      "area": "quotes",
+      "guard": "EVENT_MEMBER",
+      "title": "Detalle, selección y resultado de propuesta",
+      "query": [
+        "modal"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "clientProposal",
+          "nodeId": "51:2092",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=51-2092"
+        },
+        {
+          "surface": "mobile",
+          "key": "clientSelectConfirm",
+          "nodeId": "51:2134",
+          "view": "modal_select",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=51-2134"
+        },
+        {
+          "surface": "mobile",
+          "key": "clientSelected",
+          "nodeId": "51:2172",
+          "view": "selected",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=51-2172"
+        }
+      ],
+      "params": [
+        "privateEventId",
+        "proposalId"
+      ]
+    },
+    {
+      "id": "business.list",
+      "path": "/cuenta/negocios",
+      "area": "business",
+      "guard": "AUTH",
+      "title": "Mis negocios",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "businesses",
+          "nodeId": "44:1187",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=44-1187"
+        },
+        {
+          "surface": "desktop",
+          "key": "businesses",
+          "nodeId": "52:380",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=52-380"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "business.create",
+      "path": "/cuenta/negocios/nuevo",
+      "area": "business",
+      "guard": "AUTH",
+      "title": "Crear negocio",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "businessCreate",
+          "nodeId": "44:1287",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=44-1287"
+        },
+        {
+          "surface": "desktop",
+          "key": "businessCreate",
+          "nodeId": "53:453",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=53-453"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "business.detail",
+      "path": "/cuenta/negocios/:businessId",
+      "area": "business",
+      "guard": "BUSINESS_MEMBER",
+      "title": "Gestionar y consultar estado del negocio",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "businessDetail",
+          "nodeId": "44:1242",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=44-1242"
+        },
+        {
+          "surface": "mobile",
+          "key": "businessPending",
+          "nodeId": "44:1388",
+          "view": "content_pending",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=44-1388"
+        },
+        {
+          "surface": "mobile",
+          "key": "businessPublished",
+          "nodeId": "44:1432",
+          "view": "published",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=44-1432"
+        },
+        {
+          "surface": "mobile",
+          "key": "businessChanges",
+          "nodeId": "44:1474",
+          "view": "content_observed",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=44-1474"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "business.review",
+      "path": "/cuenta/negocios/:businessId/revisar",
+      "area": "business",
+      "guard": "BUSINESS_EDITOR",
+      "title": "Vista previa del negocio",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "businessReview",
+          "nodeId": "44:1347",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=44-1347"
+        },
+        {
+          "surface": "desktop",
+          "key": "businessReview",
+          "nodeId": "53:515",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=53-515"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "business.services",
+      "path": "/cuenta/negocios/:businessId/servicios",
+      "area": "business",
+      "guard": "BUSINESS_MEMBER",
+      "title": "Servicios del negocio",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "services",
+          "nodeId": "46:1935",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=46-1935"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "business.serviceNew",
+      "path": "/cuenta/negocios/:businessId/servicios/nuevo",
+      "area": "business",
+      "guard": "BUSINESS_EDITOR",
+      "title": "Añadir servicio",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "serviceEdit",
+          "nodeId": "46:1984",
+          "view": "create_reuses_service_form",
+          "stateSource": "local",
+          "reuse": true,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=46-1984"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "business.serviceEdit",
+      "path": "/cuenta/negocios/:businessId/servicios/:serviceId/editar",
+      "area": "business",
+      "guard": "BUSINESS_EDITOR",
+      "title": "Editar servicio",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "serviceEdit",
+          "nodeId": "46:1984",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=46-1984"
+        }
+      ],
+      "params": [
+        "businessId",
+        "serviceId"
+      ]
+    },
+    {
+      "id": "business.requests",
+      "path": "/cuenta/negocios/:businessId/solicitudes",
+      "area": "business",
+      "guard": "BUSINESS_MEMBER",
+      "title": "Solicitudes recibidas",
+      "query": [
+        "estado"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "requests",
+          "nodeId": "46:1663",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=46-1663"
+        },
+        {
+          "surface": "mobile",
+          "key": "responded",
+          "nodeId": "51:2247",
+          "view": "filter_responded",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=51-2247"
+        },
+        {
+          "surface": "desktop",
+          "key": "requests",
+          "nodeId": "52:420",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=52-420"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "business.request",
+      "path": "/cuenta/negocios/:businessId/solicitudes/:requestId",
+      "area": "business",
+      "guard": "BUSINESS_MEMBER",
+      "title": "Revisar solicitud y respuesta",
+      "query": [
+        "modal"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "requestDetail",
+          "nodeId": "46:1714",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=46-1714"
+        },
+        {
+          "surface": "mobile",
+          "key": "replySent",
+          "nodeId": "46:1849",
+          "view": "proposal_sent",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=46-1849"
+        },
+        {
+          "surface": "mobile",
+          "key": "decline",
+          "nodeId": "46:1889",
+          "view": "modal_decline",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=46-1889"
+        },
+        {
+          "surface": "mobile",
+          "key": "declineSent",
+          "nodeId": "51:2211",
+          "view": "declined",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=51-2211"
+        },
+        {
+          "surface": "desktop",
+          "key": "replySent",
+          "nodeId": "52:522",
+          "view": "proposal_sent",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=52-522"
+        }
+      ],
+      "params": [
+        "businessId",
+        "requestId"
+      ]
+    },
+    {
+      "id": "business.reply",
+      "path": "/cuenta/negocios/:businessId/solicitudes/:requestId/respuesta",
+      "area": "business",
+      "guard": "BUSINESS_EDITOR",
+      "title": "Redactar propuesta",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "reply",
+          "nodeId": "46:1755",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=46-1755"
+        },
+        {
+          "surface": "desktop",
+          "key": "reply",
+          "nodeId": "52:456",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=52-456"
+        }
+      ],
+      "params": [
+        "businessId",
+        "requestId"
+      ]
+    },
+    {
+      "id": "business.replyReview",
+      "path": "/cuenta/negocios/:businessId/solicitudes/:requestId/respuesta/revisar",
+      "area": "business",
+      "guard": "BUSINESS_EDITOR",
+      "title": "Revisar antes de enviar",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "replyReview",
+          "nodeId": "46:1806",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=46-1806"
+        },
+        {
+          "surface": "desktop",
+          "key": "replyConfirm",
+          "nodeId": "52:496",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=52-496"
+        }
+      ],
+      "params": [
+        "businessId",
+        "requestId"
+      ]
+    },
+    {
+      "id": "business.plan",
+      "path": "/cuenta/negocios/:businessId/plan",
+      "area": "business",
+      "guard": "BUSINESS_BILLING",
+      "title": "Plan mensual de S/ 30",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "businessPlan",
+          "nodeId": "45:1391",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=45-1391"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "business.checkout",
+      "path": "/cuenta/negocios/:businessId/pagos/nuevo",
+      "area": "business",
+      "guard": "BUSINESS_BILLING",
+      "title": "Registrar comprobante del periodo",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "businessPayment",
+          "nodeId": "45:1434",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=45-1434"
+        },
+        {
+          "surface": "desktop",
+          "key": "businessPayment",
+          "nodeId": "53:545",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=53-545"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "business.payment",
+      "path": "/cuenta/negocios/:businessId/pagos/:paymentId",
+      "area": "business",
+      "guard": "BUSINESS_BILLING",
+      "title": "Estado del pago y observaciones",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "businessReceipt",
+          "nodeId": "45:1489",
+          "view": "proof_received",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=45-1489"
+        },
+        {
+          "surface": "mobile",
+          "key": "businessPaymentIssue",
+          "nodeId": "45:1578",
+          "view": "payment_observed",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=45-1578"
+        },
+        {
+          "surface": "desktop",
+          "key": "businessReceipt",
+          "nodeId": "53:587",
+          "view": "proof_received",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=53-587"
+        }
+      ],
+      "params": [
+        "businessId",
+        "paymentId"
+      ]
+    },
+    {
+      "id": "business.billing",
+      "path": "/cuenta/negocios/:businessId/facturacion",
+      "area": "business",
+      "guard": "BUSINESS_BILLING",
+      "title": "Vigencia e historial de pagos",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "businessBilling",
+          "nodeId": "45:1533",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=45-1533"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "business.paymentInfo",
+      "path": "/cuenta/negocios/:businessId/pagos/instrucciones",
+      "area": "business",
+      "guard": "BUSINESS_BILLING",
+      "title": "Instrucciones de cobro configuradas",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "businessPayInfo",
+          "nodeId": "51:2382",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=51-2382"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "publication.list",
+      "path": "/cuenta/publicaciones",
+      "area": "publication",
+      "guard": "AUTH",
+      "title": "Todos mis eventos públicos",
+      "query": [
+        "estado"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "publications",
+          "nodeId": "47:1906",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=47-1906"
+        },
+        {
+          "surface": "desktop",
+          "key": "business",
+          "nodeId": "9:299",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=9-299"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "publication.create",
+      "path": "/cuenta/publicaciones/nueva",
+      "area": "publication",
+      "guard": "AUTH",
+      "title": "Crear evento público",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "publish",
+          "nodeId": "7:654",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=7-654"
+        },
+        {
+          "surface": "desktop",
+          "key": "eventCreate",
+          "nodeId": "53:611",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=53-611"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "publication.detail",
+      "path": "/cuenta/publicaciones/:publicEventId",
+      "area": "publication",
+      "guard": "PUBLICATION_OWNER",
+      "title": "Gestionar publicación y estado",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "publicationDetail",
+          "nodeId": "47:1967",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=47-1967"
+        },
+        {
+          "surface": "mobile",
+          "key": "eventPending",
+          "nodeId": "47:2064",
+          "view": "content_pending",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=47-2064"
+        },
+        {
+          "surface": "mobile",
+          "key": "eventPublished",
+          "nodeId": "47:2108",
+          "view": "published",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=47-2108"
+        },
+        {
+          "surface": "mobile",
+          "key": "eventChanges",
+          "nodeId": "47:2150",
+          "view": "content_observed",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=47-2150"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "publication.edit",
+      "path": "/cuenta/publicaciones/:publicEventId/editar",
+      "area": "publication",
+      "guard": "PUBLICATION_OWNER",
+      "title": "Editar datos del evento",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "publish",
+          "nodeId": "7:654",
+          "view": "edit_reuses_create_form",
+          "stateSource": "server",
+          "reuse": true,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=7-654"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "publication.details",
+      "path": "/cuenta/publicaciones/:publicEventId/editar/detalles",
+      "area": "publication",
+      "guard": "PUBLICATION_OWNER",
+      "title": "Categoría, precio y fecha final",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "eventDetails",
+          "nodeId": "47:2010",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=47-2010"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "publication.review",
+      "path": "/cuenta/publicaciones/:publicEventId/revisar",
+      "area": "publication",
+      "guard": "PUBLICATION_OWNER",
+      "title": "Vista previa antes de enviar",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "review",
+          "nodeId": "11:675",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=11-675"
+        },
+        {
+          "surface": "desktop",
+          "key": "eventReview",
+          "nodeId": "53:673",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=53-673"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "publication.plan",
+      "path": "/cuenta/publicaciones/:publicEventId/plan",
+      "area": "publication",
+      "guard": "PUBLICATION_OWNER",
+      "title": "Plan mensual de S/ 100",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "eventPlan",
+          "nodeId": "45:1618",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=45-1618"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "publication.checkout",
+      "path": "/cuenta/publicaciones/:publicEventId/pagos/nuevo",
+      "area": "publication",
+      "guard": "PUBLICATION_OWNER",
+      "title": "Comprobante de publicación",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "eventPayment",
+          "nodeId": "45:1661",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=45-1661"
+        },
+        {
+          "surface": "desktop",
+          "key": "eventPayment",
+          "nodeId": "53:703",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=53-703"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "publication.payment",
+      "path": "/cuenta/publicaciones/:publicEventId/pagos/:paymentId",
+      "area": "publication",
+      "guard": "PUBLICATION_OWNER",
+      "title": "Estado del comprobante",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "eventReceipt",
+          "nodeId": "45:1716",
+          "view": "proof_received",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=45-1716"
+        },
+        {
+          "surface": "mobile",
+          "key": "eventPaymentIssue",
+          "nodeId": "45:1805",
+          "view": "payment_observed",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=45-1805"
+        },
+        {
+          "surface": "desktop",
+          "key": "eventReceipt",
+          "nodeId": "53:745",
+          "view": "proof_received",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=53-745"
+        }
+      ],
+      "params": [
+        "publicEventId",
+        "paymentId"
+      ]
+    },
+    {
+      "id": "publication.billing",
+      "path": "/cuenta/publicaciones/:publicEventId/facturacion",
+      "area": "publication",
+      "guard": "PUBLICATION_OWNER",
+      "title": "Periodo, vigencia y renovaciones",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "eventBilling",
+          "nodeId": "45:1760",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=45-1760"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "publication.paymentInfo",
+      "path": "/cuenta/publicaciones/:publicEventId/pagos/instrucciones",
+      "area": "publication",
+      "guard": "PUBLICATION_OWNER",
+      "title": "Datos habilitados para el cobro",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "eventPayInfo",
+          "nodeId": "51:2418",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=51-2418"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "admin.home",
+      "path": "/admin",
+      "area": "admin",
+      "guard": "ADMIN",
+      "title": "Resumen administrativo",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "dashboard",
+          "nodeId": "48:19",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=48-19"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "admin.events",
+      "path": "/admin/eventos",
+      "area": "admin",
+      "guard": "ADMIN_EVENT_REVIEW",
+      "title": "Bandeja de eventos",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "events",
+          "nodeId": "48:113",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=48-113"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "admin.event",
+      "path": "/admin/eventos/:publicEventId",
+      "area": "admin",
+      "guard": "ADMIN_EVENT_REVIEW",
+      "title": "Revisión y aprobación del evento",
+      "query": [
+        "estado",
+        "q",
+        "responsable",
+        "modal"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "eventReview",
+          "nodeId": "49:356",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-356"
+        },
+        {
+          "surface": "admin",
+          "key": "eventApprove",
+          "nodeId": "49:430",
+          "view": "modal_approve",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-430"
+        },
+        {
+          "surface": "admin",
+          "key": "eventApproved",
+          "nodeId": "49:494",
+          "view": "published",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-494"
+        },
+        {
+          "surface": "admin",
+          "key": "decisionRecorded",
+          "nodeId": "49:890",
+          "view": "decision_recorded",
+          "stateSource": "server",
+          "reuse": true,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-890"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "admin.eventDecision",
+      "path": "/admin/eventos/:publicEventId/decision",
+      "area": "admin",
+      "guard": "ADMIN_EVENT_REVIEW",
+      "title": "Solicitar cambios, rechazar o suspender evento",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "eventObservation",
+          "nodeId": "49:556",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-556"
+        }
+      ],
+      "params": [
+        "publicEventId"
+      ]
+    },
+    {
+      "id": "admin.businesses",
+      "path": "/admin/negocios",
+      "area": "admin",
+      "guard": "ADMIN_BUSINESS_REVIEW",
+      "title": "Bandeja de negocios",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "businesses",
+          "nodeId": "48:205",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=48-205"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "admin.business",
+      "path": "/admin/negocios/:businessId",
+      "area": "admin",
+      "guard": "ADMIN_BUSINESS_REVIEW",
+      "title": "Revisión y aprobación de negocio",
+      "query": [
+        "estado",
+        "q",
+        "responsable",
+        "modal"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "businessReview",
+          "nodeId": "49:623",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-623"
+        },
+        {
+          "surface": "admin",
+          "key": "businessApprove",
+          "nodeId": "49:697",
+          "view": "modal_approve",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-697"
+        },
+        {
+          "surface": "admin",
+          "key": "businessApproved",
+          "nodeId": "49:761",
+          "view": "published",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-761"
+        },
+        {
+          "surface": "admin",
+          "key": "decisionRecorded",
+          "nodeId": "49:890",
+          "view": "decision_recorded",
+          "stateSource": "server",
+          "reuse": true,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-890"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "admin.businessDecision",
+      "path": "/admin/negocios/:businessId/decision",
+      "area": "admin",
+      "guard": "ADMIN_BUSINESS_REVIEW",
+      "title": "Observaciones del negocio",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "businessObservation",
+          "nodeId": "49:823",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-823"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    },
+    {
+      "id": "admin.payments",
+      "path": "/admin/pagos",
+      "area": "admin",
+      "guard": "ADMIN_PAYMENT_VERIFY",
+      "title": "Bandeja de pagos",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "payments",
+          "nodeId": "48:288",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=48-288"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "admin.payment",
+      "path": "/admin/pagos/:paymentId",
+      "area": "admin",
+      "guard": "ADMIN_PAYMENT_VERIFY",
+      "title": "Comprobar y verificar un cobro",
+      "query": [
+        "estado",
+        "q",
+        "responsable",
+        "modal"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "eventPaymentReview",
+          "nodeId": "50:601",
+          "view": "event_payment",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-601"
+        },
+        {
+          "surface": "admin",
+          "key": "eventPaymentConfirm",
+          "nodeId": "50:672",
+          "view": "modal_verify_event",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-672"
+        },
+        {
+          "surface": "admin",
+          "key": "eventPaymentVerified",
+          "nodeId": "50:733",
+          "view": "payment_verified",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-733"
+        },
+        {
+          "surface": "admin",
+          "key": "businessPaymentReview",
+          "nodeId": "50:794",
+          "view": "business_payment",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-794"
+        },
+        {
+          "surface": "admin",
+          "key": "businessPaymentConfirm",
+          "nodeId": "50:865",
+          "view": "modal_verify_business",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-865"
+        },
+        {
+          "surface": "admin",
+          "key": "businessPaymentVerified",
+          "nodeId": "50:926",
+          "view": "payment_verified",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-926"
+        },
+        {
+          "surface": "admin",
+          "key": "decisionRecorded",
+          "nodeId": "49:890",
+          "view": "decision_recorded",
+          "stateSource": "server",
+          "reuse": true,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-890"
+        }
+      ],
+      "params": [
+        "paymentId"
+      ]
+    },
+    {
+      "id": "admin.paymentObservation",
+      "path": "/admin/pagos/:paymentId/observacion",
+      "area": "admin",
+      "guard": "ADMIN_PAYMENT_VERIFY",
+      "title": "Solicitar corrección de comprobante",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "paymentObservation",
+          "nodeId": "50:987",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-987"
+        }
+      ],
+      "params": [
+        "paymentId"
+      ]
+    },
+    {
+      "id": "admin.subscriptions",
+      "path": "/admin/suscripciones",
+      "area": "admin",
+      "guard": "ADMIN_SUBSCRIPTION",
+      "title": "Vigencias y renovaciones",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "subscriptions",
+          "nodeId": "48:371",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=48-371"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "admin.subscription",
+      "path": "/admin/suscripciones/:subscriptionId",
+      "area": "admin",
+      "guard": "ADMIN_SUBSCRIPTION",
+      "title": "Detalle del periodo y cobro asociado",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "subscriptionDetail",
+          "nodeId": "56:1040",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=56-1040"
+        }
+      ],
+      "params": [
+        "subscriptionId"
+      ]
+    },
+    {
+      "id": "admin.users",
+      "path": "/admin/usuarios",
+      "area": "admin",
+      "guard": "ADMIN_USER_MANAGE",
+      "title": "Usuarios y capacidades",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "users",
+          "nodeId": "48:463",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=48-463"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "admin.user",
+      "path": "/admin/usuarios/:userId",
+      "area": "admin",
+      "guard": "ADMIN_USER_MANAGE",
+      "title": "Revisar cuenta y suspensión",
+      "query": [
+        "estado",
+        "q",
+        "responsable",
+        "modal"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "userDetail",
+          "nodeId": "50:1048",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-1048"
+        },
+        {
+          "surface": "admin",
+          "key": "suspendConfirm",
+          "nodeId": "50:1110",
+          "view": "modal_suspend",
+          "stateSource": "url",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-1110"
+        },
+        {
+          "surface": "admin",
+          "key": "suspended",
+          "nodeId": "56:917",
+          "view": "suspended",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=56-917"
+        }
+      ],
+      "params": [
+        "userId"
+      ]
+    },
+    {
+      "id": "admin.reports",
+      "path": "/admin/reportes",
+      "area": "admin",
+      "guard": "ADMIN_REPORT_MANAGE",
+      "title": "Bandeja de reportes",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "reports",
+          "nodeId": "48:546",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=48-546"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "admin.report",
+      "path": "/admin/reportes/:reportId",
+      "area": "admin",
+      "guard": "ADMIN_REPORT_MANAGE",
+      "title": "Revisar reporte de publicación",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "reportDetail",
+          "nodeId": "50:1170",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-1170"
+        },
+        {
+          "surface": "admin",
+          "key": "decisionRecorded",
+          "nodeId": "49:890",
+          "view": "decision_recorded",
+          "stateSource": "server",
+          "reuse": true,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=49-890"
+        }
+      ],
+      "params": [
+        "reportId"
+      ]
+    },
+    {
+      "id": "admin.reportResolve",
+      "path": "/admin/reportes/:reportId/resolver",
+      "area": "admin",
+      "guard": "ADMIN_REPORT_MANAGE",
+      "title": "Resolver reporte con motivo",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "reportDecision",
+          "nodeId": "56:976",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=56-976"
+        }
+      ],
+      "params": [
+        "reportId"
+      ]
+    },
+    {
+      "id": "admin.audit",
+      "path": "/admin/actividad",
+      "area": "admin",
+      "guard": "ADMIN_AUDIT_READ",
+      "title": "Registro de actividad",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "audit",
+          "nodeId": "50:1236",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-1236"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "admin.settings",
+      "path": "/admin/configuracion/publicaciones",
+      "area": "admin",
+      "guard": "ADMIN_CONFIG_MANAGE",
+      "title": "Tarifas y canales de cobro",
+      "query": [
+        "estado",
+        "q",
+        "responsable"
+      ],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "admin",
+          "key": "settings",
+          "nodeId": "50:1304",
+          "view": "default",
+          "stateSource": "server",
+          "reuse": false,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=50-1304"
+        }
+      ],
+      "params": []
+    },
+    {
+      "id": "business.edit",
+      "path": "/cuenta/negocios/:businessId/editar",
+      "area": "business",
+      "guard": "BUSINESS_EDITOR",
+      "title": "Editar ficha del negocio existente",
+      "query": [],
+      "status": "proposed",
+      "bindings": [
+        {
+          "surface": "mobile",
+          "key": "businessCreate",
+          "nodeId": "44:1287",
+          "view": "edit_reuses_create_form",
+          "stateSource": "server",
+          "reuse": true,
+          "figmaUrl": "https://www.figma.com/design/LvT99td5UFBvyzpcJkq4Cf/Eventin?node-id=44-1287"
+        }
+      ],
+      "params": [
+        "businessId"
+      ]
+    }
+  ],
+  "guards": {
+    "PUBLIC": "Sin sesión; solo datos públicos.",
+    "PUBLIC_VISIBLE": "Solo recursos visibles. Un dueño ve borradores en su área privada, nunca por esta ruta pública.",
+    "GUEST_OR_SESSION": "Si ya tiene sesión válida, redirigir al retorno interno seguro o a /cuenta.",
+    "RECOVERY_SESSION": "Sesión de recuperación válida, de un solo uso según autenticación.",
+    "AUTH_CALLBACK": "Validar callback con el proveedor; no tratar parámetros como autorización.",
+    "AUTH": "Sesión activa; cargar exclusivamente recursos autorizados de la cuenta.",
+    "EVENT_MEMBER": "Propietario o miembro aceptado del evento privado. Invitación pendiente no concede acceso.",
+    "EVENT_OWNER": "Solo propietario del evento; no basta con ser coorganizador.",
+    "INVITE_RECIPIENT": "Validar token temporal, destinatario, estado, expiración y sesión; aceptar explícitamente.",
+    "BUSINESS_MEMBER": "Miembro autorizado del negocio específico.",
+    "BUSINESS_EDITOR": "Membresía del negocio con capacidad de editar servicios o responder solicitudes.",
+    "BUSINESS_BILLING": "Membresía con permiso explícito para el cobro y facturación de ese negocio.",
+    "PUBLICATION_OWNER": "Cuenta responsable de ese evento público; no heredar acceso desde un evento privado.",
+    "ADMIN": "Equipo autorizado; capacidades administrativas explícitas.",
+    "ADMIN_EVENT_REVIEW": "Administración con permiso para revisar eventos públicos.",
+    "ADMIN_BUSINESS_REVIEW": "Administración con permiso para revisar negocios.",
+    "ADMIN_PAYMENT_VERIFY": "Administración con permiso para cotejar y verificar cobros.",
+    "ADMIN_SUBSCRIPTION": "Administración con permiso para consultar periodos y renovaciones.",
+    "ADMIN_USER_MANAGE": "Administración con permiso para cuentas y accesos.",
+    "ADMIN_REPORT_MANAGE": "Administración con permiso para moderación de reportes.",
+    "ADMIN_AUDIT_READ": "Administración con permiso para leer actividad; no editar el registro.",
+    "ADMIN_CONFIG_MANAGE": "Administración con permiso para tarifas y datos de cobro."
+  },
+  "transitions": [
+    {
+      "id": "T001",
+      "from": "*app",
+      "action": "Inicio",
+      "to": "home",
+      "condition": "Si la ruta requiere sesión, pasar por auth.login con retorno interno seguro.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T002",
+      "from": "*app",
+      "action": "Explorar",
+      "to": "explore",
+      "condition": "Si la ruta requiere sesión, pasar por auth.login con retorno interno seguro.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T003",
+      "from": "*app",
+      "action": "Mapa",
+      "to": "map",
+      "condition": "Si la ruta requiere sesión, pasar por auth.login con retorno interno seguro.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T004",
+      "from": "*app",
+      "action": "Organizar",
+      "to": "private.list",
+      "condition": "Si la ruta requiere sesión, pasar por auth.login con retorno interno seguro.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T005",
+      "from": "*app",
+      "action": "Perfil",
+      "to": "account",
+      "condition": "Si la ruta requiere sesión, pasar por auth.login con retorno interno seguro.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T006",
+      "from": "*app",
+      "action": "Favoritos de cabecera",
+      "to": "favorites",
+      "condition": "Si la ruta requiere sesión, pasar por auth.login con retorno interno seguro.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T007",
+      "from": "*app",
+      "action": "Notificaciones",
+      "to": "notifications",
+      "condition": "Si la ruta requiere sesión, pasar por auth.login con retorno interno seguro.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T008",
+      "from": "explore",
+      "action": "Abrir evento",
+      "to": "event.public",
+      "condition": "Solo publicación pública vigente; mantener filtros para volver.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T009",
+      "from": "map",
+      "action": "Abrir evento seleccionado",
+      "to": "event.public",
+      "condition": "El resultado es público; conservar zona y filtros.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T010",
+      "from": "map",
+      "action": "Abrir proveedor seleccionado",
+      "to": "provider.detail",
+      "condition": "El negocio es público; no asumir disponibilidad.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T011",
+      "from": "map",
+      "action": "Abrir filtros o ubicación",
+      "to": "map",
+      "condition": "Cambiar query.panel; coordenadas precisas solo en memoria.",
+      "command": null,
+      "history": "push",
+      "view": "panel_filters|panel_location"
+    },
+    {
+      "id": "T012",
+      "from": "map",
+      "action": "Aplicar filtros / seleccionar resultado",
+      "to": "map",
+      "condition": "Actualizar solo filtros no sensibles y selección por ID.",
+      "command": null,
+      "history": "replace"
+    },
+    {
+      "id": "T013",
+      "from": "provider.list",
+      "action": "Abrir proveedor",
+      "to": "provider.detail",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T014",
+      "from": "provider.detail",
+      "action": "Solicitar cotización sin evento elegido",
+      "to": "private.list",
+      "condition": "Exigir sesión y seleccionar un evento autorizado; conservar businessId como intención.",
+      "command": null,
+      "history": "push",
+      "intent": "quote"
+    },
+    {
+      "id": "T015",
+      "from": "private.list",
+      "action": "Elegir evento para la solicitud",
+      "to": "quote.create",
+      "condition": "privateEventId elegido y businessId de la intención, ambos válidos.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T016",
+      "from": "event.public",
+      "action": "Consultar entradas por WhatsApp",
+      "to": null,
+      "condition": "Teléfono del organizador validado; enlace wa.me sin datos privados.",
+      "command": null,
+      "history": "external",
+      "external": "whatsapp",
+      "onReturn": "Mantener ficha; no marcar reserva confirmada."
+    },
+    {
+      "id": "T017",
+      "from": "event.public",
+      "action": "Cómo llegar",
+      "to": null,
+      "condition": "Solo coordenadas o dirección pública verificadas.",
+      "command": null,
+      "history": "external",
+      "external": "maps",
+      "onReturn": "Volver a la ficha sin alterar estados."
+    },
+    {
+      "id": "T018",
+      "from": "auth.login",
+      "action": "Entrar",
+      "to": "account",
+      "condition": "Solo tras obtener una sesión válida.",
+      "command": "auth.signIn",
+      "history": "replace",
+      "returnTo": "Ruta interna permitida o /cuenta; no ejecutar escrituras al volver."
+    },
+    {
+      "id": "T019",
+      "from": "auth.login",
+      "action": "Crear cuenta",
+      "to": "auth.register",
+      "condition": "Conservar intención interna segura.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T020",
+      "from": "auth.login",
+      "action": "Olvidé mi contraseña",
+      "to": "auth.recovery",
+      "condition": "Estado de recuperación pendiente de diseño.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T021",
+      "from": "auth.register",
+      "action": "Completar registro",
+      "to": "account",
+      "condition": "Con sesión válida. Si requiere confirmar correo, mostrar estado pendiente.",
+      "command": "auth.register",
+      "history": "replace",
+      "returnTo": "Retorno interno seguro cuando la sesión esté activa."
+    },
+    {
+      "id": "T022",
+      "from": "auth.recovery",
+      "action": "Enviar recuperación",
+      "to": "auth.recovery",
+      "condition": "Respuesta neutral para evitar revelar si existe la cuenta.",
+      "command": "auth.requestRecovery",
+      "history": "replace",
+      "view": "recovery_requested"
+    },
+    {
+      "id": "T023",
+      "from": "auth.reset",
+      "action": "Guardar nueva contraseña",
+      "to": "auth.login",
+      "condition": "Recuperación válida; no confundir token con sesión completa.",
+      "command": "auth.resetPassword",
+      "history": "replace"
+    },
+    {
+      "id": "T024",
+      "from": "auth.callback",
+      "action": "Completar autenticación",
+      "to": "account",
+      "condition": "Validar retorno del proveedor y sesión; limpiar parámetros sensibles.",
+      "command": null,
+      "history": "replace"
+    },
+    {
+      "id": "T025",
+      "from": "account",
+      "action": "Mis negocios",
+      "to": "business.list",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T026",
+      "from": "account",
+      "action": "Mis eventos publicados",
+      "to": "publication.list",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T027",
+      "from": "private.list",
+      "action": "Crear evento privado",
+      "to": "private.create",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T028",
+      "from": "private.list",
+      "action": "Abrir evento privado",
+      "to": "private.detail",
+      "condition": "Propietario o coorganizador aceptado.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T029",
+      "from": "private.create",
+      "action": "Continuar al presupuesto",
+      "to": "private.detail",
+      "condition": "Validar datos y esperar creación persistida; usar ID devuelto.",
+      "command": "privateEvent.create",
+      "history": "replace",
+      "alternate": "Si existe intención de cotizar, ir a quote.create con el nuevo privateEventId."
+    },
+    {
+      "id": "T030",
+      "from": "private.detail",
+      "action": "Compartir",
+      "to": "private.team",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T031",
+      "from": "private.team",
+      "action": "Invitar a una amistad",
+      "to": "private.invite",
+      "condition": "Solo propietario.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T032",
+      "from": "private.invite",
+      "action": "Enviar invitación",
+      "to": "private.team",
+      "condition": "Validar destinatario y alcance; no dar membresía todavía.",
+      "command": "invitation.create",
+      "history": "replace",
+      "view": "invitation_pending"
+    },
+    {
+      "id": "T033",
+      "from": "private.invite",
+      "action": "Copiar enlace",
+      "to": "private.invite",
+      "condition": "Token temporal y revocable generado de forma segura; no registrar token en telemetría.",
+      "command": "invitation.createLink",
+      "history": "stay"
+    },
+    {
+      "id": "T034",
+      "from": "invite.accept",
+      "action": "Aceptar",
+      "to": "private.detail",
+      "condition": "Sesión, destinatario y token vigentes; solo tras aceptación persistida.",
+      "command": "invitation.accept",
+      "history": "replace"
+    },
+    {
+      "id": "T035",
+      "from": "invite.accept",
+      "action": "Ahora no",
+      "to": "notifications",
+      "condition": "No conceder acceso.",
+      "command": null,
+      "history": "replace"
+    },
+    {
+      "id": "T036",
+      "from": "private.detail",
+      "action": "Buscar proveedores",
+      "to": "provider.list",
+      "condition": "Preservar contexto del evento, sin publicarlo.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T037",
+      "from": "private.detail",
+      "action": "Ver cotizaciones",
+      "to": "quote.list",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T038",
+      "from": "quote.create",
+      "action": "Enviar solicitud",
+      "to": "quote.request",
+      "condition": "Revalidar acceso al evento y negocio; usar requestId de respuesta.",
+      "command": "quoteRequest.create",
+      "history": "replace",
+      "view": "request_pending"
+    },
+    {
+      "id": "T039",
+      "from": "quote.list",
+      "action": "Ver detalle de propuesta",
+      "to": "quote.detail",
+      "condition": "La propuesta pertenece al mismo evento autorizado.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T040",
+      "from": "quote.list",
+      "action": "Comparar propuestas",
+      "to": "quote.compare",
+      "condition": "Solo propuestas del mismo evento; no confiar en query.ids.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T041",
+      "from": "quote.detail",
+      "action": "Seleccionar esta propuesta",
+      "to": "quote.detail",
+      "condition": "Propuesta vigente y visible para el equipo.",
+      "command": null,
+      "history": "push",
+      "view": "modal_select"
+    },
+    {
+      "id": "T042",
+      "from": "quote.detail",
+      "action": "Confirmar selección",
+      "to": "quote.detail",
+      "condition": "Esperar escritura exitosa y revalidar vigencia; no hacer cobro ni contrato.",
+      "command": "proposal.select",
+      "history": "replace",
+      "view": "selected"
+    },
+    {
+      "id": "T043",
+      "from": "quote.compare",
+      "action": "Ver condiciones",
+      "to": "quote.detail",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T044",
+      "from": "business.list",
+      "action": "Crear negocio",
+      "to": "business.create",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T045",
+      "from": "business.list",
+      "action": "Gestionar negocio",
+      "to": "business.detail",
+      "condition": "Membresía del negocio consultada en servidor.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T046",
+      "from": "business.create",
+      "action": "Revisar mi negocio",
+      "to": "business.review",
+      "condition": "Validar y crear borrador persistido; usar businessId devuelto.",
+      "command": "business.saveDraft",
+      "history": "replace"
+    },
+    {
+      "id": "T047",
+      "from": "business.detail",
+      "action": "Editar ficha",
+      "to": "business.edit",
+      "condition": "Reutilizar formulario en modo edición con businessId autorizado.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T048",
+      "from": "business.review",
+      "action": "Continuar al plan",
+      "to": "business.plan",
+      "condition": "La vista previa proviene del borrador guardado.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T049",
+      "from": "business.detail",
+      "action": "Ver servicios",
+      "to": "business.services",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T050",
+      "from": "business.services",
+      "action": "Añadir servicio",
+      "to": "business.serviceNew",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T051",
+      "from": "business.services",
+      "action": "Editar servicio",
+      "to": "business.serviceEdit",
+      "condition": "serviceId pertenece al negocio.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T052",
+      "from": "business.serviceNew",
+      "action": "Guardar servicio",
+      "to": "business.services",
+      "condition": "Validar y persistir; no publicar si el negocio no tiene vigencia.",
+      "command": "service.create",
+      "history": "replace"
+    },
+    {
+      "id": "T053",
+      "from": "business.serviceEdit",
+      "action": "Guardar cambios",
+      "to": "business.services",
+      "condition": "Servicio y permiso de edición actuales.",
+      "command": "service.update",
+      "history": "replace"
+    },
+    {
+      "id": "T054",
+      "from": "business.detail",
+      "action": "Ver solicitudes",
+      "to": "business.requests",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T055",
+      "from": "business.requests",
+      "action": "Abrir solicitud",
+      "to": "business.request",
+      "condition": "La solicitud se dirige al negocio autorizado.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T056",
+      "from": "business.request",
+      "action": "Preparar propuesta",
+      "to": "business.reply",
+      "condition": "Solicitud aún admite una respuesta.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T057",
+      "from": "business.reply",
+      "action": "Revisar propuesta",
+      "to": "business.replyReview",
+      "condition": "Guardar borrador con alcance, importe, vigencia y condiciones.",
+      "command": "proposal.saveDraft",
+      "history": "push"
+    },
+    {
+      "id": "T058",
+      "from": "business.replyReview",
+      "action": "Enviar propuesta",
+      "to": "business.request",
+      "condition": "Confirmar intención y esperar respuesta persistida.",
+      "command": "proposal.send",
+      "history": "replace",
+      "view": "proposal_sent"
+    },
+    {
+      "id": "T059",
+      "from": "business.request",
+      "action": "No puedo atender",
+      "to": "business.request",
+      "condition": "Abrir confirmación, sin cambiar estado aún.",
+      "command": null,
+      "history": "push",
+      "view": "modal_decline"
+    },
+    {
+      "id": "T060",
+      "from": "business.request",
+      "action": "Confirmar que no puede atender",
+      "to": "business.request",
+      "condition": "Registrar motivo y respuesta solo si la operación se completa.",
+      "command": "quoteRequest.decline",
+      "history": "replace",
+      "view": "declined"
+    },
+    {
+      "id": "T061",
+      "from": "business.requests",
+      "action": "Ver respondidas",
+      "to": "business.requests",
+      "condition": "Query.estado filtra; no cambia el estado de solicitudes.",
+      "command": null,
+      "history": "replace",
+      "view": "filter_responded"
+    },
+    {
+      "id": "T062",
+      "from": "publication.list",
+      "action": "Crear evento público",
+      "to": "publication.create",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T063",
+      "from": "publication.list",
+      "action": "Gestionar o retomar borrador",
+      "to": "publication.detail",
+      "condition": "Responsable autorizado, incluso cuando la ficha aún no es pública.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T064",
+      "from": "publication.create",
+      "action": "Continuar a detalles",
+      "to": "publication.details",
+      "condition": "Guardar borrador y usar publicEventId devuelto.",
+      "command": "publicEvent.saveDraft",
+      "history": "replace"
+    },
+    {
+      "id": "T065",
+      "from": "publication.details",
+      "action": "Revisar mi evento",
+      "to": "publication.review",
+      "condition": "Datos y fotos válidos; fecha final coherente.",
+      "command": "publicEvent.saveDetails",
+      "history": "push"
+    },
+    {
+      "id": "T066",
+      "from": "publication.detail",
+      "action": "Editar información",
+      "to": "publication.edit",
+      "condition": "Responsable y estado permiten editar.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T067",
+      "from": "publication.edit",
+      "action": "Continuar",
+      "to": "publication.details",
+      "condition": "Actualizar el mismo publicEventId, no crear otra publicación.",
+      "command": "publicEvent.updateDraft",
+      "history": "push"
+    },
+    {
+      "id": "T068",
+      "from": "publication.review",
+      "action": "Continuar al plan",
+      "to": "publication.plan",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T069",
+      "from": "publication.detail",
+      "action": "Ver mi publicación",
+      "to": "event.public",
+      "condition": "Solo si es pública; si no, usar vista previa privada.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T070",
+      "from": "business.plan",
+      "action": "Continuar al pago",
+      "to": "business.checkout",
+      "condition": "Plan e importe resueltos en servidor; no tomarlos de query.",
+      "command": "publicationOrder.prepare",
+      "history": "push"
+    },
+    {
+      "id": "T071",
+      "from": "business.checkout",
+      "action": "Consultar datos de pago",
+      "to": "business.paymentInfo",
+      "condition": "Solo mostrar datos de cobro válidos; si faltan, impedir instrucción de pago.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T072",
+      "from": "business.checkout",
+      "action": "Enviar comprobante",
+      "to": "business.payment",
+      "condition": "Esperar carga y registro; conservar referencia al periodo y al recurso.",
+      "command": "paymentProof.submit",
+      "history": "replace",
+      "view": "proof_received"
+    },
+    {
+      "id": "T073",
+      "from": "business.detail",
+      "action": "Ver plan y pagos",
+      "to": "business.billing",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T074",
+      "from": "business.billing",
+      "action": "Renovar periodo",
+      "to": "business.checkout",
+      "condition": "Renovación manual; evento finalizado no se renueva como activo.",
+      "command": "publicationOrder.prepareRenewal",
+      "history": "push"
+    },
+    {
+      "id": "T075",
+      "from": "business.billing",
+      "action": "Ver historial",
+      "to": "business.payment",
+      "condition": "paymentId pertenece al recurso y a un periodo real.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T076",
+      "from": "business.payment",
+      "action": "Corregir comprobante",
+      "to": "business.checkout",
+      "condition": "Pago observado; conservar paymentId/orderId para corregir sin duplicar cobros.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T077",
+      "from": "business.payment",
+      "action": "Volver a publicación",
+      "to": "business.detail",
+      "condition": "Volver al estado real del recurso; no derivar publicación desde la URL.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T078",
+      "from": "publication.plan",
+      "action": "Continuar al pago",
+      "to": "publication.checkout",
+      "condition": "Plan e importe resueltos en servidor; no tomarlos de query.",
+      "command": "publicationOrder.prepare",
+      "history": "push"
+    },
+    {
+      "id": "T079",
+      "from": "publication.checkout",
+      "action": "Consultar datos de pago",
+      "to": "publication.paymentInfo",
+      "condition": "Solo mostrar datos de cobro válidos; si faltan, impedir instrucción de pago.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T080",
+      "from": "publication.checkout",
+      "action": "Enviar comprobante",
+      "to": "publication.payment",
+      "condition": "Esperar carga y registro; conservar referencia al periodo y al recurso.",
+      "command": "paymentProof.submit",
+      "history": "replace",
+      "view": "proof_received"
+    },
+    {
+      "id": "T081",
+      "from": "publication.detail",
+      "action": "Ver plan y pagos",
+      "to": "publication.billing",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T082",
+      "from": "publication.billing",
+      "action": "Renovar periodo",
+      "to": "publication.checkout",
+      "condition": "Renovación manual; evento finalizado no se renueva como activo.",
+      "command": "publicationOrder.prepareRenewal",
+      "history": "push"
+    },
+    {
+      "id": "T083",
+      "from": "publication.billing",
+      "action": "Ver historial",
+      "to": "publication.payment",
+      "condition": "paymentId pertenece al recurso y a un periodo real.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T084",
+      "from": "publication.payment",
+      "action": "Corregir comprobante",
+      "to": "publication.checkout",
+      "condition": "Pago observado; conservar paymentId/orderId para corregir sin duplicar cobros.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T085",
+      "from": "publication.payment",
+      "action": "Volver a publicación",
+      "to": "publication.detail",
+      "condition": "Volver al estado real del recurso; no derivar publicación desde la URL.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T086",
+      "from": "*admin",
+      "action": "Abrir home",
+      "to": "admin.home",
+      "condition": "Requiere la capacidad administrativa específica del destino.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T087",
+      "from": "*admin",
+      "action": "Abrir events",
+      "to": "admin.events",
+      "condition": "Requiere la capacidad administrativa específica del destino.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T088",
+      "from": "*admin",
+      "action": "Abrir businesses",
+      "to": "admin.businesses",
+      "condition": "Requiere la capacidad administrativa específica del destino.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T089",
+      "from": "*admin",
+      "action": "Abrir payments",
+      "to": "admin.payments",
+      "condition": "Requiere la capacidad administrativa específica del destino.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T090",
+      "from": "*admin",
+      "action": "Abrir subscriptions",
+      "to": "admin.subscriptions",
+      "condition": "Requiere la capacidad administrativa específica del destino.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T091",
+      "from": "*admin",
+      "action": "Abrir users",
+      "to": "admin.users",
+      "condition": "Requiere la capacidad administrativa específica del destino.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T092",
+      "from": "*admin",
+      "action": "Abrir reports",
+      "to": "admin.reports",
+      "condition": "Requiere la capacidad administrativa específica del destino.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T093",
+      "from": "*admin",
+      "action": "Abrir audit",
+      "to": "admin.audit",
+      "condition": "Requiere la capacidad administrativa específica del destino.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T094",
+      "from": "*admin",
+      "action": "Abrir settings",
+      "to": "admin.settings",
+      "condition": "Requiere la capacidad administrativa específica del destino.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T095",
+      "from": "admin.events",
+      "action": "Revisar evento",
+      "to": "admin.event",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T096",
+      "from": "admin.businesses",
+      "action": "Revisar negocio",
+      "to": "admin.business",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T097",
+      "from": "admin.event",
+      "action": "Aprobar contenido",
+      "to": "admin.event",
+      "condition": "Mostrar confirmación y revisar la versión actual del recurso.",
+      "command": null,
+      "history": "push",
+      "view": "modal_approve"
+    },
+    {
+      "id": "T098",
+      "from": "admin.event",
+      "action": "Confirmar y publicar",
+      "to": "admin.event",
+      "condition": "Aprobar contenido y recalcular visibilidad en servidor; pago y vigencia deben ser válidos.",
+      "command": "moderation.approveContent",
+      "history": "replace",
+      "view": "published_or_waiting_payment"
+    },
+    {
+      "id": "T099",
+      "from": "admin.event",
+      "action": "Solicitar cambios o rechazar",
+      "to": "admin.eventDecision",
+      "condition": "No ejecutar la decisión al abrir el formulario.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T100",
+      "from": "admin.eventDecision",
+      "action": "Confirmar decisión",
+      "to": "admin.event",
+      "condition": "Validar decisión, motivo, permiso y versión; auditar antes/después.",
+      "command": "moderation.recordDecision",
+      "history": "replace",
+      "view": "observed_or_rejected"
+    },
+    {
+      "id": "T101",
+      "from": "admin.business",
+      "action": "Aprobar contenido",
+      "to": "admin.business",
+      "condition": "Mostrar confirmación y revisar la versión actual del recurso.",
+      "command": null,
+      "history": "push",
+      "view": "modal_approve"
+    },
+    {
+      "id": "T102",
+      "from": "admin.business",
+      "action": "Confirmar y publicar",
+      "to": "admin.business",
+      "condition": "Aprobar contenido y recalcular visibilidad en servidor; pago y vigencia deben ser válidos.",
+      "command": "moderation.approveContent",
+      "history": "replace",
+      "view": "published_or_waiting_payment"
+    },
+    {
+      "id": "T103",
+      "from": "admin.business",
+      "action": "Solicitar cambios o rechazar",
+      "to": "admin.businessDecision",
+      "condition": "No ejecutar la decisión al abrir el formulario.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T104",
+      "from": "admin.businessDecision",
+      "action": "Confirmar decisión",
+      "to": "admin.business",
+      "condition": "Validar decisión, motivo, permiso y versión; auditar antes/después.",
+      "command": "moderation.recordDecision",
+      "history": "replace",
+      "view": "observed_or_rejected"
+    },
+    {
+      "id": "T105",
+      "from": "admin.payments",
+      "action": "Revisar comprobante",
+      "to": "admin.payment",
+      "condition": "Cargar recurso y periodo desde paymentId; no desde el texto de un botón.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T106",
+      "from": "admin.payment",
+      "action": "Continuar a verificación",
+      "to": "admin.payment",
+      "condition": "Abrir confirmación tras cotejar referencia e importe.",
+      "command": null,
+      "history": "push",
+      "view": "modal_verify"
+    },
+    {
+      "id": "T107",
+      "from": "admin.payment",
+      "action": "Confirmar pago verificado",
+      "to": "admin.payment",
+      "condition": "Verificar contra registro real, evitar duplicados, auditar y recalcular visibilidad.",
+      "command": "payment.verify",
+      "history": "replace",
+      "view": "payment_verified"
+    },
+    {
+      "id": "T108",
+      "from": "admin.payment",
+      "action": "Solicitar corrección",
+      "to": "admin.paymentObservation",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T109",
+      "from": "admin.paymentObservation",
+      "action": "Registrar observación",
+      "to": "admin.payment",
+      "condition": "Motivo requerido; no alterar aprobación del contenido.",
+      "command": "payment.observe",
+      "history": "replace",
+      "view": "payment_observed"
+    },
+    {
+      "id": "T110",
+      "from": "admin.subscriptions",
+      "action": "Revisar periodo",
+      "to": "admin.subscription",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T111",
+      "from": "admin.subscription",
+      "action": "Revisar pago del periodo",
+      "to": "admin.payment",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T112",
+      "from": "admin.users",
+      "action": "Abrir cuenta",
+      "to": "admin.user",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T113",
+      "from": "admin.user",
+      "action": "Revisar suspensión",
+      "to": "admin.user",
+      "condition": "Mostrar confirmación con usuario y efecto; aún no suspender.",
+      "command": null,
+      "history": "push",
+      "view": "modal_suspend"
+    },
+    {
+      "id": "T114",
+      "from": "admin.user",
+      "action": "Confirmar suspensión con motivo",
+      "to": "admin.user",
+      "condition": "Permiso específico, motivo y revalidación; no eliminar datos.",
+      "command": "account.suspend",
+      "history": "replace",
+      "view": "suspended"
+    },
+    {
+      "id": "T115",
+      "from": "admin.reports",
+      "action": "Abrir reporte",
+      "to": "admin.report",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T116",
+      "from": "admin.report",
+      "action": "Ver publicación",
+      "to": "admin.event",
+      "condition": "Resolver tipo e ID desde el reporte; si es negocio, usar admin.business.",
+      "command": null,
+      "history": "push",
+      "alternate": "admin.business"
+    },
+    {
+      "id": "T117",
+      "from": "admin.report",
+      "action": "Resolver con motivo",
+      "to": "admin.reportResolve",
+      "condition": "Acceso autorizado al recurso.",
+      "command": null,
+      "history": "push"
+    },
+    {
+      "id": "T118",
+      "from": "admin.reportResolve",
+      "action": "Confirmar resolución",
+      "to": "admin.report",
+      "condition": "Auditar decisión; si requiere suspender, confirmar recurso y efecto explícitamente.",
+      "command": "report.resolve",
+      "history": "replace",
+      "view": "resolved"
+    },
+    {
+      "id": "T119",
+      "from": "business.edit",
+      "action": "Guardar y revisar",
+      "to": "business.review",
+      "condition": "Actualizar el mismo businessId; nunca crear otro perfil.",
+      "command": "business.updateDraft",
+      "history": "push"
+    }
+  ],
+  "navigation": {
+    "appTabs": [
+      [
+        "Inicio",
+        "home"
+      ],
+      [
+        "Explorar",
+        "explore"
+      ],
+      [
+        "Mapa",
+        "map"
+      ],
+      [
+        "Organizar",
+        "private.list"
+      ],
+      [
+        "Perfil",
+        "account"
+      ]
+    ],
+    "header": [
+      [
+        "Favoritos",
+        "favorites"
+      ],
+      [
+        "Notificaciones",
+        "notifications"
+      ]
+    ],
+    "accountAreas": [
+      [
+        "Personal",
+        "private.list"
+      ],
+      [
+        "Negocios",
+        "business.list"
+      ],
+      [
+        "Eventos publicados",
+        "publication.list"
+      ]
+    ],
+    "adminShell": "Separado de las capacidades de la cuenta; no se obtiene por contratar planes.",
+    "responsive": "Mobile y Desktop comparten las mismas rutas. Un frame ausente en una superficie es una adaptación pendiente, no una segunda URL.",
+    "pathPriority": "Declarar rutas estáticas nuevo/nueva/comparar/instrucciones antes de parámetros genéricos si el router lo requiere.",
+    "rootFallback": "Ruta no reconocida: estado común 404. No crear un recurso ni redirigir a éxito.",
+    "notificationTargets": [
+      {
+        "kind": "invitation",
+        "route": "invite.accept",
+        "guard": "INVITE_RECIPIENT"
+      },
+      {
+        "kind": "quote_request",
+        "route": "business.request",
+        "guard": "BUSINESS_MEMBER"
+      },
+      {
+        "kind": "proposal_received",
+        "route": "quote.detail",
+        "guard": "EVENT_MEMBER"
+      },
+      {
+        "kind": "business_review_result",
+        "route": "business.detail",
+        "guard": "BUSINESS_MEMBER"
+      },
+      {
+        "kind": "event_review_result",
+        "route": "publication.detail",
+        "guard": "PUBLICATION_OWNER"
+      },
+      {
+        "kind": "business_payment_result",
+        "route": "business.payment",
+        "guard": "BUSINESS_BILLING"
+      },
+      {
+        "kind": "event_payment_result",
+        "route": "publication.payment",
+        "guard": "PUBLICATION_OWNER"
+      },
+      {
+        "kind": "team_activity",
+        "route": "private.detail",
+        "guard": "EVENT_MEMBER"
+      },
+      {
+        "kind": "report",
+        "route": "admin.report",
+        "guard": "ADMIN_REPORT_MANAGE"
+      }
+    ]
+  },
+  "rules": {
+    "authReturn": "returnTo solo acepta rutas internas permitidas. Validar sesión y permisos de nuevo; no ejecutar acciones mutadoras al regresar.",
+    "invitation": "Token temporal revocable; validar destinatario y aceptación. Si necesita login, conservar el token en contexto temporal protegido, no copiarlo a returnTo ni telemetría.",
+    "queries": "Filtros/selección/panel son estado de navegación; nunca autorización, pago confirmado, membresía o publicación.",
+    "location": "Zona/radio pueden ir en query. La ubicación precisa del usuario permanece en memoria; no registrar ni compartir por defecto.",
+    "success": "Pantallas de envío, selección, aprobación o pago se renderizan tras una respuesta exitosa y estado verificable. Una URL no confirma operaciones.",
+    "mutation": "No mutar al montar una ruta ni por cambiar un query. Solicitar acción explícita, validar en servidor y contemplar idempotencia.",
+    "cancel": "Cerrar confirmación no altera datos. Atrás tras enviar no repite el comando.",
+    "privateReturn": "Recargar recurso y permisos al abrir enlaces directos, volver de autenticación, recuperar foco o reintentar tras conflicto.",
+    "publicReturn": "Conservar filtros de listados/mapa; si no hay historial interno fiable, volver al listado del módulo.",
+    "unsaved": "Confirmar salida con cambios sin guardar; guardar borrador solo con sesión y permisos válidos. No cachear formularios privados en cachés públicas.",
+    "billing": "S/ 30 por negocio/mes y S/ 100 por evento/mes; renovación manual. Precio y periodo calculados en servidor. Bloquear instrucciones si datos de cobro no están configurados.",
+    "publish": "Contenido aprobado + pago del periodo verificado + vigencia válida. Un evento finalizado no permanece en cartelera activa.",
+    "adminConcurrency": "Revalidar versión/estado antes de confirmar; registrar autor, motivo y transición; no activar sobre datos obsoletos."
+  },
+  "gaps": [
+    {
+      "id": "G01",
+      "title": "Recuperación, restablecimiento y callback",
+      "routes": [
+        "auth.recovery",
+        "auth.reset",
+        "auth.callback"
+      ],
+      "status": "sin frame de producto",
+      "behavior": "Diseñar respuesta neutral, token inválido y retorno de autenticación. No mostrar sesión activa sin validación."
+    },
+    {
+      "id": "G02",
+      "title": "Acceso denegado y recurso inexistente",
+      "routes": [],
+      "status": "estado común pendiente",
+      "behavior": "403 genérico en áreas privadas; 404 genérico para datos no públicos. No filtrar nombres, dirección o membresías."
+    },
+    {
+      "id": "G03",
+      "title": "Invitación vencida, revocada o de otra cuenta",
+      "routes": [
+        "invite.accept"
+      ],
+      "status": "variantes pendientes",
+      "behavior": "No dar acceso; permitir entrar con la cuenta correcta o solicitar una nueva invitación."
+    },
+    {
+      "id": "G04",
+      "title": "Cambios sin guardar y sesión expirada",
+      "routes": [],
+      "status": "confirmación común pendiente",
+      "behavior": "Ofrecer quedarse, descartar o guardar borrador si corresponde; tras login restaurar intención, nunca reenviar automáticamente."
+    },
+    {
+      "id": "G05",
+      "title": "Propuesta vencida o solicitud cerrada",
+      "routes": [
+        "quote.detail",
+        "business.reply"
+      ],
+      "status": "variantes pendientes",
+      "behavior": "Deshabilitar seleccionar/enviar; recargar estado y volver a comparar o a la solicitud."
+    },
+    {
+      "id": "G06",
+      "title": "Comprobante duplicado y archivo rechazado",
+      "routes": [
+        "business.checkout",
+        "publication.checkout",
+        "admin.payment"
+      ],
+      "status": "errores de formulario pendientes",
+      "behavior": "Conservar datos; explicar corrección; no crear otro cobro ni periodo cuando se reintenta."
+    },
+    {
+      "id": "G07",
+      "title": "Estado de evento finalizado en enlace directo",
+      "routes": [
+        "event.public"
+      ],
+      "status": "variante pública pendiente",
+      "behavior": "Excluir de cartelera activa; mostrar no disponible/finalizado sin reserva. Confirmar el diseño antes de habilitar histórico público."
+    },
+    {
+      "id": "G08",
+      "title": "Permiso de ubicación denegado o no disponible",
+      "routes": [
+        "map"
+      ],
+      "status": "variante pendiente",
+      "behavior": "Mantener búsqueda manual; no bloquear explorar ni exponer coordenadas precisas en URL o telemetría."
+    },
+    {
+      "id": "G09",
+      "title": "Catálogos y bandejas vacíos / sin conexión",
+      "routes": [],
+      "status": "reutilizar estados existentes con copy adaptado",
+      "behavior": "Los estados de referencia del archivo no cubren cada módulo; separar carga, vacío, error y acceso denegado."
+    }
+  ],
+  "prototypeEvidence": {
+    "status": "snapshot_for_handoff_not_runtime",
+    "frames": [
+      [
+        "6:2",
+        "Inicio · Mobile"
+      ],
+      [
+        "6:76",
+        "Explorar · Mobile"
+      ],
+      [
+        "6:145",
+        "Detalle de evento · Mobile"
+      ],
+      [
+        "6:195",
+        "Organizar · Mobile"
+      ],
+      [
+        "6:253",
+        "Crear evento · Mobile"
+      ],
+      [
+        "6:322",
+        "Proveedores · Mobile"
+      ],
+      [
+        "7:292",
+        "Presupuesto y tareas · Mobile"
+      ],
+      [
+        "7:348",
+        "Detalle proveedor · Mobile"
+      ],
+      [
+        "7:393",
+        "Solicitar cotización · Mobile"
+      ],
+      [
+        "7:448",
+        "Cotizaciones · Mobile"
+      ],
+      [
+        "7:501",
+        "Favoritos · Mobile"
+      ],
+      [
+        "7:558",
+        "Perfil · Mobile"
+      ],
+      [
+        "7:654",
+        "Publicar evento · Mobile"
+      ],
+      [
+        "7:718",
+        "Acceder · Mobile"
+      ],
+      [
+        "11:619",
+        "Crear cuenta · Mobile"
+      ],
+      [
+        "11:675",
+        "Revisar publicación · Mobile"
+      ],
+      [
+        "11:719",
+        "Solicitud enviada · Mobile"
+      ],
+      [
+        "16:705",
+        "Comparar propuestas · Mobile"
+      ],
+      [
+        "32:744",
+        "Mapa · Mobile"
+      ],
+      [
+        "32:838",
+        "Filtros del mapa · Mobile"
+      ],
+      [
+        "32:903",
+        "Zona de búsqueda · Mobile"
+      ],
+      [
+        "33:887",
+        "Equipo del evento · Mobile"
+      ],
+      [
+        "33:935",
+        "Invitar a una amistad · Mobile"
+      ],
+      [
+        "33:988",
+        "Invitación al evento · Mobile"
+      ],
+      [
+        "33:1032",
+        "Notificaciones · Mobile"
+      ],
+      [
+        "34:1436",
+        "Mapa · Proveedores · Mobile"
+      ],
+      [
+        "34:1473",
+        "Equipo · Invitación pendiente · Mobile"
+      ],
+      [
+        "37:1131",
+        "Filtros de proveedores · Mobile"
+      ],
+      [
+        "44:1187",
+        "Mis negocios · Mobile"
+      ],
+      [
+        "44:1242",
+        "Gestionar negocio · Mobile"
+      ],
+      [
+        "44:1287",
+        "Crear negocio · Mobile"
+      ],
+      [
+        "44:1347",
+        "Revisar negocio · Mobile"
+      ],
+      [
+        "44:1388",
+        "Negocio en revisión · Mobile"
+      ],
+      [
+        "44:1432",
+        "Negocio publicado · Mobile"
+      ],
+      [
+        "44:1474",
+        "Negocio con observaciones · Mobile"
+      ],
+      [
+        "46:1663",
+        "Solicitudes recibidas · Mobile"
+      ],
+      [
+        "46:1714",
+        "Detalle de solicitud · Mobile"
+      ],
+      [
+        "46:1755",
+        "Responder solicitud · Mobile"
+      ],
+      [
+        "46:1806",
+        "Revisar propuesta · Mobile"
+      ],
+      [
+        "46:1849",
+        "Propuesta enviada · Mobile"
+      ],
+      [
+        "46:1889",
+        "No atender solicitud · Mobile"
+      ],
+      [
+        "46:1935",
+        "Mis servicios · Mobile"
+      ],
+      [
+        "46:1984",
+        "Editar servicio · Mobile"
+      ],
+      [
+        "47:1906",
+        "Mis eventos publicados · Mobile"
+      ],
+      [
+        "47:1967",
+        "Gestionar evento público · Mobile"
+      ],
+      [
+        "47:2010",
+        "Detalles del evento público · Mobile"
+      ],
+      [
+        "47:2064",
+        "Evento en revisión · Mobile"
+      ],
+      [
+        "47:2108",
+        "Evento publicado · Mobile"
+      ],
+      [
+        "47:2150",
+        "Evento con observaciones · Mobile"
+      ],
+      [
+        "45:1391",
+        "Plan de negocio · Mobile"
+      ],
+      [
+        "45:1434",
+        "Pagar publicación de negocio · Mobile"
+      ],
+      [
+        "45:1489",
+        "Comprobante de negocio recibido · Mobile"
+      ],
+      [
+        "45:1533",
+        "Plan y pagos de negocio · Mobile"
+      ],
+      [
+        "45:1578",
+        "Pago de negocio observado · Mobile"
+      ],
+      [
+        "45:1618",
+        "Plan de evento · Mobile"
+      ],
+      [
+        "45:1661",
+        "Pagar publicación de evento · Mobile"
+      ],
+      [
+        "45:1716",
+        "Comprobante de evento recibido · Mobile"
+      ],
+      [
+        "45:1760",
+        "Plan y pagos de evento · Mobile"
+      ],
+      [
+        "45:1805",
+        "Pago de evento observado · Mobile"
+      ],
+      [
+        "51:2092",
+        "Detalle de propuesta · Mobile"
+      ],
+      [
+        "51:2134",
+        "Confirmar selección de propuesta · Mobile"
+      ],
+      [
+        "51:2172",
+        "Propuesta seleccionada · Mobile"
+      ],
+      [
+        "51:2211",
+        "Solicitud no atendida · Mobile"
+      ],
+      [
+        "51:2247",
+        "Solicitudes respondidas · Mobile"
+      ],
+      [
+        "51:2382",
+        "Datos de pago de business · Mobile"
+      ],
+      [
+        "51:2418",
+        "Datos de pago de event · Mobile"
+      ],
+      [
+        "9:19",
+        "Inicio · Desktop"
+      ],
+      [
+        "9:110",
+        "Explorar · Desktop"
+      ],
+      [
+        "9:215",
+        "Planificación · Desktop"
+      ],
+      [
+        "9:299",
+        "Negocio · Publicaciones · Desktop"
+      ],
+      [
+        "12:253",
+        "Comparar cotizaciones · Desktop"
+      ],
+      [
+        "34:242",
+        "Mapa · Desktop"
+      ],
+      [
+        "34:331",
+        "Equipo del evento · Desktop"
+      ],
+      [
+        "34:385",
+        "Favoritos · Desktop"
+      ],
+      [
+        "38:351",
+        "Notificaciones · Desktop"
+      ],
+      [
+        "52:380",
+        "Mis negocios · Desktop"
+      ],
+      [
+        "52:420",
+        "Solicitudes del negocio · Desktop"
+      ],
+      [
+        "52:456",
+        "Responder solicitud del cliente · Desktop"
+      ],
+      [
+        "52:496",
+        "Revisar propuesta antes de enviar · Desktop"
+      ],
+      [
+        "52:522",
+        "Propuesta enviada al cliente · Desktop"
+      ],
+      [
+        "53:453",
+        "Crear negocio · Desktop"
+      ],
+      [
+        "53:515",
+        "Revisar negocio antes de publicar · Desktop"
+      ],
+      [
+        "53:545",
+        "Pagar publicación de negocio · Desktop"
+      ],
+      [
+        "53:587",
+        "Comprobante recibido de negocio · Desktop"
+      ],
+      [
+        "53:611",
+        "Crear evento · Desktop"
+      ],
+      [
+        "53:673",
+        "Revisar evento antes de publicar · Desktop"
+      ],
+      [
+        "53:703",
+        "Pagar publicación de evento · Desktop"
+      ],
+      [
+        "53:745",
+        "Comprobante recibido de evento · Desktop"
+      ],
+      [
+        "58:2823",
+        "Mi cuenta y mis áreas · Desktop"
+      ],
+      [
+        "48:19",
+        "Resumen de administración · Administración"
+      ],
+      [
+        "48:113",
+        "Eventos · Administración"
+      ],
+      [
+        "48:205",
+        "Negocios · Administración"
+      ],
+      [
+        "48:288",
+        "Pagos · Administración"
+      ],
+      [
+        "48:371",
+        "Suscripciones · Administración"
+      ],
+      [
+        "48:463",
+        "Usuarios y accesos · Administración"
+      ],
+      [
+        "48:546",
+        "Reportes · Administración"
+      ],
+      [
+        "49:356",
+        "Revisar evento · Administración"
+      ],
+      [
+        "49:430",
+        "Confirmar aprobación de evento · Administración"
+      ],
+      [
+        "49:494",
+        "Evento publicado correctamente · Administración"
+      ],
+      [
+        "49:556",
+        "Decisión sobre evento · Administración"
+      ],
+      [
+        "49:623",
+        "Revisar negocio · Administración"
+      ],
+      [
+        "49:697",
+        "Confirmar aprobación de negocio · Administración"
+      ],
+      [
+        "49:761",
+        "Negocio publicado correctamente · Administración"
+      ],
+      [
+        "49:823",
+        "Decisión sobre negocio · Administración"
+      ],
+      [
+        "49:890",
+        "Decisión registrada · Administración"
+      ],
+      [
+        "50:601",
+        "Verificar pago de evento · Administración"
+      ],
+      [
+        "50:672",
+        "Confirmar verificación del pago · Administración"
+      ],
+      [
+        "50:733",
+        "Pago verificado · Administración"
+      ],
+      [
+        "50:794",
+        "Verificar pago de negocio · Administración"
+      ],
+      [
+        "50:865",
+        "Confirmar verificación del pago · Administración"
+      ],
+      [
+        "50:926",
+        "Pago verificado · Administración"
+      ],
+      [
+        "50:987",
+        "Solicitar corrección del pago · Administración"
+      ],
+      [
+        "50:1048",
+        "Cuenta y capacidades · Administración"
+      ],
+      [
+        "50:1110",
+        "Confirmar suspensión de cuenta · Administración"
+      ],
+      [
+        "50:1170",
+        "Revisar reporte de contenido · Administración"
+      ],
+      [
+        "50:1236",
+        "Registro de actividad · Administración"
+      ],
+      [
+        "50:1304",
+        "Configuración de publicaciones · Administración"
+      ],
+      [
+        "56:917",
+        "Suspensión registrada · Administración"
+      ],
+      [
+        "56:976",
+        "Resolver reporte con motivo · Administración"
+      ],
+      [
+        "56:1040",
+        "Detalle de suscripción · Administración"
+      ]
+    ],
+    "buttons": [
+      [
+        "6:2",
+        "Organizar mi evento",
+        "6:195"
+      ],
+      [
+        "6:195",
+        "Crear un evento",
+        "6:253"
+      ],
+      [
+        "6:253",
+        "Continuar al presupuesto",
+        "7:292"
+      ],
+      [
+        "7:292",
+        "Buscar proveedores",
+        "6:322"
+      ],
+      [
+        "7:292",
+        "Ver cotizaciones",
+        "7:448"
+      ],
+      [
+        "7:292",
+        "Compartir",
+        "33:887"
+      ],
+      [
+        "7:348",
+        "Solicitar cotización",
+        "7:393"
+      ],
+      [
+        "7:393",
+        "Enviar solicitud",
+        "11:719"
+      ],
+      [
+        "7:448",
+        "Comparar propuestas",
+        "16:705"
+      ],
+      [
+        "7:654",
+        "Continuar a revisión",
+        "47:2010"
+      ],
+      [
+        "7:718",
+        "Entrar",
+        "7:558"
+      ],
+      [
+        "7:718",
+        "Crear mi cuenta",
+        "11:619"
+      ],
+      [
+        "11:675",
+        "Continuar al plan de S/ 100",
+        "45:1618"
+      ],
+      [
+        "11:675",
+        "Guardar borrador",
+        "47:1906"
+      ],
+      [
+        "11:719",
+        "Ir a mis cotizaciones",
+        "7:448"
+      ],
+      [
+        "16:705",
+        "Ver condiciones",
+        "51:2092"
+      ],
+      [
+        "16:705",
+        "Ver condiciones",
+        "51:2092"
+      ],
+      [
+        "32:838",
+        "Mostrar resultados",
+        "32:744"
+      ],
+      [
+        "32:903",
+        "Buscar en esta zona",
+        "32:744"
+      ],
+      [
+        "33:887",
+        "Invitar a una amistad",
+        "33:935"
+      ],
+      [
+        "33:935",
+        "Enviar invitación",
+        "34:1473"
+      ],
+      [
+        "33:988",
+        "Aceptar invitación",
+        "7:292"
+      ],
+      [
+        "33:988",
+        "Ahora no",
+        "33:1032"
+      ],
+      [
+        "34:1473",
+        "Invitar a una amistad",
+        "33:935"
+      ],
+      [
+        "37:1131",
+        "Mostrar resultados",
+        "34:1436"
+      ],
+      [
+        "44:1187",
+        "Crear negocio",
+        "44:1287"
+      ],
+      [
+        "44:1187",
+        "Gestionar",
+        "44:1242"
+      ],
+      [
+        "44:1187",
+        "Gestionar",
+        "44:1287"
+      ],
+      [
+        "44:1187",
+        "Solicitudes de clientes",
+        "46:1663"
+      ],
+      [
+        "44:1242",
+        "Ver solicitudes de clientes",
+        "46:1663"
+      ],
+      [
+        "44:1242",
+        "Gestionar mis servicios",
+        "46:1935"
+      ],
+      [
+        "44:1242",
+        "Editar perfil del negocio",
+        "44:1287"
+      ],
+      [
+        "44:1242",
+        "Mi plan y pagos",
+        "45:1533"
+      ],
+      [
+        "44:1287",
+        "Revisar mi negocio",
+        "44:1347"
+      ],
+      [
+        "44:1347",
+        "Continuar al plan de S/ 30",
+        "45:1391"
+      ],
+      [
+        "44:1347",
+        "Volver a editar",
+        "44:1287"
+      ],
+      [
+        "44:1388",
+        "Ir a mis negocios",
+        "44:1187"
+      ],
+      [
+        "44:1388",
+        "Ver el estado de mi pago",
+        "45:1533"
+      ],
+      [
+        "44:1432",
+        "Gestionar mi negocio",
+        "44:1242"
+      ],
+      [
+        "44:1432",
+        "Ver mi plan y vigencia",
+        "45:1533"
+      ],
+      [
+        "44:1474",
+        "Corregir mi negocio",
+        "44:1287"
+      ],
+      [
+        "44:1474",
+        "Ver el estado de mi pago",
+        "45:1533"
+      ],
+      [
+        "46:1663",
+        "Ver solicitud",
+        "46:1714"
+      ],
+      [
+        "46:1663",
+        "Ver solicitud",
+        "46:1714"
+      ],
+      [
+        "46:1714",
+        "Preparar propuesta",
+        "46:1755"
+      ],
+      [
+        "46:1714",
+        "No puedo atender",
+        "46:1889"
+      ],
+      [
+        "46:1755",
+        "Revisar propuesta",
+        "46:1806"
+      ],
+      [
+        "46:1806",
+        "Enviar propuesta al cliente",
+        "46:1849"
+      ],
+      [
+        "46:1806",
+        "Seguir editando",
+        "46:1755"
+      ],
+      [
+        "46:1849",
+        "Ver solicitudes respondidas",
+        "51:2247"
+      ],
+      [
+        "46:1889",
+        "Confirmar respuesta",
+        "51:2211"
+      ],
+      [
+        "46:1889",
+        "Volver a la solicitud",
+        "46:1714"
+      ],
+      [
+        "46:1935",
+        "Añadir servicio",
+        "46:1984"
+      ],
+      [
+        "46:1935",
+        "Gestionar",
+        "46:1984"
+      ],
+      [
+        "46:1935",
+        "Gestionar",
+        "46:1984"
+      ],
+      [
+        "46:1984",
+        "Guardar servicio",
+        "46:1935"
+      ],
+      [
+        "47:1906",
+        "Crear evento",
+        "7:654"
+      ],
+      [
+        "47:1906",
+        "Gestionar",
+        "47:1967"
+      ],
+      [
+        "47:1906",
+        "Gestionar",
+        "47:2064"
+      ],
+      [
+        "47:1906",
+        "Gestionar",
+        "7:654"
+      ],
+      [
+        "47:1967",
+        "Ver mi publicación",
+        "6:145"
+      ],
+      [
+        "47:1967",
+        "Editar información",
+        "7:654"
+      ],
+      [
+        "47:1967",
+        "Mi plan de S/ 100 y pagos",
+        "45:1760"
+      ],
+      [
+        "47:2010",
+        "Revisar mi evento",
+        "11:675"
+      ],
+      [
+        "47:2064",
+        "Ir a mis eventos publicados",
+        "47:1906"
+      ],
+      [
+        "47:2064",
+        "Ver el estado de mi pago",
+        "45:1760"
+      ],
+      [
+        "47:2108",
+        "Ver mi evento publicado",
+        "6:145"
+      ],
+      [
+        "47:2108",
+        "Gestionar mis eventos",
+        "47:1906"
+      ],
+      [
+        "47:2150",
+        "Corregir mi evento",
+        "7:654"
+      ],
+      [
+        "47:2150",
+        "Ver el estado de mi pago",
+        "45:1760"
+      ],
+      [
+        "45:1391",
+        "Continuar al pago",
+        "45:1434"
+      ],
+      [
+        "45:1391",
+        "Guardar y continuar después",
+        "44:1187"
+      ],
+      [
+        "45:1434",
+        "Consultar datos de pago",
+        "51:2382"
+      ],
+      [
+        "45:1434",
+        "Enviar comprobante",
+        "45:1489"
+      ],
+      [
+        "45:1489",
+        "Ver estado de publicación",
+        "44:1388"
+      ],
+      [
+        "45:1489",
+        "Ver mis pagos",
+        "45:1533"
+      ],
+      [
+        "45:1533",
+        "Renovar por S/ 30",
+        "45:1434"
+      ],
+      [
+        "45:1533",
+        "Ver historial de pagos",
+        "45:1489"
+      ],
+      [
+        "45:1578",
+        "Corregir comprobante",
+        "45:1434"
+      ],
+      [
+        "45:1578",
+        "Volver a mi publicación",
+        "44:1388"
+      ],
+      [
+        "45:1618",
+        "Continuar al pago",
+        "45:1661"
+      ],
+      [
+        "45:1618",
+        "Guardar y continuar después",
+        "47:1906"
+      ],
+      [
+        "45:1661",
+        "Consultar datos de pago",
+        "51:2418"
+      ],
+      [
+        "45:1661",
+        "Enviar comprobante",
+        "45:1716"
+      ],
+      [
+        "45:1716",
+        "Ver estado de publicación",
+        "47:2064"
+      ],
+      [
+        "45:1716",
+        "Ver mis pagos",
+        "45:1760"
+      ],
+      [
+        "45:1760",
+        "Renovar por S/ 100",
+        "45:1661"
+      ],
+      [
+        "45:1760",
+        "Ver historial de pagos",
+        "45:1716"
+      ],
+      [
+        "45:1805",
+        "Corregir comprobante",
+        "45:1661"
+      ],
+      [
+        "45:1805",
+        "Volver a mi publicación",
+        "47:2064"
+      ],
+      [
+        "51:2092",
+        "Seleccionar esta propuesta",
+        "51:2134"
+      ],
+      [
+        "51:2092",
+        "Volver a comparar",
+        "16:705"
+      ],
+      [
+        "51:2134",
+        "Confirmar selección",
+        "51:2172"
+      ],
+      [
+        "51:2134",
+        "Seguir comparando",
+        "16:705"
+      ],
+      [
+        "51:2172",
+        "Volver a mi evento",
+        "7:292"
+      ],
+      [
+        "51:2211",
+        "Volver a las solicitudes",
+        "46:1663"
+      ],
+      [
+        "51:2247",
+        "Ver solicitud",
+        "46:1806"
+      ],
+      [
+        "51:2247",
+        "Ver solicitud",
+        "46:1806"
+      ],
+      [
+        "51:2382",
+        "Volver a mi pago",
+        "45:1434"
+      ],
+      [
+        "51:2418",
+        "Volver a mi pago",
+        "45:1661"
+      ],
+      [
+        "9:19",
+        "Publicar evento",
+        "9:299"
+      ],
+      [
+        "9:19",
+        "Organizar mi evento",
+        "9:215"
+      ],
+      [
+        "9:19",
+        "Explorar eventos",
+        "9:110"
+      ],
+      [
+        "9:19",
+        "Buscar planes",
+        "9:110"
+      ],
+      [
+        "9:110",
+        "Publicar evento",
+        "9:299"
+      ],
+      [
+        "9:215",
+        "Ver cotizaciones",
+        "12:253"
+      ],
+      [
+        "9:215",
+        "Compartir evento",
+        "34:331"
+      ],
+      [
+        "9:299",
+        "Crear evento",
+        "53:611"
+      ],
+      [
+        "12:253",
+        "Volver a mi evento",
+        "9:215"
+      ],
+      [
+        "52:380",
+        "Crear negocio",
+        "53:453"
+      ],
+      [
+        "52:380",
+        "Gestionar",
+        "52:420"
+      ],
+      [
+        "52:380",
+        "Gestionar",
+        "52:420"
+      ],
+      [
+        "52:380",
+        "Ver solicitudes recibidas",
+        "52:420"
+      ],
+      [
+        "52:380",
+        "Mi plan de S/ 30",
+        "53:515"
+      ],
+      [
+        "52:420",
+        "Preparar propuesta",
+        "52:456"
+      ],
+      [
+        "52:456",
+        "Revisar y enviar propuesta",
+        "52:496"
+      ],
+      [
+        "52:496",
+        "Enviar propuesta al cliente",
+        "52:522"
+      ],
+      [
+        "52:496",
+        "Volver a editar propuesta",
+        "52:456"
+      ],
+      [
+        "52:522",
+        "Volver a solicitudes recibidas",
+        "52:420"
+      ],
+      [
+        "53:453",
+        "Revisar negocio",
+        "53:515"
+      ],
+      [
+        "53:515",
+        "Continuar al pago",
+        "53:545"
+      ],
+      [
+        "53:515",
+        "Volver a editar negocio",
+        "53:453"
+      ],
+      [
+        "53:545",
+        "Enviar comprobante",
+        "53:587"
+      ],
+      [
+        "53:587",
+        "Ir a mis negocios",
+        "52:380"
+      ],
+      [
+        "53:611",
+        "Revisar evento",
+        "53:673"
+      ],
+      [
+        "53:673",
+        "Continuar al pago",
+        "53:703"
+      ],
+      [
+        "53:673",
+        "Volver a editar evento",
+        "53:611"
+      ],
+      [
+        "53:703",
+        "Enviar comprobante",
+        "53:745"
+      ],
+      [
+        "53:745",
+        "Ir a mis eventos publicados",
+        "9:299"
+      ],
+      [
+        "58:2823",
+        "Ir a mi planificación",
+        "9:215"
+      ],
+      [
+        "58:2823",
+        "Administrar mis negocios",
+        "52:380"
+      ],
+      [
+        "58:2823",
+        "Mis eventos publicados",
+        "9:299"
+      ],
+      [
+        "48:19",
+        "Revisar",
+        "48:113"
+      ],
+      [
+        "48:19",
+        "Revisar",
+        "48:205"
+      ],
+      [
+        "48:19",
+        "Revisar",
+        "48:288"
+      ],
+      [
+        "48:19",
+        "Revisar",
+        "48:546"
+      ],
+      [
+        "48:113",
+        "Revisar",
+        "49:356"
+      ],
+      [
+        "48:113",
+        "Revisar",
+        "49:356"
+      ],
+      [
+        "48:113",
+        "Revisar",
+        "49:356"
+      ],
+      [
+        "48:205",
+        "Revisar",
+        "49:623"
+      ],
+      [
+        "48:205",
+        "Revisar",
+        "49:623"
+      ],
+      [
+        "48:288",
+        "Revisar",
+        "50:601"
+      ],
+      [
+        "48:288",
+        "Revisar",
+        "50:794"
+      ],
+      [
+        "48:371",
+        "Revisar",
+        "56:1040"
+      ],
+      [
+        "48:371",
+        "Revisar",
+        "56:1040"
+      ],
+      [
+        "48:371",
+        "Revisar",
+        "56:1040"
+      ],
+      [
+        "48:463",
+        "Revisar",
+        "50:1048"
+      ],
+      [
+        "48:463",
+        "Revisar",
+        "50:1048"
+      ],
+      [
+        "48:546",
+        "Revisar",
+        "50:1170"
+      ],
+      [
+        "48:546",
+        "Revisar",
+        "50:1170"
+      ],
+      [
+        "49:356",
+        "Aprobar contenido",
+        "49:430"
+      ],
+      [
+        "49:356",
+        "Solicitar cambios o rechazar",
+        "49:556"
+      ],
+      [
+        "49:430",
+        "Confirmar y publicar",
+        "49:494"
+      ],
+      [
+        "49:430",
+        "Volver a revisar",
+        "49:356"
+      ],
+      [
+        "49:494",
+        "Volver a la bandeja",
+        "48:113"
+      ],
+      [
+        "49:494",
+        "Ver registro de actividad",
+        "50:1236"
+      ],
+      [
+        "49:556",
+        "Confirmar decisión",
+        "49:890"
+      ],
+      [
+        "49:556",
+        "Cancelar y volver",
+        "49:356"
+      ],
+      [
+        "49:623",
+        "Aprobar contenido",
+        "49:697"
+      ],
+      [
+        "49:623",
+        "Solicitar cambios o rechazar",
+        "49:823"
+      ],
+      [
+        "49:697",
+        "Confirmar y publicar",
+        "49:761"
+      ],
+      [
+        "49:697",
+        "Volver a revisar",
+        "49:623"
+      ],
+      [
+        "49:761",
+        "Volver a la bandeja",
+        "48:205"
+      ],
+      [
+        "49:761",
+        "Ver registro de actividad",
+        "50:1236"
+      ],
+      [
+        "49:823",
+        "Confirmar decisión",
+        "49:890"
+      ],
+      [
+        "49:823",
+        "Cancelar y volver",
+        "49:623"
+      ],
+      [
+        "49:890",
+        "Volver al resumen",
+        "48:19"
+      ],
+      [
+        "49:890",
+        "Ver registro de actividad",
+        "50:1236"
+      ],
+      [
+        "50:601",
+        "Continuar a verificación",
+        "50:672"
+      ],
+      [
+        "50:601",
+        "Solicitar corrección del pago",
+        "50:987"
+      ],
+      [
+        "50:672",
+        "Confirmar pago verificado",
+        "50:733"
+      ],
+      [
+        "50:672",
+        "Volver al comprobante",
+        "50:601"
+      ],
+      [
+        "50:733",
+        "Volver a pagos",
+        "48:288"
+      ],
+      [
+        "50:733",
+        "Revisar el contenido",
+        "49:356"
+      ],
+      [
+        "50:794",
+        "Continuar a verificación",
+        "50:865"
+      ],
+      [
+        "50:794",
+        "Solicitar corrección del pago",
+        "50:987"
+      ],
+      [
+        "50:865",
+        "Confirmar pago verificado",
+        "50:926"
+      ],
+      [
+        "50:865",
+        "Volver al comprobante",
+        "50:794"
+      ],
+      [
+        "50:926",
+        "Volver a pagos",
+        "48:288"
+      ],
+      [
+        "50:926",
+        "Revisar el contenido",
+        "49:623"
+      ],
+      [
+        "50:987",
+        "Registrar observación del pago",
+        "49:890"
+      ],
+      [
+        "50:987",
+        "Volver a pagos",
+        "48:288"
+      ],
+      [
+        "50:1048",
+        "Revisar publicaciones de la cuenta",
+        "48:113"
+      ],
+      [
+        "50:1048",
+        "Revisar suspensión de acceso",
+        "50:1110"
+      ],
+      [
+        "50:1110",
+        "Confirmar suspensión con motivo",
+        "56:917"
+      ],
+      [
+        "50:1110",
+        "Cancelar",
+        "50:1048"
+      ],
+      [
+        "50:1170",
+        "Revisar la publicación",
+        "49:356"
+      ],
+      [
+        "50:1170",
+        "Solicitar cambios",
+        "49:556"
+      ],
+      [
+        "50:1170",
+        "Resolver reporte con motivo",
+        "56:976"
+      ],
+      [
+        "56:917",
+        "Volver a usuarios",
+        "48:463"
+      ],
+      [
+        "56:917",
+        "Ver registro de actividad",
+        "50:1236"
+      ],
+      [
+        "56:976",
+        "Confirmar resolución con motivo",
+        "49:890"
+      ],
+      [
+        "56:976",
+        "Volver al reporte",
+        "50:1170"
+      ],
+      [
+        "56:1040",
+        "Revisar pago del periodo",
+        "50:794"
+      ],
+      [
+        "56:1040",
+        "Revisar negocio asociado",
+        "49:623"
+      ]
+    ],
+    "unwired": [
+      [
+        "6:145",
+        "Consultar cómo llegar"
+      ],
+      [
+        "6:145",
+        "Consultar entradas por WhatsApp"
+      ],
+      [
+        "11:619",
+        "Crear mi cuenta"
+      ],
+      [
+        "32:903",
+        "Usar mi ubicación"
+      ],
+      [
+        "33:935",
+        "Copiar enlace de invitación"
+      ],
+      [
+        "9:110",
+        "Aplicar filtros"
+      ],
+      [
+        "9:215",
+        "Añadir servicio"
+      ],
+      [
+        "9:215",
+        "Buscar proveedores"
+      ],
+      [
+        "9:299",
+        "Publicar evento"
+      ],
+      [
+        "12:253",
+        "Ver condiciones"
+      ],
+      [
+        "12:253",
+        "Ver condiciones"
+      ],
+      [
+        "34:242",
+        "Publicar evento"
+      ],
+      [
+        "34:242",
+        "Aplicar filtros"
+      ],
+      [
+        "34:331",
+        "Publicar evento"
+      ],
+      [
+        "34:331",
+        "Preparar invitación"
+      ],
+      [
+        "34:331",
+        "Copiar enlace privado"
+      ],
+      [
+        "34:385",
+        "Publicar evento"
+      ],
+      [
+        "52:420",
+        "Ver solicitud"
+      ],
+      [
+        "52:420",
+        "Ver solicitud"
+      ]
+    ],
+    "totalEdges": 1014
+  },
+  "validation": {
+    "sourceFramesMapped": 120,
+    "routeCount": 72,
+    "transitionCount": 119,
+    "bindings": 126,
+    "proposedRoutesWithoutFrame": [
+      "auth.recovery",
+      "auth.reset",
+      "auth.callback"
+    ],
+    "prototypeButtonsWired": 195,
+    "prototypeButtonsWithoutInteraction": 19
+  }
+}
