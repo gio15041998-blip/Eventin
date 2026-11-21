@@ -1,0 +1,222 @@
+const imgIconBell = "https://www.figma.com/api/mcp/asset/d31303c4-53c7-4fb9-a8e6-ad1ab67950f1.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/62938816-2855-4c66-a2e9-93391dc4f503.svg";
+const imgIconMap = "https://www.figma.com/api/mcp/asset/a196a4b3-d1c1-486d-a8e4-501fbb89aa74.svg";
+const imgIconSearch = "https://www.figma.com/api/mcp/asset/b678d993-2398-4d42-bac8-86150e70b424.svg";
+const imgPortada = "https://www.figma.com/api/mcp/asset/2a5ccf1a-f629-4d4c-81d4-24fa6aad60c9.png";
+const imgIconFilter = "https://www.figma.com/api/mcp/asset/6169712d-2d3f-4eb9-a4ee-03c6f5a8c83b.svg";
+const imgIconPin = "https://www.figma.com/api/mcp/asset/b965c34d-752b-4514-981a-6aded0dce44d.svg";
+const imgIconBack = "https://www.figma.com/api/mcp/asset/54ffbf37-c96e-47ad-b939-4a191d11e873.svg";
+const imgFotoTable = "https://www.figma.com/api/mcp/asset/18cbf543-1cc5-4f00-af79-f575bff798a6.png";
+const imgIconHome = "https://www.figma.com/api/mcp/asset/0b30b39d-b07d-49e2-87ed-c6a483d822aa.svg";
+const imgIconCalendar = "https://www.figma.com/api/mcp/asset/05402396-16cd-4ce3-82b3-35a297fc9af4.svg";
+const imgIconUser = "https://www.figma.com/api/mcp/asset/5aecaf03-36b9-4806-8486-a167f543c611.svg";
+
+function NavigationTouchTarget({ className }: { className?: string }) {
+  return <div className={className || "h-[72px] relative w-[77px]"} data-node-id="17:1037" data-name="Navigation/Touch target" />;
+}
+
+function IconBell({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:66" data-name="Icon/bell">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBell} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+function IconMap({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:70" data-name="Icon/map">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMap} />
+    </div>
+  );
+}
+
+function IconSearch({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:5" data-name="Icon/search">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSearch} />
+    </div>
+  );
+}
+
+type CardEventoProps = {
+  className?: string;
+  category?: string;
+  meta?: string;
+  price?: string;
+  title?: string;
+};
+
+function CardEvento({ className, category = "Música en vivo", meta = "Sáb. 12 dic. · Miraflores", price = "Desde S/ 35 · Ejemplo", title = "Una noche al aire libre" }: CardEventoProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] content-stretch flex flex-col items-start overflow-clip relative rounded-[var(--radius-16,16px)] w-[342px]"} data-node-id="5:7" data-name="Card/Evento">
+      <div className="h-[172px] overflow-clip relative shrink-0 w-full" data-node-id="5:8" data-name="Portada">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgPortada} />
+        <div className="[word-break:break-word] absolute bg-[var(--color-surface,white)] font-['Manrope:Bold'] font-bold h-[58px] left-[12px] overflow-clip rounded-[var(--radius-8,8px)] text-[color:var(--color-brand,#145c46)] top-[12px] w-[52px] whitespace-nowrap" data-node-id="5:9" data-name="Fecha">
+          <p className="absolute leading-[30px] left-[11px] text-[22px] top-[3px]" data-node-id="5:10">
+            12
+          </p>
+          <p className="absolute leading-[16px] left-[13px] text-[11px] top-[35px]" data-node-id="5:11">
+            DIC
+          </p>
+        </div>
+        <div className="absolute bg-[var(--color-surface,white)] overflow-clip right-[12px] rounded-[var(--radius-999,999px)] size-[40px] top-[12px]" data-node-id="5:12" data-name="Guardar">
+          <IconHeart className="absolute left-[10px] size-[20px] top-[10px]" />
+        </div>
+      </div>
+      <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--space-4,4px)] items-start overflow-clip p-[var(--space-16,16px)] relative shrink-0 w-full" data-node-id="5:15" data-name="Contenido">
+        <p className="font-['Manrope:SemiBold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="5:16">
+          {category}
+        </p>
+        <p className="font-['Manrope:Bold'] font-bold leading-[26px] relative shrink-0 text-[18px] text-[color:var(--color-text,#172d28)] w-[310px]" data-node-id="5:17">
+          {title}
+        </p>
+        <p className="font-['Manrope:Regular'] font-normal leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-secondary,#566a63)] whitespace-nowrap" data-node-id="5:18">
+          {meta}
+        </p>
+        <p className="font-['Manrope:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-text,#172d28)] whitespace-nowrap" data-node-id="5:19">
+          {price}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function IconFilter({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:46" data-name="Icon/filter">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconFilter} />
+    </div>
+  );
+}
+
+function IconPin({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:15" data-name="Icon/pin">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconPin} />
+    </div>
+  );
+}
+
+type FilterChipProps = {
+  className?: string;
+  label?: string;
+};
+
+function FilterChip({ className, label = "Todos" }: FilterChipProps) {
+  return (
+    <div className={className || "bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start px-[var(--space-16,16px)] py-[var(--space-8,8px)] relative rounded-[var(--radius-999,999px)]"} data-node-id="4:113" data-name="Filter/Chip">
+      <p className="[word-break:break-word] font-['Manrope:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:114">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function IconBack({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:11" data-name="Icon/back">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBack} />
+    </div>
+  );
+}
+
+export default function ExplorarMobile() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] overflow-clip relative rounded-[var(--radius-24,24px)] size-full" data-node-id="6:76" data-name="Explorar · Mobile">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-nowrap" data-node-id="6:77">
+        9:41
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[16px] left-[292px] text-[11px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-pre" data-node-id="6:78">{`5G   100%`}</p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[24px] overflow-clip rounded-[var(--radius-12,12px)] size-[40px] top-[48px]" data-node-id="6:79" data-name="Volver">
+        <IconBack className="absolute left-[8px] size-[24px] top-[8px]" />
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[80px] text-[18px] text-[color:var(--color-text,#172d28)] top-[53px] w-[200px]" data-node-id="6:82">
+        Explorar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[38px] left-[24px] text-[26px] text-[color:var(--color-text,#172d28)] top-[115px] w-[342px]" data-node-id="6:85">
+        Encuentra tu próximo plan
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[50px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[169px] w-[342px]" data-node-id="6:86" data-name="Buscador">
+        <IconSearch className="absolute left-[16px] size-[22px] top-[14px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[50px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[15px] whitespace-nowrap" data-node-id="6:90">
+          Evento, artista o lugar
+        </p>
+      </div>
+      <FilterChip className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start left-[24px] px-[var(--space-16,16px)] py-[var(--space-8,8px)] rounded-[var(--radius-999,999px)] top-[235px]" />
+      <FilterChip className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start left-[110px] px-[var(--space-16,16px)] py-[var(--space-8,8px)] rounded-[var(--radius-999,999px)] top-[235px]" label="Conciertos" />
+      <FilterChip className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start left-[241px] px-[var(--space-16,16px)] py-[var(--space-8,8px)] rounded-[var(--radius-999,999px)] top-[235px]" label="Ferias" />
+      <IconPin className="absolute left-[24px] size-[18px] top-[293px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[19px] left-[49px] text-[13px] text-[color:var(--color-text,#172d28)] top-[292px] whitespace-nowrap" data-node-id="6:100">
+        Lima
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[19px] left-[119px] text-[13px] text-[color:var(--color-brand,#145c46)] top-[292px] whitespace-nowrap" data-node-id="6:101">
+        Cambiar
+      </p>
+      <IconFilter className="absolute left-[340px] size-[22px] top-[290px]" />
+      <CardEvento className="absolute bg-[var(--color-surface,white)] content-stretch cursor-pointer flex flex-col items-start left-[24px] overflow-clip rounded-[var(--radius-16,16px)] top-[334px] w-[342px]" />
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[654px] w-[342px]" data-node-id="6:119" data-name="Evento / Feria">
+        <div className="absolute left-0 rounded-[var(--radius-12,12px)] size-[88px] top-0" data-node-id="6:120" data-name="Foto/table">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[var(--radius-12,12px)] size-full" src={imgFotoTable} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[25px] left-[104px] text-[17px] text-[color:var(--color-text,#172d28)] top-[11px] whitespace-nowrap" data-node-id="6:121">
+          Feria de sabores
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[104px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[39px] whitespace-nowrap" data-node-id="6:122">
+          Dom. 13 dic. · Barranco
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[17px] left-[104px] text-[12px] text-[color:var(--color-brand,#145c46)] top-[60px] whitespace-nowrap" data-node-id="6:123">
+          Entrada libre · Ejemplo
+        </p>
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] h-[72px] left-0 top-[772px] w-[390px]" data-node-id="6:124" data-name="Navigation/Mobile">
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-0 w-[390px]" data-node-id="I6:124;5:51" data-name="border" />
+        <div className="absolute left-[29px] size-[22px] top-[12px]" data-node-id="I6:124;5:52" data-name="Icon/home">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[38.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:124;5:54">
+          Inicio
+        </p>
+        <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[32px] left-[88px] rounded-[var(--radius-12,12px)] top-[8px] w-[60px]" data-node-id="I6:124;5:55" data-name="subtle" />
+        <IconSearch className="absolute left-[106px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[15px] left-[115.5px] text-[10px] text-[color:var(--color-brand,#145c46)] text-center top-[40px] w-[77px]" data-node-id="I6:124;5:59">
+          Explorar
+        </p>
+        <div className="absolute left-[260px] size-[22px] top-[12px]" data-node-id="I6:124;5:60" data-name="Icon/calendar">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[269.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:124;5:63">
+          Organizar
+        </p>
+        <IconMap className="absolute left-[183px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[192.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:124;5:66">
+          Mapa
+        </p>
+        <div className="absolute left-[337px] size-[22px] top-[12px]" data-node-id="I6:124;5:67" data-name="Icon/user">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[346.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:124;5:70">
+          Perfil
+        </p>
+      </div>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[286px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1109" data-name="Abrir favoritos">
+        <IconHeart className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[334px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1112" data-name="Abrir notificaciones">
+        <IconBell className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-0 top-[772px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[154px] top-[772px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[231px] top-[772px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[308px] top-[772px] w-[77px]" />
+    </div>
+  );
+}

@@ -1,0 +1,196 @@
+const imgIconBell = "https://www.figma.com/api/mcp/asset/ae03cfbd-18eb-41a5-b0fb-f5c125c1aaa4.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/95e2b67c-ee19-48fe-9669-1c56407a799b.svg";
+const imgIconMap = "https://www.figma.com/api/mcp/asset/35c35511-2694-4d33-82ca-c4b7db5d2b32.svg";
+const imgIconMessage = "https://www.figma.com/api/mcp/asset/9f1554ec-8f7d-4aee-908b-c551d4c3bb89.svg";
+const imgIconChevron = "https://www.figma.com/api/mcp/asset/c5853b19-80bf-426f-bb3e-f90b5aa55c1f.svg";
+const imgIconBack = "https://www.figma.com/api/mcp/asset/b94a636e-8b33-4af1-8488-505357ad6558.svg";
+const imgIconHome = "https://www.figma.com/api/mcp/asset/42a66b2a-5d41-4905-a708-704d6a67866b.svg";
+const imgIconSearch = "https://www.figma.com/api/mcp/asset/8112f57c-85c8-43db-9e67-b43ae0ea1030.svg";
+const imgIconCalendar = "https://www.figma.com/api/mcp/asset/08a5e181-475e-41b5-a893-f8496d37b8cb.svg";
+const imgIconUser = "https://www.figma.com/api/mcp/asset/3b1c5da4-d8c2-4709-9667-25d67fb11308.svg";
+
+function NavigationTouchTarget({ className }: { className?: string }) {
+  return <div className={className || "h-[72px] relative w-[77px]"} data-node-id="17:1037" data-name="Navigation/Touch target" />;
+}
+
+function IconBell({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:66" data-name="Icon/bell">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBell} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+function IconMap({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:70" data-name="Icon/map">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMap} />
+    </div>
+  );
+}
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--color-brand,#145c46)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px]"} data-node-id="4:93">
+      <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function IconMessage({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:54" data-name="Icon/message">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMessage} />
+    </div>
+  );
+}
+
+function IconChevron({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:57" data-name="Icon/chevron">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevron} />
+    </div>
+  );
+}
+
+type FieldDefaultProps = {
+  className?: string;
+  label?: string;
+  value?: string;
+};
+
+function FieldDefault({ className, label = "Etiqueta", value = "Selecciona una opción" }: FieldDefaultProps) {
+  return (
+    <div className={className || "h-[82px] relative w-[342px]"} data-node-id="4:107" data-name="Field/Default">
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="4:108">
+        {label}
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="4:109" data-name="Input">
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="4:110">
+          {value}
+        </p>
+        <IconChevron className="absolute left-[303px] size-[20px] top-[13px]" />
+      </div>
+    </div>
+  );
+}
+
+function IconBack({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:11" data-name="Icon/back">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBack} />
+    </div>
+  );
+}
+
+export default function SolicitarCotizacionMobile() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] overflow-clip relative rounded-[var(--radius-24,24px)] size-full" data-node-id="7:393" data-name="Solicitar cotización · Mobile">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-nowrap" data-node-id="7:394">
+        9:41
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[16px] left-[292px] text-[11px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-pre" data-node-id="7:395">{`5G   100%`}</p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[24px] overflow-clip rounded-[var(--radius-12,12px)] size-[40px] top-[48px]" data-node-id="7:396" data-name="Volver">
+        <IconBack className="absolute left-[8px] size-[24px] top-[8px]" />
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[80px] text-[18px] text-[color:var(--color-text,#172d28)] top-[53px] w-[200px]" data-node-id="7:399">
+        Solicitar cotización
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[36px] left-[24px] text-[25px] text-[color:var(--color-text,#172d28)] top-[119px] w-[342px]" data-node-id="7:402">
+        Cuéntales lo que imaginas
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[164px] whitespace-nowrap" data-node-id="7:403">{`Para Mesa & Momento · Proveedor de ejemplo`}</p>
+      <FieldDefault className="absolute h-[82px] left-[24px] top-[211px] w-[342px]" label="¿Para qué evento?" value="Cumpleaños de Valeria" />
+      <div className="absolute h-[82px] left-[24px] top-[317px] w-[342px]" data-node-id="7:410" data-name="Field/Default">
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="I7:410;4:108">
+          Presupuesto para este servicio
+        </p>
+        <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="I7:410;4:109" data-name="Input">
+          <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="I7:410;4:110">
+            Ej. S/ 500
+          </p>
+        </div>
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-[24px] text-[14px] text-[color:var(--color-text,#172d28)] top-[431px] whitespace-nowrap" data-node-id="7:416">
+        ¿Qué necesitas?
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[152px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[465px] w-[342px]" data-node-id="7:417" data-name="Mensaje de cotización">
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[16px] w-[310px]" data-node-id="7:418">
+          <p className="leading-[20px] mb-0">Describe la temática, colores y servicios</p>
+          <p className="leading-[20px]">que te gustaría incluir.</p>
+        </div>
+      </div>
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[78px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[645px] w-[342px]" data-node-id="7:419" data-name="Información de privacidad">
+        <IconMessage className="absolute left-[16px] size-[22px] top-[16px]" />
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[52px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[15px] w-[274px]" data-node-id="7:423">
+          <p className="leading-[17px] mb-0">El proveedor recibirá los datos del evento</p>
+          <p className="leading-[17px]">y tu mensaje para preparar su respuesta.</p>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[760px] w-[342px]" label="Enviar solicitud" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[823px] whitespace-nowrap" data-node-id="7:426">
+        Solicitar no confirma una contratación.
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[72px] left-0 top-[928px] w-[390px]" data-node-id="7:427" data-name="Navigation/Mobile">
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-0 w-[390px]" data-node-id="I7:427;5:72" data-name="border" />
+        <div className="absolute left-[29px] size-[22px] top-[12px]" data-node-id="I7:427;5:73" data-name="Icon/home">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[38.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I7:427;5:75">
+          Inicio
+        </p>
+        <div className="absolute left-[106px] size-[22px] top-[12px]" data-node-id="I7:427;5:76" data-name="Icon/search">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSearch} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[115.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I7:427;5:79">
+          Explorar
+        </p>
+        <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[32px] left-[242px] rounded-[var(--radius-12,12px)] top-[8px] w-[60px]" data-node-id="I7:427;5:80" data-name="subtle" />
+        <div className="absolute left-[260px] size-[22px] top-[12px]" data-node-id="I7:427;5:81" data-name="Icon/calendar">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[15px] left-[269.5px] text-[10px] text-[color:var(--color-brand,#145c46)] text-center top-[40px] w-[77px]" data-node-id="I7:427;5:84">
+          Organizar
+        </p>
+        <IconMap className="absolute left-[183px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[192.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I7:427;5:87">
+          Mapa
+        </p>
+        <div className="absolute left-[337px] size-[22px] top-[12px]" data-node-id="I7:427;5:88" data-name="Icon/user">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[346.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I7:427;5:91">
+          Perfil
+        </p>
+      </div>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[286px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1172" data-name="Abrir favoritos">
+        <IconHeart className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[334px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1175" data-name="Abrir notificaciones">
+        <IconBell className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-0 top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[77px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[154px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[231px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[308px] top-[928px] w-[77px]" />
+    </div>
+  );
+}

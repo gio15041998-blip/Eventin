@@ -1,0 +1,52 @@
+[
+  {
+    "surface": "mobile",
+    "key": "declineSent",
+    "id": "51:2211"
+  },
+  {
+    "surface": "mobile",
+    "key": "responded",
+    "id": "51:2247"
+  },
+  {
+    "surface": "desktop",
+    "key": "explore",
+    "id": "9:110"
+  },
+  {
+    "surface": "desktop",
+    "key": "favorites",
+    "id": "34:385"
+  },
+  {
+    "surface": "desktop",
+    "key": "notifications",
+    "id": "38:351"
+  },
+  {
+    "surface": "desktop",
+    "key": "replyConfirm",
+    "id": "52:496"
+  },
+  {
+    "surface": "desktop",
+    "key": "replySent",
+    "id": "52:522"
+  },
+  {
+    "surface": "desktop",
+    "key": "businessCreate",
+    "id": "53:453"
+  },
+  {
+    "surface": "desktop",
+    "key": "businessReceipt",
+    "id": "53:587"
+  },
+  {
+    "surface": "desktop",
+    "key": "account",
+    "id": "58:2823"
+  }
+]

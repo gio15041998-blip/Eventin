@@ -1,0 +1,183 @@
+const imgIconUser = "https://www.figma.com/api/mcp/asset/dea037b6-d79b-420d-a2bd-ae79798aa008.svg";
+const imgIconMap = "https://www.figma.com/api/mcp/asset/40af5448-590a-41de-8f0b-e77bb246ae1f.svg";
+const imgIconCalendar = "https://www.figma.com/api/mcp/asset/712970c3-d641-4cd3-8be4-b9ed930da243.svg";
+const imgIconSearch = "https://www.figma.com/api/mcp/asset/abedd7d6-525b-4a6b-85c7-d5b7b3828374.svg";
+const imgIconHome = "https://www.figma.com/api/mcp/asset/c8850af1-3395-4712-b8a4-aaf05767bb4d.svg";
+const imgFotoConcert = "https://www.figma.com/api/mcp/asset/5617d9f2-e980-44a7-a628-e7de2a2ae2d8.png";
+const imgIconBack = "https://www.figma.com/api/mcp/asset/948ca71c-e982-41b2-8678-5b3f16e00337.svg";
+
+function NavigationTouchTarget({ className }: { className?: string }) {
+  return <div className={className || "h-[72px] relative w-[77px]"} data-node-id="17:1037" data-name="Navigation/Touch target" />;
+}
+
+function IconUser({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:29" data-name="Icon/user">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+    </div>
+  );
+}
+
+function IconMap({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:70" data-name="Icon/map">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMap} />
+    </div>
+  );
+}
+
+function IconCalendar({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:19" data-name="Icon/calendar">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar} />
+    </div>
+  );
+}
+
+function IconSearch({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:5" data-name="Icon/search">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSearch} />
+    </div>
+  );
+}
+
+function IconHome({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:25" data-name="Icon/home">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+    </div>
+  );
+}
+
+type NavigationMobileProps = {
+  className?: string;
+  active?: "Perfil";
+};
+
+function NavigationMobile({ className, active = "Perfil" }: NavigationMobileProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] h-[72px] relative w-[390px]"} data-node-id="5:113">
+      <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-0 w-[390px]" data-node-id="5:114" data-name="border" />
+      <IconHome className="absolute left-[29px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[38.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:117">
+        Inicio
+      </p>
+      <IconSearch className="absolute left-[106px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[115.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:121">
+        Explorar
+      </p>
+      <IconCalendar className="absolute left-[260px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[269.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:125">
+        Organizar
+      </p>
+      <IconMap className="absolute left-[183px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[192.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:128">
+        Mapa
+      </p>
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[32px] left-[319px] rounded-[var(--radius-12,12px)] top-[8px] w-[60px]" data-node-id="5:129" data-name="subtle" />
+      <IconUser className="absolute left-[337px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[15px] left-[346.5px] text-[10px] text-[color:var(--color-brand,#145c46)] text-center top-[40px] w-[77px]" data-node-id="5:133">
+        Perfil
+      </p>
+    </div>
+  );
+}
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = variant === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px] ${isSecondaryAndDefault ? "bg-[var(--color-subtle,#e7f3ed)]" : "bg-[var(--color-brand,#145c46)]"}`} id={isSecondaryAndDefault ? "node-4_101" : "node-4_93"}>
+      {variant === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:102">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type ManagementBusinessProps = {
+  className?: string;
+  plan?: string;
+  status?: string;
+  title?: string;
+};
+
+function ManagementBusiness({ className, plan = "S/ 100 al mes · Evento público", status = "En revisión", title = "Una noche al aire libre" }: ManagementBusinessProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] h-[196px] relative rounded-[var(--radius-16,16px)] w-[342px]"} data-node-id="44:1180" data-name="Management/Business">
+      <div className="absolute h-[76px] left-[16px] rounded-[var(--radius-12,12px)] top-[16px] w-[88px]" data-node-id="44:1181" data-name="Foto/concert">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[var(--radius-12,12px)] size-full" src={imgFotoConcert} />
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[25px] left-[120px] text-[17px] text-[color:var(--color-text,#172d28)] top-[14px] w-[206px]" data-node-id="44:1182">
+        {title}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[17px] left-[120px] text-[12px] text-[color:var(--color-brand,#145c46)] top-[72px] whitespace-nowrap" data-node-id="44:1183">
+        {status}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[16px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[108px] whitespace-nowrap" data-node-id="44:1184">
+        {plan}
+      </p>
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[16px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[134px] w-[310px]" label="Gestionar" variant="Secondary" />
+    </div>
+  );
+}
+
+function IconBack({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:11" data-name="Icon/back">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBack} />
+    </div>
+  );
+}
+
+export default function MisServiciosMobile() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] overflow-clip relative rounded-[var(--radius-24,24px)] size-full" data-node-id="46:1935" data-name="Mis servicios · Mobile">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-nowrap" data-node-id="46:1936">
+        9:41
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[16px] left-[292px] text-[11px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-pre" data-node-id="46:1937">{`5G   100%`}</p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[24px] overflow-clip rounded-[var(--radius-12,12px)] size-[40px] top-[48px]" data-node-id="46:1938" data-name="Volver">
+        <IconBack className="absolute left-[8px] size-[24px] top-[8px]" />
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[80px] text-[18px] text-[color:var(--color-text,#172d28)] top-[54px] w-[200px]" data-node-id="46:1941">
+        Mi negocio
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[39px] left-[24px] text-[27px] text-[color:var(--color-text,#172d28)] top-[119px] w-[342px]" data-node-id="46:1942">
+        Servicios del negocio
+      </p>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[194px] w-[342px]" label="Añadir servicio" />
+      <ManagementBusiness className="absolute bg-[var(--color-surface,white)] block cursor-pointer h-[196px] left-[24px] rounded-[var(--radius-16,16px)] top-[292px] w-[342px]" plan="Precio por cotizar" status="Activo" title="Decoración de mesa" />
+      <ManagementBusiness className="absolute bg-[var(--color-surface,white)] block cursor-pointer h-[196px] left-[24px] rounded-[var(--radius-16,16px)] top-[512px] w-[342px]" plan="Completar antes de publicar" status="Borrador" title="Ambientación integral" />
+      <div className="[word-break:break-word] absolute bg-[var(--color-subtle,#e7f3ed)] h-[108px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[761px] w-[342px]" data-node-id="46:1959" data-name="Aviso/Servicios vinculados al negocio">
+        <p className="absolute font-['Manrope:Bold'] font-bold leading-[22px] left-[16px] text-[15px] text-[color:var(--color-brand,#145c46)] top-[14px] w-[310px]" data-node-id="46:1960">
+          Servicios vinculados al negocio
+        </p>
+        <div className="absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[47px] w-[310px]" data-node-id="46:1961">
+          <p className="leading-[17px] mb-0">Se muestran mientras el negocio tenga</p>
+          <p className="leading-[17px]">aprobación y publicación vigentes.</p>
+        </div>
+      </div>
+      <NavigationMobile className="absolute bg-[var(--color-surface,white)] h-[72px] left-0 top-[928px] w-[390px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-0 top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[77px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[154px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[231px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[308px] top-[928px] w-[77px]" />
+    </div>
+  );
+}

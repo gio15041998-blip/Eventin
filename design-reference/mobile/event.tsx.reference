@@ -1,0 +1,170 @@
+const imgIconMap = "https://www.figma.com/api/mcp/asset/c0e60dd9-c1e9-432f-b2c7-ee8dec04c391.svg";
+const imgIconPin = "https://www.figma.com/api/mcp/asset/926762b2-bd3c-4e0d-9019-2fd7869e7b2e.svg";
+const imgIconCalendar = "https://www.figma.com/api/mcp/asset/bd541262-3df5-4a79-8535-96d5623b3387.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/0097e660-6b0c-4a1b-ab0d-20f42d059f3b.svg";
+const imgIconBack = "https://www.figma.com/api/mcp/asset/abe04c8a-dba7-4dbd-9b0b-d0c529a249b4.svg";
+const imgFotoConcert = "https://www.figma.com/api/mcp/asset/c410f6a6-5c3e-4a3f-bf90-9d2aec9e06f4.png";
+const imgIconHome = "https://www.figma.com/api/mcp/asset/6a11c7a0-8db5-44a6-bd64-d0b9f3576974.svg";
+const imgIconSearch = "https://www.figma.com/api/mcp/asset/394f3b14-eca1-4103-8546-86aca6b40a21.svg";
+const imgIconCalendar1 = "https://www.figma.com/api/mcp/asset/b6ed5fac-7b14-41ce-8271-8f64a85f0eec.svg";
+const imgIconUser = "https://www.figma.com/api/mcp/asset/23abbba1-d383-4e6e-a59c-517be174a5f5.svg";
+
+function NavigationTouchTarget({ className }: { className?: string }) {
+  return <div className={className || "h-[72px] relative w-[77px]"} data-node-id="17:1037" data-name="Navigation/Touch target" />;
+}
+
+function IconMap({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:70" data-name="Icon/map">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMap} />
+    </div>
+  );
+}
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = variant === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px] ${isSecondaryAndDefault ? "bg-[var(--color-subtle,#e7f3ed)]" : "bg-[var(--color-brand,#145c46)]"}`} id={isSecondaryAndDefault ? "node-4_101" : "node-4_93"}>
+      {variant === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:102">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function IconPin({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:15" data-name="Icon/pin">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconPin} />
+    </div>
+  );
+}
+
+function IconCalendar({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:19" data-name="Icon/calendar">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+function IconBack({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:11" data-name="Icon/back">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBack} />
+    </div>
+  );
+}
+
+export default function DetalleDeEventoMobile() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] overflow-clip relative rounded-[var(--radius-24,24px)] size-full" data-node-id="6:145" data-name="Detalle de evento · Mobile">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-nowrap" data-node-id="6:146">
+        9:41
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[16px] left-[292px] text-[11px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-pre" data-node-id="6:147">{`5G   100%`}</p>
+      <div className="absolute h-[252px] left-0 top-[35px] w-[390px]" data-node-id="6:148" data-name="Foto/concert">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFotoConcert} />
+      </div>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[24px] overflow-clip rounded-[var(--radius-999,999px)] size-[40px] top-[51px]" data-node-id="6:149" data-name="Volver">
+        <IconBack className="absolute left-[8px] size-[24px] top-[8px]" />
+      </a>
+      <div className="absolute bg-[var(--color-surface,white)] left-[326px] overflow-clip rounded-[var(--radius-999,999px)] size-[40px] top-[51px]" data-node-id="6:152" data-name="Guardar">
+        <IconHeart className="absolute left-[8px] size-[24px] top-[8px]" />
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-brand,#145c46)] top-[311px] whitespace-nowrap" data-node-id="6:155">
+        Música en vivo · Evento de ejemplo
+      </p>
+      <div className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[0] left-[24px] text-[30px] text-[color:var(--color-text,#172d28)] top-[340px] w-[342px]" data-node-id="6:156">
+        <p className="leading-[44px] mb-0">Una noche</p>
+        <p className="leading-[44px]">al aire libre</p>
+      </div>
+      <IconCalendar className="absolute left-[24px] size-[22px] top-[441px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[19px] left-[58px] text-[13px] text-[color:var(--color-text,#172d28)] top-[442px] whitespace-nowrap" data-node-id="6:160">
+        Sábado 12 de diciembre · 8:00 p. m.
+      </p>
+      <IconPin className="absolute left-[24px] size-[22px] top-[482px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-[58px] text-[14px] text-[color:var(--color-text,#172d28)] top-[482px] whitespace-nowrap" data-node-id="6:164">
+        Miraflores, Lima
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[58px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[506px] whitespace-nowrap" data-node-id="6:165">
+        Dirección por confirmar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[24px] text-[18px] text-[color:var(--color-text,#172d28)] top-[550px] whitespace-nowrap" data-node-id="6:166">
+        Acerca del evento
+      </p>
+      <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[585px] w-[342px]" data-node-id="6:167">
+        <p className="leading-[20px] mb-0">Música, amigos y una noche para recordar.</p>
+        <p className="leading-[20px] mb-0">Consulta el aforo, la ubicación y las condiciones</p>
+        <p className="leading-[20px]">directamente con el organizador.</p>
+      </div>
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[665px] w-[342px]" label="Consultar cómo llegar" variant="Secondary" />
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[19px] left-[24px] text-[13px] text-[color:var(--color-text,#172d28)] top-[733px] whitespace-nowrap" data-node-id="6:170">
+        Precio ilustrativo desde S/ 35
+      </p>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[766px] w-[342px]" label="Consultar entradas por WhatsApp" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[827px] w-[342px]" data-node-id="6:173">
+        La reserva se coordina con el organizador.
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[72px] left-0 top-[928px] w-[390px]" data-node-id="6:174" data-name="Navigation/Mobile">
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-0 w-[390px]" data-node-id="I6:174;5:51" data-name="border" />
+        <div className="absolute left-[29px] size-[22px] top-[12px]" data-node-id="I6:174;5:52" data-name="Icon/home">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[38.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:174;5:54">
+          Inicio
+        </p>
+        <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[32px] left-[88px] rounded-[var(--radius-12,12px)] top-[8px] w-[60px]" data-node-id="I6:174;5:55" data-name="subtle" />
+        <div className="absolute left-[106px] size-[22px] top-[12px]" data-node-id="I6:174;5:56" data-name="Icon/search">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSearch} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[15px] left-[115.5px] text-[10px] text-[color:var(--color-brand,#145c46)] text-center top-[40px] w-[77px]" data-node-id="I6:174;5:59">
+          Explorar
+        </p>
+        <div className="absolute left-[260px] size-[22px] top-[12px]" data-node-id="I6:174;5:60" data-name="Icon/calendar">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar1} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[269.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:174;5:63">
+          Organizar
+        </p>
+        <IconMap className="absolute left-[183px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[192.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:174;5:66">
+          Mapa
+        </p>
+        <div className="absolute left-[337px] size-[22px] top-[12px]" data-node-id="I6:174;5:67" data-name="Icon/user">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[346.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:174;5:70">
+          Perfil
+        </p>
+      </div>
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-0 top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[77px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[154px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[231px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[308px] top-[928px] w-[77px]" />
+    </div>
+  );
+}

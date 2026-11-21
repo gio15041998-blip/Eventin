@@ -1,0 +1,179 @@
+const imgIconBell = "https://www.figma.com/api/mcp/asset/dfb1121c-382f-4b9f-ae32-1d1832916fcb.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/df39140b-c742-4bce-abdc-a56ca545bbf5.svg";
+const imgIconUser = "https://www.figma.com/api/mcp/asset/ebfc2465-0084-4053-8b8b-ac02d02547b6.svg";
+const imgBrandIsotipo = "https://www.figma.com/api/mcp/asset/54872ac3-f07c-482a-b2e0-ea1b26f934fb.svg";
+
+function IconBell({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:66" data-name="Icon/bell">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBell} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = variant === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px] ${isSecondaryAndDefault ? "bg-[var(--color-subtle,#e7f3ed)]" : "bg-[var(--color-brand,#145c46)]"}`} id={isSecondaryAndDefault ? "node-4_101" : "node-4_93"}>
+      {variant === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:102">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type CollaborationMemberProps = {
+  className?: string;
+  initials?: string;
+  name?: string;
+  role?: string;
+};
+
+function CollaborationMember({ className, initials = "AM", name = "Ana Martínez", role = "Coorganizador" }: CollaborationMemberProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] h-[82px] relative w-[342px]"} data-node-id="31:93" data-name="Collaboration/Member">
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] left-0 overflow-clip rounded-[var(--radius-999,999px)] size-[48px] top-[12px]" data-node-id="31:94" data-name="Avatar">
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[23px] left-[10px] text-[16px] text-[color:var(--color-brand,#145c46)] top-[13px] whitespace-nowrap" data-node-id="31:95">
+          {initials}
+        </p>
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[23px] left-[64px] text-[16px] text-[color:var(--color-text,#172d28)] top-[13px] whitespace-nowrap" data-node-id="31:96">
+        {name}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[64px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[43px] whitespace-nowrap" data-node-id="31:97">
+        {role}
+      </p>
+      <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-[81px] w-[342px]" data-node-id="31:98" data-name="border" />
+    </div>
+  );
+}
+
+function IconUser({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:29" data-name="Icon/user">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+    </div>
+  );
+}
+
+function BrandIsotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[40px]"} data-node-id="4:84" data-name="Brand/Isotipo">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBrandIsotipo} />
+    </div>
+  );
+}
+
+function BrandLogotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[40px] relative w-[166px]"} data-node-id="4:85" data-name="Brand/Logotipo">
+      <BrandIsotipo className="absolute left-0 size-[40px] top-0" />
+      <p className="[word-break:break-word] absolute font-['Manrope:ExtraBold'] font-extrabold leading-[44px] left-[50px] text-[30px] text-[color:var(--color-text,#172d28)] top-[-2px] whitespace-nowrap" data-node-id="4:91">
+        eventin
+      </p>
+    </div>
+  );
+}
+
+export default function EquipoDelEventoDesktop() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] relative size-full" data-node-id="34:331" data-name="Equipo del evento · Desktop">
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-0 top-0 w-[1440px]" data-node-id="34:332" data-name="surface" />
+      <BrandLogotipo className="absolute h-[40px] left-[80px] top-[24px] w-[166px]" />
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[410px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="34:340">
+        <p className="leading-[20px]">Inicio</p>
+      </a>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[510px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="34:341">
+        <p className="leading-[20px]">Explorar</p>
+      </a>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[622px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="34:342">
+        <p className="leading-[20px]">Organizar</p>
+      </a>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[754px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[35px] whitespace-nowrap" data-node-id="34:343">
+        <p className="leading-[20px]">Mapa</p>
+      </a>
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[1031px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[21px] w-[178px]" label="Publicar evento" variant="Secondary" />
+      <a className="absolute bg-[var(--color-background,#f6f8f7)] block cursor-pointer h-[40px] left-[1233px] overflow-clip rounded-[var(--radius-12,12px)] top-[24px] w-[127px]" data-node-id="34:346" data-name="Cuenta">
+        <IconUser className="absolute left-[9px] size-[22px] top-[8px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[19px] left-[42px] text-[13px] text-[color:var(--color-text,#172d28)] text-left top-[10px] whitespace-nowrap" data-node-id="34:350">
+          Giovanny
+        </p>
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[52px] left-[80px] text-[36px] text-[color:var(--color-text,#172d28)] top-[144px] whitespace-nowrap" data-node-id="34:351">
+        Las mejores ideas se planean juntos.
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[23px] left-[80px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[211px] whitespace-nowrap" data-node-id="34:352">
+        Cumpleaños de Valeria · Evento privado
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[342px] left-[80px] overflow-clip rounded-[var(--radius-16,16px)] top-[299px] w-[750px]" data-node-id="34:353" data-name="Equipo de planificación">
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[33px] left-[24px] text-[23px] text-[color:var(--color-text,#172d28)] top-[24px] whitespace-nowrap" data-node-id="34:354">
+          Personas con acceso
+        </p>
+        <CollaborationMember className="absolute bg-[var(--color-surface,white)] h-[82px] left-[24px] top-[94px] w-[702px]" initials="GV" name="Giovanny" role="Propietario · Administra los accesos" />
+        <CollaborationMember className="absolute bg-[var(--color-surface,white)] h-[82px] left-[24px] top-[195px] w-[702px]" role="Coorganizadora · Puede editar" />
+      </div>
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[535px] left-[870px] overflow-clip rounded-[var(--radius-16,16px)] top-[299px] w-[490px]" data-node-id="34:367" data-name="Invitación privada">
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[35px] left-[24px] text-[24px] text-[color:var(--color-text,#172d28)] top-[24px] whitespace-nowrap" data-node-id="34:368">
+          Invitar a una amistad
+        </p>
+        <div className="absolute h-[82px] left-[24px] top-[89px] w-[342px]" data-node-id="34:369" data-name="Field/Default">
+          <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="I34:369;4:108">
+            Correo electrónico
+          </p>
+          <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="I34:369;4:109" data-name="Input">
+            <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="I34:369;4:110">
+              nombre@correo.com
+            </p>
+          </div>
+        </div>
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[23px] left-[24px] text-[16px] text-[color:var(--color-brand,#145c46)] top-[211px] whitespace-nowrap" data-node-id="34:376">
+          Permiso: coorganizador
+        </p>
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[15px] text-[color:var(--color-secondary,#566a63)] top-[251px] w-[442px]" data-node-id="34:377">
+          <p className="leading-[22px] mb-0">Podrá editar presupuesto y tareas,</p>
+          <p className="leading-[22px]">proponer proveedores y revisar cotizaciones.</p>
+        </div>
+        <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[352px] w-[442px]" label="Preparar invitación" />
+        <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[416px] w-[442px]" label="Copiar enlace privado" variant="Secondary" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[485px] w-[442px]" data-node-id="34:382">
+          Requiere una cuenta y aceptar la invitación.
+        </p>
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[35px] left-[80px] text-[24px] text-[color:var(--color-text,#172d28)] top-[699px] whitespace-nowrap" data-node-id="34:383">
+        Un evento compartido sigue siendo privado.
+      </p>
+      <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[80px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[755px] w-[750px]" data-node-id="34:384">
+        <p className="leading-[23px] mb-0">Cada cambio debe guardar quién lo hizo. El propietario puede revocar el acceso.</p>
+        <p className="leading-[23px]">Solo se comparten los datos de este evento, sin dar acceso al resto de tu cuenta.</p>
+      </div>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[912px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[22px]" data-node-id="38:414" data-name="Abrir favoritos">
+        <IconHeart className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[960px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[22px]" data-node-id="38:417" data-name="Abrir notificaciones">
+        <IconBell className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+    </div>
+  );
+}

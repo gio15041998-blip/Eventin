@@ -1,0 +1,108 @@
+const imgBrandIsotipo = "https://www.figma.com/api/mcp/asset/1f3de8a0-a1f3-4f82-9c72-19fb24011be4.svg";
+const imgFotoTable = "https://www.figma.com/api/mcp/asset/99762c38-36fa-4d46-b259-f74a9e3cc0c5.png";
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = variant === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px] ${isSecondaryAndDefault ? "bg-[var(--color-subtle,#e7f3ed)]" : "bg-[var(--color-brand,#145c46)]"}`} id={isSecondaryAndDefault ? "node-4_101" : "node-4_93"}>
+      {variant === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:102">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function BrandIsotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[40px]"} data-node-id="4:84" data-name="Brand/Isotipo">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBrandIsotipo} />
+    </div>
+  );
+}
+
+function BrandLogotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[40px] relative w-[166px]"} data-node-id="4:85" data-name="Brand/Logotipo">
+      <BrandIsotipo className="absolute left-0 size-[40px] top-0" />
+      <p className="[word-break:break-word] absolute font-['Manrope:ExtraBold'] font-extrabold leading-[44px] left-[50px] text-[30px] text-[color:var(--color-text,#172d28)] top-[-2px] whitespace-nowrap" data-node-id="4:91">
+        eventin
+      </p>
+    </div>
+  );
+}
+
+export default function RevisarNegocioAntesDePublicarDesktop() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] relative size-full" data-node-id="53:515" data-name="Revisar negocio antes de publicar · Desktop">
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-0 top-0 w-[1440px]" data-node-id="53:516" data-name="surface" />
+      <BrandLogotipo className="absolute h-[40px] left-[80px] top-[24px] w-[166px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[410px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:524">
+        Inicio
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[510px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:525">
+        Explorar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[622px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:526">
+        Organizar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[754px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:527">
+        Mapa
+      </p>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[1232px] text-[14px] text-[color:var(--color-brand,#145c46)] top-[35px] whitespace-nowrap" data-node-id="53:528">
+        <p className="leading-[20px]">Mi cuenta</p>
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[49px] left-[80px] text-[34px] text-[color:var(--color-text,#172d28)] top-[132px] w-[1280px]" data-node-id="53:529">
+        Panel de negocios
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[534px] left-[80px] overflow-clip rounded-[var(--radius-16,16px)] top-[263px] w-[832px]" data-node-id="53:530" data-name="Vista previa de ficha">
+        <div className="absolute h-[210px] left-[24px] rounded-[var(--radius-12,12px)] top-[24px] w-[784px]" data-node-id="53:531" data-name="Foto/table">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[var(--radius-12,12px)] size-full" src={imgFotoTable} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[44px] left-[24px] text-[30px] text-[color:var(--color-text,#172d28)] top-[271px] w-[784px]" data-node-id="53:532">{`Mesa & Momento`}</p>
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[25px] left-[24px] text-[17px] text-[color:var(--color-brand,#145c46)] top-[337px] whitespace-nowrap" data-node-id="53:533">
+          Decoración · Zona de atención: Lima
+        </p>
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[17px] text-[color:var(--color-secondary,#566a63)] top-[397px] w-[784px]" data-node-id="53:534">
+          <p className="leading-[25px] mb-0">La ficha mostrará fotos, descripción, ubicación o cobertura</p>
+          <p className="leading-[25px] mb-0">y el contacto público que proporcionaste.</p>
+          <p className="leading-[25px]">Corrige los datos antes de continuar con el pago.</p>
+        </div>
+      </div>
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[534px] left-[952px] overflow-clip rounded-[var(--radius-16,16px)] top-[263px] w-[408px]" data-node-id="53:535" data-name="Plan de publicación">
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[64px] left-[24px] text-[44px] text-[color:var(--color-brand,#145c46)] top-[24px] whitespace-nowrap" data-node-id="53:536">
+          S/ 30
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[26px] left-[24px] text-[18px] text-[color:var(--color-text,#172d28)] top-[103px] whitespace-nowrap" data-node-id="53:537">
+          por negocio / mes
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[24px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[158px] whitespace-nowrap" data-node-id="53:538">
+          Renovación mensual manual
+        </p>
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[17px] text-[color:var(--color-secondary,#566a63)] top-[224px] w-[360px]" data-node-id="53:539">
+          <p className="leading-[25px] mb-0">Publicamos cuando el contenido</p>
+          <p className="leading-[25px] mb-0">está aprobado y el pago está</p>
+          <p className="leading-[25px]">verificado para el periodo.</p>
+        </div>
+        <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[380px] w-[360px]" label="Continuar al pago" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[458px] w-[360px]" data-node-id="53:542">
+          No hay cargos reales en el prototipo.
+        </p>
+      </div>
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[80px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[861px] w-[380px]" label="Volver a editar negocio" variant="Secondary" />
+    </div>
+  );
+}

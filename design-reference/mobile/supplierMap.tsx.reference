@@ -1,0 +1,282 @@
+const imgIconBell = "https://www.figma.com/api/mcp/asset/c793a2b3-7645-49b1-95d8-542a44e80ca0.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/f5443aed-83bc-41e5-a371-c999539b78c5.svg";
+const imgIconUser = "https://www.figma.com/api/mcp/asset/92ac0985-bba8-4c9b-ab6b-487c737f9284.svg";
+const imgIconMap = "https://www.figma.com/api/mcp/asset/d1e57fb9-5971-49d7-87c8-6d6baf38e9e6.svg";
+const imgIconCalendar = "https://www.figma.com/api/mcp/asset/53920a3a-762a-4dde-a80c-aad9e484ac84.svg";
+const imgIconSearch = "https://www.figma.com/api/mcp/asset/0a81290b-6a26-42b1-a77d-456135a7dd08.svg";
+const imgIconHome = "https://www.figma.com/api/mcp/asset/0b2b2212-156e-48c4-9fcc-e19e11e3a74a.svg";
+const imgIconChevron = "https://www.figma.com/api/mcp/asset/8f5781ad-6b9f-4c6a-a6e4-1a72cfa98ea5.svg";
+const imgFotoTable = "https://www.figma.com/api/mcp/asset/b8357acf-27f8-43b5-ae6a-c8fa686a7817.png";
+const imgIconStore = "https://www.figma.com/api/mcp/asset/4b920184-51a1-478d-858e-8c4387427d12.svg";
+const imgIconTicket = "https://www.figma.com/api/mcp/asset/a17cec48-dc32-4a71-84a3-778113c9ded8.svg";
+const imgIconLocate = "https://www.figma.com/api/mcp/asset/baff0507-d629-4a43-a3bc-d4aaaba5a763.svg";
+const imgIconFilter = "https://www.figma.com/api/mcp/asset/94c0e91e-4e16-4254-9ce6-1234ee4c6d1b.svg";
+const imgMapBaseIlustrativa = "https://www.figma.com/api/mcp/asset/6b354b37-7f48-438f-b9e6-fa8549dd164e.svg";
+const imgIconBack = "https://www.figma.com/api/mcp/asset/f91a620e-3bae-4051-8be6-67531c232b5a.svg";
+
+function NavigationTouchTarget({ className }: { className?: string }) {
+  return <div className={className || "h-[72px] relative w-[77px]"} data-node-id="17:1037" data-name="Navigation/Touch target" />;
+}
+
+function IconBell({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:66" data-name="Icon/bell">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBell} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+function IconUser({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:29" data-name="Icon/user">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+    </div>
+  );
+}
+
+function IconMap({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:70" data-name="Icon/map">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMap} />
+    </div>
+  );
+}
+
+function IconCalendar({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:19" data-name="Icon/calendar">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar} />
+    </div>
+  );
+}
+
+function IconSearch({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:5" data-name="Icon/search">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSearch} />
+    </div>
+  );
+}
+
+function IconHome({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:25" data-name="Icon/home">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+    </div>
+  );
+}
+
+type NavigationMobileProps = {
+  className?: string;
+  active?: "Mapa";
+};
+
+function NavigationMobile({ className, active = "Mapa" }: NavigationMobileProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] h-[72px] relative w-[390px]"} data-node-id="5:92">
+      <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-0 w-[390px]" data-node-id="5:93" data-name="border" />
+      <IconHome className="absolute left-[29px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[38.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:96">
+        Inicio
+      </p>
+      <IconSearch className="absolute left-[106px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[115.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:100">
+        Explorar
+      </p>
+      <IconCalendar className="absolute left-[260px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[269.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:104">
+        Organizar
+      </p>
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[32px] left-[165px] rounded-[var(--radius-12,12px)] top-[8px] w-[60px]" data-node-id="5:105" data-name="subtle" />
+      <IconMap className="absolute left-[183px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[15px] left-[192.5px] text-[10px] text-[color:var(--color-brand,#145c46)] text-center top-[40px] w-[77px]" data-node-id="5:108">
+        Mapa
+      </p>
+      <IconUser className="absolute left-[337px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[346.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:112">
+        Perfil
+      </p>
+    </div>
+  );
+}
+
+function IconChevron({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:57" data-name="Icon/chevron">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevron} />
+    </div>
+  );
+}
+
+type CardProveedorProps = {
+  className?: string;
+  category?: string;
+  meta?: string;
+  title?: string;
+};
+
+function CardProveedor({ className, category = "Decoración", meta = "Lima · Precio a cotizar", title = "Mesa & Momento" }: CardProveedorProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] h-[122px] relative rounded-[var(--radius-16,16px)] w-[342px]"} data-node-id="5:20" data-name="Card/Proveedor">
+      <div className="absolute h-[122px] left-0 rounded-[var(--radius-16,16px)] top-0 w-[116px]" data-node-id="5:21" data-name="Foto/table">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[var(--radius-16,16px)] size-full" src={imgFotoTable} />
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[17px] left-[132px] text-[12px] text-[color:var(--color-brand,#145c46)] top-[12px] whitespace-nowrap" data-node-id="5:22">
+        {category}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[25px] left-[132px] text-[17px] text-[color:var(--color-text,#172d28)] top-[34px] whitespace-nowrap" data-node-id="5:23">
+        {title}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[132px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[63px] whitespace-nowrap" data-node-id="5:24">
+        {meta}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[19px] left-[132px] text-[13px] text-[color:var(--color-brand,#145c46)] top-[87px] whitespace-nowrap" data-node-id="5:25">
+        Ver servicios
+      </p>
+      <IconChevron className="absolute left-[310px] size-[18px] top-[84px]" />
+    </div>
+  );
+}
+
+function IconStore({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:63" data-name="Icon/store">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconStore} />
+    </div>
+  );
+}
+
+function IconTicket({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:74" data-name="Icon/ticket">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconTicket} />
+    </div>
+  );
+}
+
+function IconLocate({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:85" data-name="Icon/locate">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconLocate} />
+    </div>
+  );
+}
+
+function IconFilter({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:46" data-name="Icon/filter">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconFilter} />
+    </div>
+  );
+}
+
+function MapMarkerProveedor({ className }: { className?: string }) {
+  return (
+    <div className={className || "bg-[var(--color-accent,#d7ef98)] relative rounded-[var(--radius-12,12px)] size-[48px]"} data-node-id="31:90" data-name="Map/Marker/Proveedor">
+      <IconStore className="absolute left-[12px] size-[24px] top-[12px]" />
+    </div>
+  );
+}
+
+function MapBaseIlustrativa({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[650px] relative w-[900px]"} data-node-id="31:107" data-name="Map/Base ilustrativa">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMapBaseIlustrativa} />
+    </div>
+  );
+}
+
+function IconBack({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:11" data-name="Icon/back">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBack} />
+    </div>
+  );
+}
+
+export default function MapaProveedoresMobile() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] overflow-clip relative rounded-[var(--radius-24,24px)] size-full" data-node-id="34:1436" data-name="Mapa · Proveedores · Mobile">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-nowrap" data-node-id="34:1437">
+        9:41
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[16px] left-[292px] text-[11px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-pre" data-node-id="34:1438">{`5G   100%`}</p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[24px] overflow-clip rounded-[var(--radius-12,12px)] size-[40px] top-[48px]" data-node-id="34:1439" data-name="Volver">
+        <IconBack className="absolute left-[8px] size-[24px] top-[8px]" />
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[80px] text-[18px] text-[color:var(--color-text,#172d28)] top-[53px] w-[200px]" data-node-id="34:1441">
+        Mapa
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[50px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[111px] w-[342px]" data-node-id="34:1442" data-name="Buscar en el mapa">
+        <IconSearch className="absolute left-[14px] size-[22px] top-[14px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[49px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[15px] whitespace-nowrap" data-node-id="34:1444">
+          Evento, proveedor o zona
+        </p>
+      </div>
+      <a className="absolute bg-[var(--color-surface,white)] content-stretch cursor-pointer flex items-start left-[24px] px-[var(--space-16,16px)] py-[var(--space-8,8px)] rounded-[var(--radius-999,999px)] top-[178px]" data-node-id="34:1445" data-name="Filter/Chip">
+        <p className="[word-break:break-word] font-['Manrope:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] text-left whitespace-nowrap" data-node-id="I34:1445;4:114">
+          Todos
+        </p>
+      </a>
+      <a className="absolute bg-[var(--color-surface,white)] content-stretch cursor-pointer flex items-start left-[114px] px-[var(--space-16,16px)] py-[var(--space-8,8px)] rounded-[var(--radius-999,999px)] top-[178px]" data-node-id="34:1446" data-name="Filter/Chip">
+        <p className="[word-break:break-word] font-['Manrope:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] text-left whitespace-nowrap" data-node-id="I34:1446;4:114">
+          Eventos
+        </p>
+      </a>
+      <div className="absolute bg-[var(--color-brand,#145c46)] content-stretch flex items-start left-[225px] px-[var(--space-16,16px)] py-[var(--space-8,8px)] rounded-[var(--radius-999,999px)] top-[178px]" data-node-id="34:1447" data-name="Filter/Chip">
+        <p className="[word-break:break-word] font-['Manrope:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="I34:1447;4:114">
+          Proveedores
+        </p>
+      </div>
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[450px] left-0 overflow-clip top-[230px] w-[390px]" data-node-id="34:1448" data-name="Mapa ilustrativo">
+        <MapBaseIlustrativa className="absolute h-[650px] left-[-245px] top-[-110px] w-[900px]" />
+        <MapMarkerProveedor className="absolute bg-[var(--color-accent,#d7ef98)] left-[235px] rounded-[var(--radius-12,12px)] size-[48px] top-[162px]" />
+        <MapMarkerProveedor className="absolute bg-[var(--color-accent,#d7ef98)] left-[39px] rounded-[var(--radius-12,12px)] size-[48px] top-[314px]" />
+        <div className="absolute bg-[var(--color-brand,#145c46)] left-[159px] rounded-[var(--radius-999,999px)] size-[12px] top-[176px]" data-node-id="34:1454" data-name="Centro de búsqueda" />
+        <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer h-[44px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[18px] w-[113px]" data-node-id="34:1455" data-name="Filtros">
+          <IconFilter className="absolute left-[12px] size-[22px] top-[11px]" />
+          <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[19px] left-[44px] text-[13px] text-[color:var(--color-text,#172d28)] text-left top-[12px] whitespace-nowrap" data-node-id="34:1457">
+            Filtros
+          </p>
+        </a>
+        <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[322px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[18px]" data-node-id="34:1458" data-name="Ubicación">
+          <IconLocate className="absolute left-[10px] size-[24px] top-[10px]" />
+        </a>
+        <div className="absolute bg-[var(--color-surface,white)] h-[56px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[370px] w-[342px]" data-node-id="34:1460" data-name="Leyenda">
+          <IconTicket className="absolute left-[12px] size-[24px] top-[15px]" />
+          <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[17px] left-[44px] text-[12px] text-[color:var(--color-text,#172d28)] top-[17px] whitespace-nowrap" data-node-id="34:1462">
+            Evento
+          </p>
+          <IconStore className="absolute left-[157px] size-[24px] top-[15px]" />
+          <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[17px] left-[190px] text-[12px] text-[color:var(--color-text,#172d28)] top-[17px] whitespace-nowrap" data-node-id="34:1464">
+            Proveedor
+          </p>
+        </div>
+        <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[16px] left-[24px] text-[11px] text-[color:var(--color-secondary,#566a63)] top-[431px] w-[342px]" data-node-id="34:1465">
+          Mapa ilustrativo · ubicaciones de ejemplo
+        </p>
+      </div>
+      <CardProveedor category="Proveedor · Decoración" className="absolute bg-[var(--color-surface,white)] block cursor-pointer h-[122px] left-[24px] rounded-[var(--radius-16,16px)] top-[708px] w-[342px]" meta="Zona de atención por confirmar" />
+      <NavigationMobile className="absolute bg-[var(--color-surface,white)] h-[72px] left-0 top-[848px] w-[390px]" />
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[286px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1366" data-name="Abrir favoritos">
+        <IconHeart className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[334px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1369" data-name="Abrir notificaciones">
+        <IconBell className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-0 top-[848px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[77px] top-[848px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[154px] top-[848px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[231px] top-[848px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[308px] top-[848px] w-[77px]" />
+    </div>
+  );
+}

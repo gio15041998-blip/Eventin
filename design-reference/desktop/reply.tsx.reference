@@ -1,0 +1,142 @@
+const imgIconChevron = "https://www.figma.com/api/mcp/asset/da59197c-c375-40e9-a118-b17c995c7fa1.svg";
+const imgBrandIsotipo = "https://www.figma.com/api/mcp/asset/e1e1a525-49bc-4f30-bfde-e906d38a8a46.svg";
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--color-brand,#145c46)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px]"} data-node-id="4:93">
+      <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function IconChevron({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:57" data-name="Icon/chevron">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevron} />
+    </div>
+  );
+}
+
+type FieldDefaultProps = {
+  className?: string;
+  label?: string;
+  value?: string;
+};
+
+function FieldDefault({ className, label = "Etiqueta", value = "Selecciona una opción" }: FieldDefaultProps) {
+  return (
+    <div className={className || "h-[82px] relative w-[342px]"} data-node-id="4:107" data-name="Field/Default">
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="4:108">
+        {label}
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="4:109" data-name="Input">
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="4:110">
+          {value}
+        </p>
+        <IconChevron className="absolute left-[303px] size-[20px] top-[13px]" />
+      </div>
+    </div>
+  );
+}
+
+function BrandIsotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[40px]"} data-node-id="4:84" data-name="Brand/Isotipo">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBrandIsotipo} />
+    </div>
+  );
+}
+
+function BrandLogotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[40px] relative w-[166px]"} data-node-id="4:85" data-name="Brand/Logotipo">
+      <BrandIsotipo className="absolute left-0 size-[40px] top-0" />
+      <p className="[word-break:break-word] absolute font-['Manrope:ExtraBold'] font-extrabold leading-[44px] left-[50px] text-[30px] text-[color:var(--color-text,#172d28)] top-[-2px] whitespace-nowrap" data-node-id="4:91">
+        eventin
+      </p>
+    </div>
+  );
+}
+
+export default function ResponderSolicitudDelClienteDesktop() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] relative size-full" data-node-id="52:456" data-name="Responder solicitud del cliente · Desktop">
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-0 top-0 w-[1440px]" data-node-id="52:457" data-name="surface" />
+      <BrandLogotipo className="absolute h-[40px] left-[80px] top-[24px] w-[166px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[410px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:465">
+        Inicio
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[510px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:466">
+        Explorar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[622px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:467">
+        Organizar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[754px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:468">
+        Mapa
+      </p>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[1232px] text-[14px] text-[color:var(--color-brand,#145c46)] top-[35px] whitespace-nowrap" data-node-id="52:469">
+        <p className="leading-[20px]">Mi cuenta</p>
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[49px] left-[80px] text-[34px] text-[color:var(--color-text,#172d28)] top-[132px] w-[1280px]" data-node-id="52:470">
+        Panel de negocios
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[23px] left-[80px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[198px] whitespace-nowrap" data-node-id="52:471">
+        Cumpleaños de Valeria · Datos de ejemplo
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[615px] left-[80px] overflow-clip rounded-[var(--radius-16,16px)] top-[261px] w-[800px]" data-node-id="52:472" data-name="Formulario de propuesta">
+        <div className="absolute h-[82px] left-[24px] top-[24px] w-[342px]" data-node-id="52:473" data-name="Field/Default">
+          <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="I52:473;4:108">
+            Precio total
+          </p>
+          <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="I52:473;4:109" data-name="Input">
+            <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="I52:473;4:110">
+              S/ 480
+            </p>
+          </div>
+        </div>
+        <FieldDefault className="absolute h-[82px] left-[424px] top-[24px] w-[342px]" label="Válida hasta" value="Seleccionar fecha" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[23px] left-[24px] text-[16px] text-[color:var(--color-text,#172d28)] top-[142px] whitespace-nowrap" data-node-id="52:485">
+          Servicios incluidos
+        </p>
+        <div className="absolute bg-[var(--color-background,#f6f8f7)] h-[112px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[184px] w-[752px]" data-node-id="52:486" data-name="Detalle del alcance">
+          <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[23px] left-[16px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[16px] w-[720px]" data-node-id="52:487">
+            Decoración de mesa, montaje y retiro de elementos.
+          </p>
+        </div>
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[23px] left-[24px] text-[16px] text-[color:var(--color-text,#172d28)] top-[340px] whitespace-nowrap" data-node-id="52:488">
+          Condiciones y costos adicionales
+        </p>
+        <div className="absolute bg-[var(--color-background,#f6f8f7)] h-[125px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[382px] w-[752px]" data-node-id="52:489" data-name="Condiciones de la propuesta">
+          <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[16px] w-[720px]" data-node-id="52:490">
+            <p className="leading-[23px] mb-0">Escribe las condiciones de pago, cambios y cancelación</p>
+            <p className="leading-[23px]">y cualquier costo de traslado u otro concepto.</p>
+          </div>
+        </div>
+      </div>
+      <div className="[word-break:break-word] absolute bg-[var(--color-subtle,#e7f3ed)] h-[366px] left-[920px] overflow-clip rounded-[var(--radius-16,16px)] top-[261px] w-[440px]" data-node-id="52:491" data-name="Antes de enviar">
+        <p className="absolute font-['Manrope:Bold'] font-bold leading-[36px] left-[24px] text-[25px] text-[color:var(--color-text,#172d28)] top-[24px] whitespace-nowrap" data-node-id="52:492">
+          Una propuesta clara
+        </p>
+        <div className="absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[17px] text-[color:var(--color-secondary,#566a63)] top-[94px] w-[392px] whitespace-pre-wrap" data-node-id="52:493">
+          <p className="leading-[25px] mb-0">Incluye precio total, alcance, vigencia</p>
+          <p className="leading-[25px] mb-0">y condiciones. El cliente podrá</p>
+          <p className="leading-[25px] mb-0">comparar la propuesta.</p>
+          <p className="leading-[25px] mb-0">​</p>
+          <p className="leading-[25px] mb-0">Enviar una respuesta no confirma</p>
+          <p className="leading-[25px]">un pago ni una contratación.</p>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[80px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[927px] w-[390px]" label="Revisar y enviar propuesta" />
+    </div>
+  );
+}

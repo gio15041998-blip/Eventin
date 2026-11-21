@@ -1,0 +1,151 @@
+const imgIconUpload = "https://www.figma.com/api/mcp/asset/0fd8fbf2-a7b7-418a-8f73-2d490038c52b.svg";
+const imgIconChevron = "https://www.figma.com/api/mcp/asset/82512632-f695-4896-adb5-2411dc89985d.svg";
+const imgBrandIsotipo = "https://www.figma.com/api/mcp/asset/10410778-dce5-4542-b3dc-08b29cfa23ab.svg";
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--color-brand,#145c46)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px]"} data-node-id="4:93">
+      <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function IconUpload({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:69" data-name="Icon/upload">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUpload} />
+    </div>
+  );
+}
+
+function IconChevron({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:57" data-name="Icon/chevron">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevron} />
+    </div>
+  );
+}
+
+type FieldDefaultProps = {
+  className?: string;
+  label?: string;
+  value?: string;
+};
+
+function FieldDefault({ className, label = "Etiqueta", value = "Selecciona una opción" }: FieldDefaultProps) {
+  return (
+    <div className={className || "h-[82px] relative w-[342px]"} data-node-id="4:107" data-name="Field/Default">
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="4:108">
+        {label}
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="4:109" data-name="Input">
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="4:110">
+          {value}
+        </p>
+        <IconChevron className="absolute left-[303px] size-[20px] top-[13px]" />
+      </div>
+    </div>
+  );
+}
+
+function BrandIsotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[40px]"} data-node-id="4:84" data-name="Brand/Isotipo">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBrandIsotipo} />
+    </div>
+  );
+}
+
+function BrandLogotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[40px] relative w-[166px]"} data-node-id="4:85" data-name="Brand/Logotipo">
+      <BrandIsotipo className="absolute left-0 size-[40px] top-0" />
+      <p className="[word-break:break-word] absolute font-['Manrope:ExtraBold'] font-extrabold leading-[44px] left-[50px] text-[30px] text-[color:var(--color-text,#172d28)] top-[-2px] whitespace-nowrap" data-node-id="4:91">
+        eventin
+      </p>
+    </div>
+  );
+}
+
+export default function PagarPublicacionDeEventoDesktop() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] relative size-full" data-node-id="53:703" data-name="Pagar publicación de evento · Desktop">
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-0 top-0 w-[1440px]" data-node-id="53:704" data-name="surface" />
+      <BrandLogotipo className="absolute h-[40px] left-[80px] top-[24px] w-[166px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[410px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:712">
+        Inicio
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[510px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:713">
+        Explorar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[622px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:714">
+        Organizar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[754px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:715">
+        Mapa
+      </p>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[1232px] text-[14px] text-[color:var(--color-brand,#145c46)] top-[35px] whitespace-nowrap" data-node-id="53:716">
+        <p className="leading-[20px]">Mi cuenta</p>
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[49px] left-[80px] text-[34px] text-[color:var(--color-text,#172d28)] top-[132px] w-[1280px]" data-node-id="53:717">
+        Mis eventos públicos
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[601px] left-[80px] overflow-clip rounded-[var(--radius-16,16px)] top-[263px] w-[832px]" data-node-id="53:718" data-name="Comprobante de pago">
+        <FieldDefault className="absolute h-[82px] left-[24px] top-[24px] w-[342px]" label="Forma de pago" value="Pago manual con comprobante" />
+        <div className="absolute h-[82px] left-[444px] top-[24px] w-[342px]" data-node-id="53:725" data-name="Field/Default">
+          <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="I53:725;4:108">
+            Referencia del pago
+          </p>
+          <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="I53:725;4:109" data-name="Input">
+            <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="I53:725;4:110">
+              Código de la operación
+            </p>
+          </div>
+        </div>
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[24px] text-[18px] text-[color:var(--color-text,#172d28)] top-[147px] whitespace-nowrap" data-node-id="53:731">
+          Adjunta tu comprobante
+        </p>
+        <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[156px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[193px] w-[784px]" data-node-id="53:732" data-name="Adjunto">
+          <IconUpload className="absolute left-[369px] size-[44px] top-[29px]" />
+          <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[25px] left-[236px] text-[17px] text-[color:var(--color-brand,#145c46)] top-[105px] whitespace-nowrap" data-node-id="53:735">
+            Subir imagen o PDF del comprobante
+          </p>
+        </div>
+        <div className="[word-break:break-word] absolute bg-[var(--color-subtle,#e7f3ed)] h-[121px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[399px] w-[784px]" data-node-id="53:736" data-name="Aviso/Instrucciones del cobro">
+          <p className="absolute font-['Manrope:Bold'] font-bold leading-[22px] left-[16px] text-[15px] text-[color:var(--color-brand,#145c46)] top-[14px] w-[752px]" data-node-id="53:737">
+            Instrucciones del cobro
+          </p>
+          <div className="absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[47px] w-[752px]" data-node-id="53:738">
+            <p className="leading-[17px] mb-0">Los datos del beneficiario se configurarán antes de habilitar cobros.</p>
+            <p className="leading-[17px]">Verifica siempre importe, destinatario y referencia.</p>
+          </div>
+        </div>
+      </div>
+      <div className="[word-break:break-word] absolute bg-[var(--color-surface,white)] h-[456px] left-[952px] overflow-clip rounded-[var(--radius-16,16px)] top-[263px] w-[408px]" data-node-id="53:739" data-name="Resumen del plan">
+        <p className="absolute font-['Manrope:Bold'] font-bold leading-[33px] left-[24px] text-[23px] text-[color:var(--color-text,#172d28)] top-[24px] w-[360px]" data-node-id="53:740">
+          Una noche al aire libre
+        </p>
+        <p className="absolute font-['Manrope:Bold'] font-bold leading-[52px] left-[24px] text-[36px] text-[color:var(--color-brand,#145c46)] top-[116px] whitespace-nowrap" data-node-id="53:741">
+          S/ 100 / mes
+        </p>
+        <div className="absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[17px] text-[color:var(--color-secondary,#566a63)] top-[201px] w-[360px] whitespace-pre-wrap" data-node-id="53:742">
+          <p className="leading-[25px] mb-0">Un periodo por publicación.</p>
+          <p className="leading-[25px] mb-0">Renovación mensual manual.</p>
+          <p className="leading-[25px] mb-0">​</p>
+          <p className="leading-[25px] mb-0">Enviar el comprobante no confirma</p>
+          <p className="leading-[25px]">el cobro ni la publicación.</p>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[80px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[925px] w-[342px]" label="Enviar comprobante" />
+    </div>
+  );
+}

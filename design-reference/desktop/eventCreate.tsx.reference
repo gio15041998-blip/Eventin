@@ -1,0 +1,147 @@
+const imgIconChevron = "https://www.figma.com/api/mcp/asset/92d5762b-35b9-4213-8678-cd4a7cae57ed.svg";
+const imgBrandIsotipo = "https://www.figma.com/api/mcp/asset/78f85e9b-077d-448e-86da-65ebd9c78e1c.svg";
+const imgFotoConcert = "https://www.figma.com/api/mcp/asset/8aca9d59-55c3-4a20-ba62-0b3a37858276.png";
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--color-brand,#145c46)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px]"} data-node-id="4:93">
+      <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function IconChevron({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:57" data-name="Icon/chevron">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevron} />
+    </div>
+  );
+}
+
+type FieldDefaultProps = {
+  className?: string;
+  label?: string;
+  value?: string;
+};
+
+function FieldDefault({ className, label = "Etiqueta", value = "Selecciona una opción" }: FieldDefaultProps) {
+  return (
+    <div className={className || "h-[82px] relative w-[342px]"} data-node-id="4:107" data-name="Field/Default">
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="4:108">
+        {label}
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="4:109" data-name="Input">
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="4:110">
+          {value}
+        </p>
+        <IconChevron className="absolute left-[303px] size-[20px] top-[13px]" />
+      </div>
+    </div>
+  );
+}
+
+function BrandIsotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[40px]"} data-node-id="4:84" data-name="Brand/Isotipo">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBrandIsotipo} />
+    </div>
+  );
+}
+
+function BrandLogotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[40px] relative w-[166px]"} data-node-id="4:85" data-name="Brand/Logotipo">
+      <BrandIsotipo className="absolute left-0 size-[40px] top-0" />
+      <p className="[word-break:break-word] absolute font-['Manrope:ExtraBold'] font-extrabold leading-[44px] left-[50px] text-[30px] text-[color:var(--color-text,#172d28)] top-[-2px] whitespace-nowrap" data-node-id="4:91">
+        eventin
+      </p>
+    </div>
+  );
+}
+
+export default function CrearEventoDesktop() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] relative size-full" data-node-id="53:611" data-name="Crear evento · Desktop">
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-0 top-0 w-[1440px]" data-node-id="53:612" data-name="surface" />
+      <BrandLogotipo className="absolute h-[40px] left-[80px] top-[24px] w-[166px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[410px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:620">
+        Inicio
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[510px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:621">
+        Explorar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[622px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:622">
+        Organizar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[754px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="53:623">
+        Mapa
+      </p>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[1232px] text-[14px] text-[color:var(--color-brand,#145c46)] top-[35px] whitespace-nowrap" data-node-id="53:624">
+        <p className="leading-[20px]">Mi cuenta</p>
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[49px] left-[80px] text-[34px] text-[color:var(--color-text,#172d28)] top-[132px] w-[1280px]" data-node-id="53:625">
+        Mis eventos públicos
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[23px] left-[80px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[198px] whitespace-nowrap" data-node-id="53:626">
+        Completa los datos que verá el público.
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[610px] left-[80px] overflow-clip rounded-[var(--radius-16,16px)] top-[263px] w-[832px]" data-node-id="53:627" data-name="Datos de publicación">
+        <div className="absolute h-[82px] left-[24px] top-[24px] w-[342px]" data-node-id="53:628" data-name="Field/Default">
+          <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="I53:628;4:108">
+            Nombre del evento
+          </p>
+          <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="I53:628;4:109" data-name="Input">
+            <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="I53:628;4:110">
+              Ej. Una noche al aire libre
+            </p>
+          </div>
+        </div>
+        <FieldDefault className="absolute h-[82px] left-[444px] top-[24px] w-[342px]" label="Categoría" value="Música en vivo" />
+        <FieldDefault className="absolute h-[82px] left-[24px] top-[144px] w-[342px]" label="Dirección pública" value="Dirección y distrito" />
+        <div className="absolute h-[82px] left-[444px] top-[144px] w-[342px]" data-node-id="53:646" data-name="Field/Default">
+          <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="I53:646;4:108">
+            WhatsApp público
+          </p>
+          <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="I53:646;4:109" data-name="Input">
+            <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="I53:646;4:110">
+              +51 · Número de contacto
+            </p>
+          </div>
+        </div>
+        <FieldDefault className="absolute h-[82px] left-[24px] top-[264px] w-[342px]" label="Fecha y hora del evento" value="Seleccionar fecha y hora" />
+        <FieldDefault className="absolute h-[82px] left-[444px] top-[264px] w-[342px]" label="Precio de entrada" value="Desde S/ 35 o entrada libre" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[23px] left-[24px] text-[16px] text-[color:var(--color-text,#172d28)] top-[384px] whitespace-nowrap" data-node-id="53:664">
+          Descripción pública
+        </p>
+        <div className="absolute bg-[var(--color-background,#f6f8f7)] h-[141px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[426px] w-[784px]" data-node-id="53:665" data-name="Descripción">
+          <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[16px] w-[752px]" data-node-id="53:666">
+            <p className="leading-[23px] mb-0">Describe el servicio o la experiencia y los detalles</p>
+            <p className="leading-[23px]">que el público necesita antes de contactarte.</p>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] h-[366px] left-[952px] overflow-clip rounded-[var(--radius-16,16px)] top-[263px] w-[408px]" data-node-id="53:667" data-name="Imágenes de la publicación">
+        <div className="absolute h-[180px] left-[16px] rounded-[var(--radius-12,12px)] top-[16px] w-[376px]" data-node-id="53:668" data-name="Foto/concert">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[var(--radius-12,12px)] size-full" src={imgFotoConcert} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[29px] left-[16px] text-[20px] text-[color:var(--color-text,#172d28)] top-[226px] w-[376px]" data-node-id="53:669">
+          Afiche o portada del evento
+        </p>
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[15px] text-[color:var(--color-secondary,#566a63)] top-[276px] w-[376px]" data-node-id="53:670">
+          <p className="leading-[22px] mb-0">Revisa la calidad y que la información</p>
+          <p className="leading-[22px]">coincida con los datos de la ficha.</p>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[80px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[930px] w-[342px]" label="Revisar evento" />
+    </div>
+  );
+}

@@ -1,0 +1,215 @@
+const imgIconUser = "https://www.figma.com/api/mcp/asset/4bd28e95-6f5a-43e2-87ce-eeca44c3e536.svg";
+const imgIconMap = "https://www.figma.com/api/mcp/asset/9f87f3ea-138e-498f-aba9-4b5ab2317ac4.svg";
+const imgIconCalendar = "https://www.figma.com/api/mcp/asset/fbe1374a-94d9-4eb1-b2b4-61bda497594f.svg";
+const imgIconSearch = "https://www.figma.com/api/mcp/asset/7ab4b9fb-f80f-4176-b85f-8e9b19778450.svg";
+const imgIconHome = "https://www.figma.com/api/mcp/asset/eb7b868c-0057-40d6-aa0e-a70a02948a68.svg";
+const imgIconUpload = "https://www.figma.com/api/mcp/asset/acd8a297-4cee-4615-935d-fbaf928005fd.svg";
+const imgIconChevron = "https://www.figma.com/api/mcp/asset/26222dbe-faf5-40ec-bd07-23501f208c11.svg";
+const imgIconBack = "https://www.figma.com/api/mcp/asset/bea258ec-0414-495f-bd4c-0cef793dbdac.svg";
+
+function NavigationTouchTarget({ className }: { className?: string }) {
+  return <div className={className || "h-[72px] relative w-[77px]"} data-node-id="17:1037" data-name="Navigation/Touch target" />;
+}
+
+function IconUser({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:29" data-name="Icon/user">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+    </div>
+  );
+}
+
+function IconMap({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:70" data-name="Icon/map">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMap} />
+    </div>
+  );
+}
+
+function IconCalendar({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:19" data-name="Icon/calendar">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar} />
+    </div>
+  );
+}
+
+function IconSearch({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:5" data-name="Icon/search">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSearch} />
+    </div>
+  );
+}
+
+function IconHome({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:25" data-name="Icon/home">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+    </div>
+  );
+}
+
+type NavigationMobileProps = {
+  className?: string;
+  active?: "Perfil";
+};
+
+function NavigationMobile({ className, active = "Perfil" }: NavigationMobileProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] h-[72px] relative w-[390px]"} data-node-id="5:113">
+      <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-0 w-[390px]" data-node-id="5:114" data-name="border" />
+      <IconHome className="absolute left-[29px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[38.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:117">
+        Inicio
+      </p>
+      <IconSearch className="absolute left-[106px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[115.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:121">
+        Explorar
+      </p>
+      <IconCalendar className="absolute left-[260px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[269.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:125">
+        Organizar
+      </p>
+      <IconMap className="absolute left-[183px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[192.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="5:128">
+        Mapa
+      </p>
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[32px] left-[319px] rounded-[var(--radius-12,12px)] top-[8px] w-[60px]" data-node-id="5:129" data-name="subtle" />
+      <IconUser className="absolute left-[337px] size-[22px] top-[12px]" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[15px] left-[346.5px] text-[10px] text-[color:var(--color-brand,#145c46)] text-center top-[40px] w-[77px]" data-node-id="5:133">
+        Perfil
+      </p>
+    </div>
+  );
+}
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = variant === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px] ${isSecondaryAndDefault ? "bg-[var(--color-subtle,#e7f3ed)]" : "bg-[var(--color-brand,#145c46)]"}`} id={isSecondaryAndDefault ? "node-4_101" : "node-4_93"}>
+      {variant === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:102">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function IconUpload({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:69" data-name="Icon/upload">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUpload} />
+    </div>
+  );
+}
+
+function IconChevron({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:57" data-name="Icon/chevron">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevron} />
+    </div>
+  );
+}
+
+type FieldDefaultProps = {
+  className?: string;
+  label?: string;
+  value?: string;
+};
+
+function FieldDefault({ className, label = "Etiqueta", value = "Selecciona una opción" }: FieldDefaultProps) {
+  return (
+    <div className={className || "h-[82px] relative w-[342px]"} data-node-id="4:107" data-name="Field/Default">
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="4:108">
+        {label}
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="4:109" data-name="Input">
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="4:110">
+          {value}
+        </p>
+        <IconChevron className="absolute left-[303px] size-[20px] top-[13px]" />
+      </div>
+    </div>
+  );
+}
+
+function IconBack({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:11" data-name="Icon/back">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBack} />
+    </div>
+  );
+}
+
+export default function PagarPublicacionDeNegocioMobile() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] overflow-clip relative rounded-[var(--radius-24,24px)] size-full" data-node-id="45:1434" data-name="Pagar publicación de negocio · Mobile">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-nowrap" data-node-id="45:1435">
+        9:41
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[16px] left-[292px] text-[11px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-pre" data-node-id="45:1436">{`5G   100%`}</p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[24px] overflow-clip rounded-[var(--radius-12,12px)] size-[40px] top-[48px]" data-node-id="45:1437" data-name="Volver">
+        <IconBack className="absolute left-[8px] size-[24px] top-[8px]" />
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[80px] text-[18px] text-[color:var(--color-text,#172d28)] top-[54px] w-[200px]" data-node-id="45:1440">
+        Mi negocio
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[39px] left-[24px] text-[27px] text-[color:var(--color-text,#172d28)] top-[119px] w-[342px]" data-node-id="45:1441">
+        Publicar mi negocio
+      </p>
+      <div className="[word-break:break-word] absolute bg-[var(--color-surface,white)] h-[125px] left-[24px] overflow-clip rounded-[var(--radius-16,16px)] top-[189px] w-[342px]" data-node-id="45:1442" data-name="Resumen del cobro">
+        <p className="absolute font-['Manrope:Bold'] font-bold leading-[25px] left-[16px] text-[17px] text-[color:var(--color-text,#172d28)] top-[15px] w-[310px]" data-node-id="45:1443">{`Mesa & Momento`}</p>
+        <p className="absolute font-['Manrope:Bold'] font-bold leading-[39px] left-[16px] text-[27px] text-[color:var(--color-brand,#145c46)] top-[56px] whitespace-nowrap" data-node-id="45:1444">
+          S/ 30 por un mes
+        </p>
+        <p className="absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[16px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[99px] whitespace-nowrap" data-node-id="45:1445">
+          Renovación mensual manual
+        </p>
+      </div>
+      <FieldDefault className="absolute h-[82px] left-[24px] top-[348px] w-[342px]" label="Forma de pago" value="Pago manual con comprobante" />
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[452px] w-[342px]" label="Consultar datos de pago" variant="Secondary" />
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[101px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] top-[526px] w-[342px]" data-node-id="45:1454" data-name="Subir comprobante">
+        <IconUpload className="absolute left-[155px] size-[28px] top-[16px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[19px] left-[87px] text-[13px] text-[color:var(--color-brand,#145c46)] top-[61px] whitespace-nowrap" data-node-id="45:1457">
+          Adjuntar imagen o PDF
+        </p>
+      </div>
+      <div className="absolute h-[82px] left-[24px] top-[657px] w-[342px]" data-node-id="45:1458" data-name="Field/Default">
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="I45:1458;4:108">
+          Referencia de la operación
+        </p>
+        <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="I45:1458;4:109" data-name="Input">
+          <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="I45:1458;4:110">
+            Código que aparece en tu comprobante
+          </p>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[782px] w-[342px]" label="Enviar comprobante" />
+      <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[850px] w-[342px]" data-node-id="45:1466">
+        <p className="leading-[17px] mb-0">Enviar el comprobante no confirma el pago.</p>
+        <p className="leading-[17px]">Recibirás el resultado de la verificación.</p>
+      </div>
+      <NavigationMobile className="absolute bg-[var(--color-surface,white)] h-[72px] left-0 top-[928px] w-[390px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-0 top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[77px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[154px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[231px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[308px] top-[928px] w-[77px]" />
+    </div>
+  );
+}

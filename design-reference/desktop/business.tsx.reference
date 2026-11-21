@@ -1,0 +1,229 @@
+const imgIconBell = "https://www.figma.com/api/mcp/asset/fba96b9a-a614-4f88-bca3-f5a3b2359e62.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/427ed096-8b3c-4f12-8bbb-4ea2f5d7608f.svg";
+const imgIconMessage = "https://www.figma.com/api/mcp/asset/27aec510-8395-478d-87f3-b85dc798a05f.svg";
+const imgIconArrow = "https://www.figma.com/api/mcp/asset/ce6c1c58-ddd2-417a-9b13-3495ad827221.svg";
+const imgIconUser = "https://www.figma.com/api/mcp/asset/e582ab08-cb65-4e9f-a2ba-d2e6cfa07040.svg";
+const imgBrandIsotipo = "https://www.figma.com/api/mcp/asset/b034b0b8-f1d1-4fbf-b978-9d3daac9a204.svg";
+const imgFotoConcert = "https://www.figma.com/api/mcp/asset/8d28c57d-505c-417c-ada4-71c9066dcef6.png";
+const imgFotoTable = "https://www.figma.com/api/mcp/asset/ffab0a23-90c3-452a-ba0a-8661c8f19c76.png";
+
+function IconBell({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:66" data-name="Icon/bell">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBell} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+function IconMessage({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:54" data-name="Icon/message">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMessage} />
+    </div>
+  );
+}
+
+function IconArrow({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:8" data-name="Icon/arrow">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconArrow} />
+    </div>
+  );
+}
+
+type StatusBadgeProps = {
+  className?: string;
+  label?: string;
+};
+
+function StatusBadge({ className, label = "En revisión" }: StatusBadgeProps) {
+  return (
+    <div className={className || "bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start px-[var(--space-12,12px)] py-[var(--space-4,4px)] relative rounded-[var(--radius-8,8px)]"} data-node-id="4:115" data-name="Status/Badge">
+      <p className="[word-break:break-word] font-['Manrope:SemiBold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:116">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type FilterChipProps = {
+  className?: string;
+  label?: string;
+};
+
+function FilterChip({ className, label = "Todos" }: FilterChipProps) {
+  return (
+    <div className={className || "bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start px-[var(--space-16,16px)] py-[var(--space-8,8px)] relative rounded-[var(--radius-999,999px)]"} data-node-id="4:113" data-name="Filter/Chip">
+      <p className="[word-break:break-word] font-['Manrope:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:114">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = variant === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px] ${isSecondaryAndDefault ? "bg-[var(--color-subtle,#e7f3ed)]" : "bg-[var(--color-brand,#145c46)]"}`} id={isSecondaryAndDefault ? "node-4_101" : "node-4_93"}>
+      {variant === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:102">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function IconUser({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:29" data-name="Icon/user">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+    </div>
+  );
+}
+
+function BrandIsotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[40px]"} data-node-id="4:84" data-name="Brand/Isotipo">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBrandIsotipo} />
+    </div>
+  );
+}
+
+function BrandLogotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[40px] relative w-[166px]"} data-node-id="4:85" data-name="Brand/Logotipo">
+      <BrandIsotipo className="absolute left-0 size-[40px] top-0" />
+      <p className="[word-break:break-word] absolute font-['Manrope:ExtraBold'] font-extrabold leading-[44px] left-[50px] text-[30px] text-[color:var(--color-text,#172d28)] top-[-2px] whitespace-nowrap" data-node-id="4:91">
+        eventin
+      </p>
+    </div>
+  );
+}
+
+export default function NegocioPublicacionesDesktop() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] relative size-full" data-node-id="9:299" data-name="Negocio · Publicaciones · Desktop">
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-0 top-0 w-[1440px]" data-node-id="9:300" data-name="surface" />
+      <BrandLogotipo className="absolute h-[40px] left-[80px] top-[24px] w-[166px]" />
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[410px] text-[14px] text-[color:var(--color-brand,#145c46)] top-[35px] whitespace-nowrap" data-node-id="9:308">
+        <p className="leading-[20px]">Inicio</p>
+      </a>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[510px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[35px] whitespace-nowrap" data-node-id="9:309">
+        <p className="leading-[20px]">Explorar</p>
+      </a>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[622px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[35px] whitespace-nowrap" data-node-id="9:310">
+        <p className="leading-[20px]">Organizar</p>
+      </a>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[754px] text-[14px] text-[color:var(--color-secondary,black)] top-[35px] whitespace-nowrap" data-node-id="9:311">
+        <p className="leading-[20px]">Mapa</p>
+      </a>
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[1031px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[21px] w-[178px]" label="Publicar evento" variant="Secondary" />
+      <a className="absolute bg-[var(--color-background,#f6f8f7)] block cursor-pointer h-[40px] left-[1233px] overflow-clip rounded-[var(--radius-12,12px)] top-[24px] w-[127px]" data-node-id="9:314" data-name="Cuenta">
+        <IconUser className="absolute left-[9px] size-[22px] top-[8px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[19px] left-[42px] text-[13px] text-[color:var(--color-text,#172d28)] text-left top-[10px] whitespace-nowrap" data-node-id="9:318">
+          Giovanny
+        </p>
+      </a>
+      <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-[87px] w-[1440px]" data-node-id="9:319" data-name="border" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[52px] left-[80px] text-[36px] text-[color:var(--color-text,#172d28)] top-[146px] whitespace-nowrap" data-node-id="9:320">
+        Mis eventos publicados
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[24px] left-[80px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[214px] w-[1000px]" data-node-id="9:321">
+        Todos tus eventos públicos creados: borradores, pendientes y publicados.
+      </p>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[1122px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[154px] w-[238px]" label="Crear evento" />
+      <FilterChip className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start left-[80px] px-[var(--space-16,16px)] py-[var(--space-8,8px)] rounded-[var(--radius-999,999px)] top-[287px]" />
+      <FilterChip className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start left-[179px] px-[var(--space-16,16px)] py-[var(--space-8,8px)] rounded-[var(--radius-999,999px)] top-[287px]" label="Borradores" />
+      <FilterChip className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start left-[322px] px-[var(--space-16,16px)] py-[var(--space-8,8px)] rounded-[var(--radius-999,999px)] top-[287px]" label="En revisión" />
+      <FilterChip className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start left-[469px] px-[var(--space-16,16px)] py-[var(--space-8,8px)] rounded-[var(--radius-999,999px)] top-[287px]" label="Publicados" />
+      <div className="absolute bg-[var(--color-surface,white)] h-[424px] left-[80px] overflow-clip rounded-[var(--radius-16,16px)] top-[366px] w-[1280px]" data-node-id="9:332" data-name="Lista de publicaciones">
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[20px] whitespace-nowrap" data-node-id="9:333">
+          Evento
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[605px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[20px] whitespace-nowrap" data-node-id="9:334">
+          Fecha
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[793px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[20px] whitespace-nowrap" data-node-id="9:335">
+          Publicación
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[1030px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[20px] whitespace-nowrap" data-node-id="9:336">
+          Pago
+        </p>
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-[24px] top-[60px] w-[1232px]" data-node-id="9:337" data-name="border" />
+        <div className="absolute h-[88px] left-[24px] rounded-[var(--radius-12,12px)] top-[89px] w-[132px]" data-node-id="9:338" data-name="Foto/concert">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[var(--radius-12,12px)] size-full" src={imgFotoConcert} />
+        </div>
+        <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[184px] text-[18px] text-[color:var(--color-text,#172d28)] top-[94px] whitespace-nowrap" data-node-id="9:339">
+          <p className="leading-[26px]">Una noche al aire libre</p>
+        </a>
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[19px] left-[184px] text-[13px] text-[color:var(--color-secondary,#566a63)] top-[131px] whitespace-nowrap" data-node-id="9:340">
+          Miraflores · Ejemplo
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[605px] text-[14px] text-[color:var(--color-text,#172d28)] top-[113px] whitespace-nowrap" data-node-id="9:341">
+          12 dic. 2026
+        </p>
+        <StatusBadge className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start left-[793px] px-[var(--space-12,12px)] py-[var(--space-4,4px)] rounded-[var(--radius-8,8px)] top-[109px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[19px] left-[1030px] text-[13px] text-[color:var(--color-warning,#785715)] top-[113px] whitespace-nowrap" data-node-id="9:344">
+          Por verificar
+        </p>
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-[24px] top-[208px] w-[1232px]" data-node-id="9:345" data-name="border" />
+        <div className="absolute h-[88px] left-[24px] rounded-[var(--radius-12,12px)] top-[239px] w-[132px]" data-node-id="9:346" data-name="Foto/table">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[var(--radius-12,12px)] size-full" src={imgFotoTable} />
+        </div>
+        <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[184px] text-[18px] text-[color:var(--color-text,#172d28)] top-[244px] whitespace-nowrap" data-node-id="9:347">
+          <p className="leading-[26px]">Feria de sabores</p>
+        </a>
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[19px] left-[184px] text-[13px] text-[color:var(--color-secondary,#566a63)] top-[281px] whitespace-nowrap" data-node-id="9:348">
+          Barranco · Ejemplo
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[605px] text-[14px] text-[color:var(--color-text,#172d28)] top-[263px] whitespace-nowrap" data-node-id="9:349">
+          13 dic. 2026
+        </p>
+        <StatusBadge className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex items-start left-[793px] px-[var(--space-12,12px)] py-[var(--space-4,4px)] rounded-[var(--radius-8,8px)] top-[259px]" label="Borrador" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[19px] left-[1030px] text-[13px] text-[color:var(--color-secondary,#566a63)] top-[263px] whitespace-nowrap" data-node-id="9:352">
+          No iniciado
+        </p>
+        <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[184px] text-[13px] text-[color:var(--color-brand,#145c46)] top-[365px] whitespace-nowrap" data-node-id="9:353">
+          <p className="leading-[19px]">Continuar edición</p>
+        </a>
+        <IconArrow className="absolute left-[336px] size-[20px] top-[363px]" />
+      </div>
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[90px] left-[80px] overflow-clip rounded-[var(--radius-16,16px)] top-[833px] w-[1280px]" data-node-id="9:356" data-name="Información editorial">
+        <IconMessage className="absolute left-[24px] size-[24px] top-[30px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[25px] left-[66px] text-[17px] text-[color:var(--color-text,#172d28)] top-[20px] whitespace-nowrap" data-node-id="9:360">
+          Tu evento se publica después de la revisión.
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[19px] left-[66px] text-[13px] text-[color:var(--color-secondary,#566a63)] top-[53px] w-[1180px]" data-node-id="9:361">
+          S/ 100 por evento al mes. La aprobación y la verificación del pago se gestionan por separado.
+        </p>
+      </div>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[912px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[22px]" data-node-id="38:396" data-name="Abrir favoritos">
+        <IconHeart className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[960px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[22px]" data-node-id="38:399" data-name="Abrir notificaciones">
+        <IconBell className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+    </div>
+  );
+}

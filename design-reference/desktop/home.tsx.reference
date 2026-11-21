@@ -1,0 +1,289 @@
+const imgIconBell = "https://www.figma.com/api/mcp/asset/dee4d9a0-78a8-4859-bcf8-744bb2e53241.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/982b8aba-d275-43b0-9b94-14470e333dd4.svg";
+const imgPortada = "https://www.figma.com/api/mcp/asset/7cf35357-4db8-40a5-8684-69f83aeeff99.png";
+const imgIconCalendar = "https://www.figma.com/api/mcp/asset/22568ba6-2140-44a3-83f7-fb28e071462f.svg";
+const imgIconPin = "https://www.figma.com/api/mcp/asset/fc04bc11-3d42-46ba-99ef-306257aa3c93.svg";
+const imgIconSearch = "https://www.figma.com/api/mcp/asset/2ce70ff0-887b-434b-ae88-e5ed5eee519f.svg";
+const imgIconUser = "https://www.figma.com/api/mcp/asset/c20757b8-cf59-4d31-a64c-cfcf1cbbfa06.svg";
+const imgBrandIsotipo = "https://www.figma.com/api/mcp/asset/80ff7701-23ef-4794-8f21-4f502d68a6f3.svg";
+const imgFotoCelebration = "https://www.figma.com/api/mcp/asset/779a7dbd-ac99-4a66-aedb-bfa7d8288dfe.png";
+const imgPortada1 = "https://www.figma.com/api/mcp/asset/efac347c-51eb-4366-be66-3456f53b68ab.png";
+
+function IconBell({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:66" data-name="Icon/bell">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBell} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+type CardEventoProps = {
+  className?: string;
+  category?: string;
+  meta?: string;
+  price?: string;
+  title?: string;
+};
+
+function CardEvento({ className, category = "Música en vivo", meta = "Sáb. 12 dic. · Miraflores", price = "Desde S/ 35 · Ejemplo", title = "Una noche al aire libre" }: CardEventoProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] content-stretch flex flex-col items-start overflow-clip relative rounded-[var(--radius-16,16px)] w-[342px]"} data-node-id="5:7" data-name="Card/Evento">
+      <div className="h-[172px] overflow-clip relative shrink-0 w-full" data-node-id="5:8" data-name="Portada">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgPortada} />
+        <div className="[word-break:break-word] absolute bg-[var(--color-surface,white)] font-['Manrope:Bold'] font-bold h-[58px] left-[12px] overflow-clip rounded-[var(--radius-8,8px)] text-[color:var(--color-brand,#145c46)] top-[12px] w-[52px] whitespace-nowrap" data-node-id="5:9" data-name="Fecha">
+          <p className="absolute leading-[30px] left-[11px] text-[22px] top-[3px]" data-node-id="5:10">
+            12
+          </p>
+          <p className="absolute leading-[16px] left-[13px] text-[11px] top-[35px]" data-node-id="5:11">
+            DIC
+          </p>
+        </div>
+        <div className="absolute bg-[var(--color-surface,white)] overflow-clip right-[12px] rounded-[var(--radius-999,999px)] size-[40px] top-[12px]" data-node-id="5:12" data-name="Guardar">
+          <IconHeart className="absolute left-[10px] size-[20px] top-[10px]" />
+        </div>
+      </div>
+      <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--space-4,4px)] items-start overflow-clip p-[var(--space-16,16px)] relative shrink-0 w-full" data-node-id="5:15" data-name="Contenido">
+        <p className="font-['Manrope:SemiBold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="5:16">
+          {category}
+        </p>
+        <p className="font-['Manrope:Bold'] font-bold leading-[26px] relative shrink-0 text-[18px] text-[color:var(--color-text,#172d28)] w-[310px]" data-node-id="5:17">
+          {title}
+        </p>
+        <p className="font-['Manrope:Regular'] font-normal leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-secondary,#566a63)] whitespace-nowrap" data-node-id="5:18">
+          {meta}
+        </p>
+        <p className="font-['Manrope:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-text,#172d28)] whitespace-nowrap" data-node-id="5:19">
+          {price}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = variant === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px] ${isSecondaryAndDefault ? "bg-[var(--color-subtle,#e7f3ed)]" : "bg-[var(--color-brand,#145c46)]"}`} id={isSecondaryAndDefault ? "node-4_101" : "node-4_93"}>
+      {variant === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:102">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function IconCalendar({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:19" data-name="Icon/calendar">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar} />
+    </div>
+  );
+}
+
+function IconPin({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:15" data-name="Icon/pin">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconPin} />
+    </div>
+  );
+}
+
+function IconSearch({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:5" data-name="Icon/search">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSearch} />
+    </div>
+  );
+}
+
+function IconUser({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:29" data-name="Icon/user">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+    </div>
+  );
+}
+
+function BrandIsotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[40px]"} data-node-id="4:84" data-name="Brand/Isotipo">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBrandIsotipo} />
+    </div>
+  );
+}
+
+function BrandLogotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[40px] relative w-[166px]"} data-node-id="4:85" data-name="Brand/Logotipo">
+      <BrandIsotipo className="absolute left-0 size-[40px] top-0" />
+      <p className="[word-break:break-word] absolute font-['Manrope:ExtraBold'] font-extrabold leading-[44px] left-[50px] text-[30px] text-[color:var(--color-text,#172d28)] top-[-2px] whitespace-nowrap" data-node-id="4:91">
+        eventin
+      </p>
+    </div>
+  );
+}
+
+export default function InicioDesktop() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] relative size-full" data-node-id="9:19" data-name="Inicio · Desktop">
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-0 top-0 w-[1440px]" data-node-id="9:20" data-name="surface" />
+      <BrandLogotipo className="absolute h-[40px] left-[80px] top-[24px] w-[166px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[20px] left-[410px] text-[14px] text-[color:var(--color-brand,#145c46)] top-[35px] whitespace-nowrap" data-node-id="9:28">
+        Inicio
+      </p>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[510px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[35px] whitespace-nowrap" data-node-id="9:29">
+        <p className="leading-[20px]">Explorar</p>
+      </a>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[622px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[35px] whitespace-nowrap" data-node-id="9:30">
+        <p className="leading-[20px]">Organizar</p>
+      </a>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[754px] text-[14px] text-[color:var(--color-secondary,black)] top-[35px] whitespace-nowrap" data-node-id="9:31">
+        <p className="leading-[20px]">Mapa</p>
+      </a>
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[1031px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[21px] w-[178px]" label="Publicar evento" variant="Secondary" />
+      <a className="absolute bg-[var(--color-background,#f6f8f7)] block cursor-pointer h-[40px] left-[1233px] overflow-clip rounded-[var(--radius-12,12px)] top-[24px] w-[127px]" data-node-id="9:34" data-name="Cuenta">
+        <IconUser className="absolute left-[9px] size-[22px] top-[8px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[19px] left-[42px] text-[13px] text-[color:var(--color-text,#172d28)] text-left top-[10px] whitespace-nowrap" data-node-id="9:38">
+          Giovanny
+        </p>
+      </a>
+      <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-[87px] w-[1440px]" data-node-id="9:39" data-name="border" />
+      <div className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[0] left-[80px] text-[58px] text-[color:var(--color-text,#172d28)] top-[166px] w-[680px]" data-node-id="9:40">
+        <p className="leading-[84px] mb-0">Haz espacio para</p>
+        <p className="leading-[84px]">un buen plan.</p>
+      </div>
+      <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[80px] text-[19px] text-[color:var(--color-secondary,#566a63)] top-[356px] w-[620px]" data-node-id="9:41">
+        <p className="leading-[28px] mb-0">Organiza una celebración con el equipo ideal</p>
+        <p className="leading-[28px]">o descubre qué está pasando cerca de ti.</p>
+      </div>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[80px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[461px] w-[237px]" label="Organizar mi evento" />
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[333px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[461px] w-[221px]" label="Explorar eventos" variant="Secondary" />
+      <div className="absolute h-[418px] left-[800px] rounded-[var(--radius-24,24px)] top-[136px] w-[560px]" data-node-id="9:46" data-name="Foto/celebration">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[var(--radius-24,24px)] size-full" src={imgFotoCelebration} />
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] h-[102px] left-[80px] overflow-clip rounded-[var(--radius-16,16px)] top-[608px] w-[1280px]" data-node-id="9:47" data-name="Busca tu próximo plan">
+        <IconSearch className="absolute left-[28px] size-[24px] top-[39px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[23px] left-[69px] text-[16px] text-[color:var(--color-text,#172d28)] top-[24px] whitespace-nowrap" data-node-id="9:51">
+          ¿Qué te gustaría hacer?
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[19px] left-[69px] text-[13px] text-[color:var(--color-secondary,#566a63)] top-[54px] whitespace-nowrap" data-node-id="9:52">
+          Evento, artista o categoría
+        </p>
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-[54px] left-[465px] top-[24px] w-px" data-node-id="9:53" data-name="border" />
+        <IconPin className="absolute left-[493px] size-[24px] top-[39px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[22px] left-[532px] text-[15px] text-[color:var(--color-text,#172d28)] top-[25px] whitespace-nowrap" data-node-id="9:57">
+          Lima, Perú
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[532px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[54px] whitespace-nowrap" data-node-id="9:58">
+          Cambiar ubicación
+        </p>
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-[54px] left-[796px] top-[24px] w-px" data-node-id="9:59" data-name="border" />
+        <IconCalendar className="absolute left-[826px] size-[24px] top-[39px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[22px] left-[865px] text-[15px] text-[color:var(--color-text,#172d28)] top-[25px] whitespace-nowrap" data-node-id="9:63">
+          Cualquier fecha
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[865px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[54px] whitespace-nowrap" data-node-id="9:64">
+          Elegir fecha
+        </p>
+        <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[1068px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[27px] w-[184px]" label="Buscar planes" />
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[44px] left-[80px] text-[30px] text-[color:var(--color-text,#172d28)] top-[766px] whitespace-nowrap" data-node-id="9:67">
+        Planes para encontrarse
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[19px] left-[1196px] text-[13px] text-[color:var(--color-brand,#145c46)] top-[781px] whitespace-nowrap" data-node-id="9:68">
+        Ver todos los eventos
+      </p>
+      <CardEvento className="absolute bg-[var(--color-surface,white)] content-stretch flex flex-col items-start left-[80px] overflow-clip rounded-[var(--radius-16,16px)] top-[835px] w-[400px]" />
+      <div className="absolute bg-[var(--color-surface,white)] content-stretch flex flex-col items-start left-[520px] overflow-clip rounded-[var(--radius-16,16px)] top-[835px] w-[400px]" data-node-id="9:83" data-name="Card/Evento">
+        <div className="h-[172px] overflow-clip relative shrink-0 w-full" data-node-id="I9:83;5:8" data-name="Portada">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgPortada1} />
+          <div className="[word-break:break-word] absolute bg-[var(--color-surface,white)] font-['Manrope:Bold'] font-bold h-[58px] left-[12px] overflow-clip rounded-[var(--radius-8,8px)] text-[color:var(--color-brand,#145c46)] top-[12px] w-[52px] whitespace-nowrap" data-node-id="I9:83;5:9" data-name="Fecha">
+            <p className="absolute leading-[30px] left-[11px] text-[22px] top-[3px]" data-node-id="I9:83;5:10">
+              13
+            </p>
+            <p className="absolute leading-[16px] left-[13px] text-[11px] top-[35px]" data-node-id="I9:83;5:11">
+              DIC
+            </p>
+          </div>
+          <div className="absolute bg-[var(--color-surface,white)] overflow-clip right-[12px] rounded-[var(--radius-999,999px)] size-[40px] top-[12px]" data-node-id="I9:83;5:12" data-name="Guardar">
+            <IconHeart className="absolute left-[10px] size-[20px] top-[10px]" />
+          </div>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--space-4,4px)] items-start overflow-clip p-[var(--space-16,16px)] relative shrink-0 w-full" data-node-id="I9:83;5:15" data-name="Contenido">
+          <p className="font-['Manrope:SemiBold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="I9:83;5:16">
+            Gastronomía
+          </p>
+          <p className="font-['Manrope:Bold'] font-bold leading-[26px] relative shrink-0 text-[18px] text-[color:var(--color-text,#172d28)] w-[310px]" data-node-id="I9:83;5:17">
+            Feria de sabores
+          </p>
+          <p className="font-['Manrope:Regular'] font-normal leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-secondary,#566a63)] whitespace-nowrap" data-node-id="I9:83;5:18">
+            Dom. 13 dic. · Barranco
+          </p>
+          <p className="font-['Manrope:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-text,#172d28)] whitespace-nowrap" data-node-id="I9:83;5:19">
+            Entrada libre · Ejemplo
+          </p>
+        </div>
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] content-stretch flex flex-col items-start left-[960px] overflow-clip rounded-[var(--radius-16,16px)] top-[835px] w-[400px]" data-node-id="9:96" data-name="Card/Evento">
+        <div className="h-[172px] overflow-clip relative shrink-0 w-full" data-node-id="I9:96;5:8" data-name="Portada">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgPortada} />
+          <div className="[word-break:break-word] absolute bg-[var(--color-surface,white)] font-['Manrope:Bold'] font-bold h-[58px] left-[12px] overflow-clip rounded-[var(--radius-8,8px)] text-[color:var(--color-brand,#145c46)] top-[12px] w-[52px] whitespace-nowrap" data-node-id="I9:96;5:9" data-name="Fecha">
+            <p className="absolute leading-[30px] left-[11px] text-[22px] top-[3px]" data-node-id="I9:96;5:10">
+              19
+            </p>
+            <p className="absolute leading-[16px] left-[13px] text-[11px] top-[35px]" data-node-id="I9:96;5:11">
+              DIC
+            </p>
+          </div>
+          <div className="absolute bg-[var(--color-surface,white)] overflow-clip right-[12px] rounded-[var(--radius-999,999px)] size-[40px] top-[12px]" data-node-id="I9:96;5:12" data-name="Guardar">
+            <IconHeart className="absolute left-[10px] size-[20px] top-[10px]" />
+          </div>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--space-4,4px)] items-start overflow-clip p-[var(--space-16,16px)] relative shrink-0 w-full" data-node-id="I9:96;5:15" data-name="Contenido">
+          <p className="font-['Manrope:SemiBold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="I9:96;5:16">
+            Música en vivo
+          </p>
+          <p className="font-['Manrope:Bold'] font-bold leading-[26px] relative shrink-0 text-[18px] text-[color:var(--color-text,#172d28)] w-[310px]" data-node-id="I9:96;5:17">
+            Sesiones al atardecer
+          </p>
+          <p className="font-['Manrope:Regular'] font-normal leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-secondary,#566a63)] whitespace-nowrap" data-node-id="I9:96;5:18">
+            Sáb. 19 dic. · San Isidro
+          </p>
+          <p className="font-['Manrope:SemiBold'] font-semibold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-text,#172d28)] whitespace-nowrap" data-node-id="I9:96;5:19">
+            Desde S/ 45 · Ejemplo
+          </p>
+        </div>
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[80px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[1161px] whitespace-nowrap" data-node-id="9:109">
+        Contenido de demostración. Consulta disponibilidad, precios y ubicación con cada organizador.
+      </p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[912px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[22px]" data-node-id="38:378" data-name="Abrir favoritos">
+        <IconHeart className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[960px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[22px]" data-node-id="38:381" data-name="Abrir notificaciones">
+        <IconBell className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+    </div>
+  );
+}

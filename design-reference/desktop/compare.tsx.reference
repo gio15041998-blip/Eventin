@@ -1,0 +1,178 @@
+const imgIconBell = "https://www.figma.com/api/mcp/asset/b0df8129-7165-441a-b891-4cc272d56bfb.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/313995c9-09c4-437f-9fac-dfb5a444096a.svg";
+const imgIconMessage = "https://www.figma.com/api/mcp/asset/4057f79f-2102-4abe-9edd-e78dda080961.svg";
+const imgBrandIsotipo = "https://www.figma.com/api/mcp/asset/96e41500-3c4f-48b1-91ac-7d3e8053d3b1.svg";
+
+function IconBell({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:66" data-name="Icon/bell">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBell} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = variant === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px] ${isSecondaryAndDefault ? "bg-[var(--color-subtle,#e7f3ed)]" : "bg-[var(--color-brand,#145c46)]"}`} id={isSecondaryAndDefault ? "node-4_101" : "node-4_93"}>
+      {variant === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:102">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function IconMessage({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:54" data-name="Icon/message">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMessage} />
+    </div>
+  );
+}
+
+type QuotationCompareProps = {
+  className?: string;
+  includes?: string;
+  price?: string;
+  time?: string;
+  title?: string;
+};
+
+function QuotationCompare({ className, includes = "Decoración de mesa\nMontaje\nRetiro de elementos", price = "S/ 480", time = "2 horas", title = "Mesa & Momento" }: QuotationCompareProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] h-[530px] relative rounded-[var(--radius-16,16px)] w-[390px]"} data-node-id="12:193" data-name="Quotation/Compare">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[30px] left-[24px] text-[22px] text-[color:var(--color-text,#172d28)] top-[24px] whitespace-nowrap" data-node-id="12:194">
+        {title}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[52px] left-[24px] text-[36px] text-[color:var(--color-brand,#145c46)] top-[77px] whitespace-nowrap" data-node-id="12:195">
+        {price}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[139px] whitespace-nowrap" data-node-id="12:196">
+        Propuesta de ejemplo
+      </p>
+      <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-[24px] top-[184px] w-[342px]" data-node-id="12:197" data-name="border" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[20px] left-[24px] text-[14px] text-[color:var(--color-text,#172d28)] top-[211px] whitespace-nowrap" data-node-id="12:198">
+        Incluye
+      </p>
+      <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[250px] w-[342px]" data-node-id="12:199">
+        {includes ? (
+          <p className="leading-[24px] mb-0">{includes}</p>
+        ) : (
+          <>
+            <p className="leading-[24px] mb-0">Decoración de mesa</p>
+            <p className="leading-[24px] mb-0">Montaje</p>
+            <p className="leading-[24px]">Retiro de elementos</p>
+          </>
+        )}
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[370px] whitespace-nowrap" data-node-id="12:200">
+        Duración del montaje
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[23px] left-[24px] text-[16px] text-[color:var(--color-text,#172d28)] top-[398px] whitespace-nowrap" data-node-id="12:201">
+        {time}
+      </p>
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[458px] w-[342px]" label="Ver condiciones" variant="Secondary" />
+    </div>
+  );
+}
+
+function BrandIsotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[40px]"} data-node-id="4:84" data-name="Brand/Isotipo">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBrandIsotipo} />
+    </div>
+  );
+}
+
+function BrandLogotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[40px] relative w-[166px]"} data-node-id="4:85" data-name="Brand/Logotipo">
+      <BrandIsotipo className="absolute left-0 size-[40px] top-0" />
+      <p className="[word-break:break-word] absolute font-['Manrope:ExtraBold'] font-extrabold leading-[44px] left-[50px] text-[30px] text-[color:var(--color-text,#172d28)] top-[-2px] whitespace-nowrap" data-node-id="4:91">
+        eventin
+      </p>
+    </div>
+  );
+}
+
+export default function CompararCotizacionesDesktop() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] relative size-full" data-node-id="12:253" data-name="Comparar cotizaciones · Desktop">
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-0 top-0 w-[1440px]" data-node-id="12:254" data-name="surface" />
+      <BrandLogotipo className="absolute h-[40px] left-[80px] top-[24px] w-[166px]" />
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[410px] text-[14px] text-[color:var(--color-brand,#145c46)] top-[35px] whitespace-nowrap" data-node-id="12:262">
+        <p className="leading-[20px]">Organizar</p>
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[540px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[35px] whitespace-nowrap" data-node-id="12:263">
+        Cotizaciones
+      </p>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Medium'] font-medium leading-[0] left-[1200px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[35px] whitespace-nowrap" data-node-id="12:264">
+        <p className="leading-[20px]">Mi perfil</p>
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[55px] left-[80px] text-[38px] text-[color:var(--color-text,#172d28)] top-[146px] whitespace-nowrap" data-node-id="12:265">
+        Compara lo que importa.
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[24px] left-[80px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[215px] whitespace-nowrap" data-node-id="12:266">
+        Decoración para el cumpleaños de Valeria · Propuestas e importes ilustrativos
+      </p>
+      <QuotationCompare className="absolute bg-[var(--color-surface,white)] h-[530px] left-[80px] rounded-[var(--radius-16,16px)] top-[300px] w-[390px]" />
+      <QuotationCompare
+        className="absolute bg-[var(--color-surface,white)] h-[530px] left-[525px] rounded-[var(--radius-16,16px)] top-[300px] w-[390px]"
+        includes="Decoración de mesa
+Arco de globos
+Montaje y desmontaje"
+        price="S/ 560"
+        time="3 horas"
+        title="Celebra Estudio"
+      />
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[530px] left-[970px] overflow-clip rounded-[var(--radius-16,16px)] top-[300px] w-[390px]" data-node-id="12:289" data-name="Decidir con contexto">
+        <IconMessage className="absolute left-[24px] size-[28px] top-[24px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[36px] left-[24px] text-[25px] text-[color:var(--color-text,#172d28)] top-[81px] whitespace-nowrap" data-node-id="12:293">
+          Antes de elegir
+        </p>
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[144px] w-[342px] whitespace-pre-wrap" data-node-id="12:294">
+          <p className="leading-[24px] mb-0">Revisa alcance, horarios, traslados,</p>
+          <p className="leading-[24px] mb-0">cambios y condiciones de pago.</p>
+          <p className="leading-[24px] mb-0">​</p>
+          <p className="leading-[24px] mb-0">Un precio menor puede incluir</p>
+          <p className="leading-[24px] mb-0">servicios diferentes.</p>
+          <p className="leading-[24px] mb-0">​</p>
+          <p className="leading-[24px] mb-0">Consulta tus dudas antes de</p>
+          <p className="leading-[24px]">acordar la contratación.</p>
+        </div>
+        <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[458px] w-[342px]" label="Volver a mi evento" />
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[19px] left-[80px] text-[13px] text-[color:var(--color-secondary,#566a63)] top-[889px] w-[1280px]" data-node-id="12:297">
+        Elegir una propuesta no confirma un pago ni un contrato dentro del prototipo.
+      </p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[1088px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[22px]" data-node-id="38:402" data-name="Abrir favoritos">
+        <IconHeart className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[1136px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[22px]" data-node-id="38:405" data-name="Abrir notificaciones">
+        <IconBell className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+    </div>
+  );
+}

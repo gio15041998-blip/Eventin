@@ -1,0 +1,184 @@
+const imgIconBell = "https://www.figma.com/api/mcp/asset/b230c143-5a45-4dae-8c1e-1fcc6e7ba057.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/95e51f08-1d5b-4e7a-a156-e4c53fdab2f6.svg";
+const imgIconMap = "https://www.figma.com/api/mcp/asset/a887e624-00f5-475c-b863-c120067e6552.svg";
+const imgIconChevron = "https://www.figma.com/api/mcp/asset/b383df92-867f-4121-a22b-03436db037fa.svg";
+const imgIconBack = "https://www.figma.com/api/mcp/asset/915add7b-01f5-4928-b942-02ebd370912a.svg";
+const imgIconHome = "https://www.figma.com/api/mcp/asset/bbbf71ac-8610-40c5-b7b8-1aa42c3f38aa.svg";
+const imgIconSearch = "https://www.figma.com/api/mcp/asset/19bf0dd3-8e61-4a62-a42a-93df2462b022.svg";
+const imgIconCalendar = "https://www.figma.com/api/mcp/asset/be097160-288a-43a4-b547-1bfa136a0b88.svg";
+const imgIconUser = "https://www.figma.com/api/mcp/asset/6dec11ae-7376-4d06-bfe9-d665d2f7e37a.svg";
+
+function NavigationTouchTarget({ className }: { className?: string }) {
+  return <div className={className || "h-[72px] relative w-[77px]"} data-node-id="17:1037" data-name="Navigation/Touch target" />;
+}
+
+function IconBell({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:66" data-name="Icon/bell">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBell} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+function IconMap({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:70" data-name="Icon/map">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMap} />
+    </div>
+  );
+}
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--color-brand,#145c46)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px]"} data-node-id="4:93">
+      <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function IconChevron({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:57" data-name="Icon/chevron">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevron} />
+    </div>
+  );
+}
+
+type FieldDefaultProps = {
+  className?: string;
+  label?: string;
+  value?: string;
+};
+
+function FieldDefault({ className, label = "Etiqueta", value = "Selecciona una opción" }: FieldDefaultProps) {
+  return (
+    <div className={className || "h-[82px] relative w-[342px]"} data-node-id="4:107" data-name="Field/Default">
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="4:108">
+        {label}
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="4:109" data-name="Input">
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="4:110">
+          {value}
+        </p>
+        <IconChevron className="absolute left-[303px] size-[20px] top-[13px]" />
+      </div>
+    </div>
+  );
+}
+
+function IconBack({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:11" data-name="Icon/back">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBack} />
+    </div>
+  );
+}
+
+export default function CrearEventoMobile() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] overflow-clip relative rounded-[var(--radius-24,24px)] size-full" data-node-id="6:253" data-name="Crear evento · Mobile">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-nowrap" data-node-id="6:254">
+        9:41
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[16px] left-[292px] text-[11px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-pre" data-node-id="6:255">{`5G   100%`}</p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[24px] overflow-clip rounded-[var(--radius-12,12px)] size-[40px] top-[48px]" data-node-id="6:256" data-name="Volver">
+        <IconBack className="absolute left-[8px] size-[24px] top-[8px]" />
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[80px] text-[18px] text-[color:var(--color-text,#172d28)] top-[53px] w-[200px]" data-node-id="6:259">
+        Crear evento
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[36px] left-[24px] text-[25px] text-[color:var(--color-text,#172d28)] top-[117px] w-[342px]" data-node-id="6:262">
+        Empecemos por lo esencial
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[19px] left-[24px] text-[13px] text-[color:var(--color-brand,#145c46)] top-[163px] whitespace-nowrap" data-node-id="6:263">
+        Paso 1 de 2 · Datos del evento
+      </p>
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[4px] left-[24px] rounded-[var(--radius-8,8px)] top-[199px] w-[342px]" data-node-id="6:264" data-name="subtle" />
+      <div className="absolute bg-[var(--color-brand,#145c46)] h-[4px] left-[24px] rounded-[var(--radius-8,8px)] top-[199px] w-[171px]" data-node-id="6:265" data-name="brand" />
+      <div className="absolute h-[82px] left-[24px] top-[232px] w-[342px]" data-node-id="6:266" data-name="Field/Default">
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[20px] left-0 text-[14px] text-[color:var(--color-text,#172d28)] top-0 whitespace-nowrap" data-node-id="I6:266;4:108">
+          Nombre del evento
+        </p>
+        <div className="absolute bg-[var(--color-surface,white)] border border-[var(--color-border,#dce4df)] border-solid h-[52px] left-0 overflow-clip rounded-[var(--radius-12,12px)] top-[30px] w-[342px]" data-node-id="I6:266;4:109" data-name="Input">
+          <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[20px] left-[15px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[13px] whitespace-nowrap" data-node-id="I6:266;4:110">
+            Ej. Cumpleaños de Valeria
+          </p>
+        </div>
+      </div>
+      <FieldDefault className="absolute h-[82px] left-[24px] top-[330px] w-[342px]" label="Tipo de celebración" value="Cumpleaños" />
+      <FieldDefault className="absolute h-[82px] left-[24px] top-[428px] w-[342px]" label="Fecha estimada" value="Seleccionar fecha" />
+      <FieldDefault className="absolute h-[82px] left-[24px] top-[526px] w-[342px]" label="Distrito o ciudad" value="Buscar ubicación" />
+      <FieldDefault className="absolute h-[82px] left-[24px] top-[624px] w-[342px]" label="Invitados aproximados" value="Ej. 40 personas" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[19px] left-[24px] text-[13px] text-[color:var(--color-secondary,#566a63)] top-[730px] whitespace-nowrap" data-node-id="6:297">
+        Podrás cambiar estos datos después.
+      </p>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[776px] w-[342px]" label="Continuar al presupuesto" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[846px] whitespace-nowrap" data-node-id="6:300">
+        Tu evento será privado.
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[72px] left-0 top-[928px] w-[390px]" data-node-id="6:301" data-name="Navigation/Mobile">
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-0 w-[390px]" data-node-id="I6:301;5:72" data-name="border" />
+        <div className="absolute left-[29px] size-[22px] top-[12px]" data-node-id="I6:301;5:73" data-name="Icon/home">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[38.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:301;5:75">
+          Inicio
+        </p>
+        <div className="absolute left-[106px] size-[22px] top-[12px]" data-node-id="I6:301;5:76" data-name="Icon/search">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSearch} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[115.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:301;5:79">
+          Explorar
+        </p>
+        <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[32px] left-[242px] rounded-[var(--radius-12,12px)] top-[8px] w-[60px]" data-node-id="I6:301;5:80" data-name="subtle" />
+        <div className="absolute left-[260px] size-[22px] top-[12px]" data-node-id="I6:301;5:81" data-name="Icon/calendar">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[15px] left-[269.5px] text-[10px] text-[color:var(--color-brand,#145c46)] text-center top-[40px] w-[77px]" data-node-id="I6:301;5:84">
+          Organizar
+        </p>
+        <IconMap className="absolute left-[183px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[192.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:301;5:87">
+          Mapa
+        </p>
+        <div className="absolute left-[337px] size-[22px] top-[12px]" data-node-id="I6:301;5:88" data-name="Icon/user">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[346.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I6:301;5:91">
+          Perfil
+        </p>
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[16px] left-[24px] text-[11px] text-[color:var(--color-secondary,#566a63)] top-[891px] w-[342px]" data-node-id="33:1088">
+        Después podrás invitar a alguien a planear contigo.
+      </p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[286px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1134" data-name="Abrir favoritos">
+        <IconHeart className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[334px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1137" data-name="Abrir notificaciones">
+        <IconBell className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-0 top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[77px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[154px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[231px] top-[928px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[308px] top-[928px] w-[77px]" />
+    </div>
+  );
+}

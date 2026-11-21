@@ -1,0 +1,208 @@
+const imgIconBell = "https://www.figma.com/api/mcp/asset/6622fc1b-82a4-45dc-bdef-f0080702ab34.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/8187d28e-6fdb-4bc5-8a9c-207bb1615891.svg";
+const imgIconUser = "https://www.figma.com/api/mcp/asset/652fe977-f947-4935-849b-e0de6308c031.svg";
+const imgIconMap = "https://www.figma.com/api/mcp/asset/31654ec8-1a91-4dd0-88cb-b61c618df9a3.svg";
+const imgIconCalendar = "https://www.figma.com/api/mcp/asset/c3fa4826-690d-4edc-98cf-80c996c1a3de.svg";
+const imgIconSearch = "https://www.figma.com/api/mcp/asset/783d29f0-4a3b-4077-985b-a3c49ac40a77.svg";
+const imgIconHome = "https://www.figma.com/api/mcp/asset/bcde11a5-f5d1-42a3-8b42-2b17abe4e404.svg";
+const imgIconMessage = "https://www.figma.com/api/mcp/asset/8e7ce4ca-9d54-4601-9a1b-10b20bc602dc.svg";
+const imgIconPeople = "https://www.figma.com/api/mcp/asset/0753ac44-8a18-4ee6-ba94-ddad959f8c14.svg";
+const imgIconBack = "https://www.figma.com/api/mcp/asset/2ea9e8f9-92fa-4fdf-b1c9-caa9f360bb39.svg";
+
+function NavigationTouchTarget({ className }: { className?: string }) {
+  return <div className={className || "h-[72px] relative w-[77px]"} data-node-id="17:1037" data-name="Navigation/Touch target" />;
+}
+
+function IconBell({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:66" data-name="Icon/bell">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBell} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+function IconUser({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:29" data-name="Icon/user">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+    </div>
+  );
+}
+
+function IconMap({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:70" data-name="Icon/map">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMap} />
+    </div>
+  );
+}
+
+function IconCalendar({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:19" data-name="Icon/calendar">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar} />
+    </div>
+  );
+}
+
+function IconSearch({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:5" data-name="Icon/search">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSearch} />
+    </div>
+  );
+}
+
+function IconHome({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:25" data-name="Icon/home">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+    </div>
+  );
+}
+
+function IconMessage({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:54" data-name="Icon/message">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMessage} />
+    </div>
+  );
+}
+
+function IconPeople({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:73" data-name="Icon/people">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconPeople} />
+    </div>
+  );
+}
+
+function IconBack({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:11" data-name="Icon/back">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBack} />
+    </div>
+  );
+}
+
+export default function NotificacionesMobile() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] overflow-clip relative rounded-[var(--radius-24,24px)] size-full" data-node-id="33:1032" data-name="Notificaciones · Mobile">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-nowrap" data-node-id="33:1033">
+        9:41
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[16px] left-[292px] text-[11px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-pre" data-node-id="33:1034">{`5G   100%`}</p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[24px] overflow-clip rounded-[var(--radius-12,12px)] size-[40px] top-[48px]" data-node-id="33:1035" data-name="Volver">
+        <IconBack className="absolute left-[8px] size-[24px] top-[8px]" />
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[80px] text-[18px] text-[color:var(--color-text,#172d28)] top-[53px] w-[200px]" data-node-id="33:1038">
+        Notificaciones
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[36px] left-[24px] text-[25px] text-[color:var(--color-text,#172d28)] top-[119px] w-[342px]" data-node-id="33:1039">
+        Lo último de tus planes.
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[168px] left-[24px] overflow-clip rounded-[var(--radius-16,16px)] top-[198px] w-[342px]" data-node-id="33:1040" data-name="Invitación pendiente">
+        <IconPeople className="absolute left-[16px] size-[24px] top-[18px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[25px] left-[55px] text-[17px] text-[color:var(--color-text,#172d28)] top-[20px] whitespace-nowrap" data-node-id="33:1044">
+          Planea con Giovanny
+        </p>
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[14px] text-[color:var(--color-secondary,#566a63)] top-[65px] w-[310px]" data-node-id="33:1045">
+          <p className="leading-[20px] mb-0">Te invitó al cumpleaños de Valeria.</p>
+          <p className="leading-[20px]">Revisa el evento y los permisos.</p>
+        </div>
+        <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[16px] text-[13px] text-[color:var(--color-brand,#145c46)] top-[129px] whitespace-nowrap" data-node-id="33:1046">
+          <p className="leading-[19px]">Ver invitación</p>
+        </a>
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] h-[130px] left-[24px] overflow-clip rounded-[var(--radius-16,16px)] top-[390px] w-[342px]" data-node-id="33:1047" data-name="Actividad del evento">
+        <IconCalendar className="absolute left-[16px] size-[24px] top-[18px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[23px] left-[55px] text-[16px] text-[color:var(--color-text,#172d28)] top-[20px] whitespace-nowrap" data-node-id="33:1051">
+          Ana actualizó una tarea
+        </p>
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[13px] text-[color:var(--color-secondary,#566a63)] top-[64px] w-[310px]" data-node-id="33:1052">
+          <p className="leading-[19px] mb-0">Cumpleaños de Valeria</p>
+          <p className="leading-[19px]">Actividad de ejemplo</p>
+        </div>
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] h-[130px] left-[24px] overflow-clip rounded-[var(--radius-16,16px)] top-[544px] w-[342px]" data-node-id="33:1053" data-name="Cotización disponible">
+        <IconMessage className="absolute left-[16px] size-[24px] top-[18px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[23px] left-[55px] text-[16px] text-[color:var(--color-text,#172d28)] top-[20px] whitespace-nowrap" data-node-id="33:1057">
+          Tienes una propuesta
+        </p>
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[13px] text-[color:var(--color-secondary,#566a63)] top-[64px] w-[310px]" data-node-id="33:1058">
+          <p className="leading-[19px] mb-0">{`Mesa & Momento respondió tu solicitud.`}</p>
+          <p className="leading-[19px]">Compara el alcance y las condiciones.</p>
+        </div>
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] h-[72px] left-0 top-[1168px] w-[390px]" data-node-id="33:1059" data-name="Navigation/Mobile">
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-0 w-[390px]" data-node-id="I33:1059;5:30" data-name="border" />
+        <IconHome className="absolute left-[29px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[38.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I33:1059;5:34">
+          Inicio
+        </p>
+        <IconSearch className="absolute left-[106px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[115.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I33:1059;5:38">
+          Explorar
+        </p>
+        <IconCalendar className="absolute left-[260px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[269.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I33:1059;5:42">
+          Organizar
+        </p>
+        <IconMap className="absolute left-[183px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[192.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I33:1059;5:45">
+          Mapa
+        </p>
+        <IconUser className="absolute left-[337px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[346.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I33:1059;5:49">
+          Perfil
+        </p>
+      </div>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[286px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1355" data-name="Abrir favoritos">
+        <IconHeart className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <div className="absolute bg-[var(--color-surface,white)] left-[334px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1358" data-name="Abrir notificaciones">
+        <IconBell className="absolute left-[11px] size-[22px] top-[11px]" />
+      </div>
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-0 top-[1168px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[77px] top-[1168px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[154px] top-[1168px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[231px] top-[1168px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[308px] top-[1168px] w-[77px]" />
+      <a className="[word-break:break-word] absolute bg-[var(--color-subtle,#e7f3ed)] block cursor-pointer h-[116px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] text-left top-[714px] w-[342px]" data-node-id="58:2268" data-name="Aviso/Tu negocio fue aprobado">
+        <p className="absolute font-['Manrope:Bold'] font-bold leading-[22px] left-[16px] text-[15px] text-[color:var(--color-brand,#145c46)] top-[14px] w-[310px]" data-node-id="58:2269">
+          Tu negocio fue aprobado
+        </p>
+        <div className="absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[47px] w-[310px]" data-node-id="58:2270">
+          <p className="leading-[17px] mb-0">{`Mesa & Momento ya está publicado.`}</p>
+          <p className="leading-[17px]">Consulta el estado y la vigencia de tu plan.</p>
+        </div>
+      </a>
+      <a className="[word-break:break-word] absolute bg-[var(--color-subtle,#e7f3ed)] block cursor-pointer h-[116px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] text-left top-[854px] w-[342px]" data-node-id="58:2271" data-name="Aviso/Tu evento está publicado">
+        <p className="absolute font-['Manrope:Bold'] font-bold leading-[22px] left-[16px] text-[15px] text-[color:var(--color-brand,#145c46)] top-[14px] w-[310px]" data-node-id="58:2272">
+          Tu evento está publicado
+        </p>
+        <div className="absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[47px] w-[310px]" data-node-id="58:2273">
+          <p className="leading-[17px] mb-0">Una noche al aire libre aparece en Explorar.</p>
+          <p className="leading-[17px]">Consulta la confirmación de publicación.</p>
+        </div>
+      </a>
+      <a className="[word-break:break-word] absolute bg-[var(--color-warningBg,#fff4d6)] block cursor-pointer h-[108px] left-[24px] overflow-clip rounded-[var(--radius-12,12px)] text-left top-[994px] w-[342px]" data-node-id="58:2274" data-name="Aviso/Hay cambios solicitados">
+        <p className="absolute font-['Manrope:Bold'] font-bold leading-[22px] left-[16px] text-[15px] text-[color:var(--color-brand,#145c46)] top-[14px] w-[310px]" data-node-id="58:2275">
+          Hay cambios solicitados
+        </p>
+        <div className="absolute font-['Manrope:Regular'] font-normal leading-[0] left-[16px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[47px] w-[310px]" data-node-id="58:2276">
+          <p className="leading-[17px] mb-0">Revisa el comentario del equipo antes</p>
+          <p className="leading-[17px]">de volver a enviar tu publicación.</p>
+        </div>
+      </a>
+    </div>
+  );
+}

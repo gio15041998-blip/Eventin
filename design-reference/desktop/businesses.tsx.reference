@@ -1,0 +1,116 @@
+const imgFotoConcert = "https://www.figma.com/api/mcp/asset/0e903059-35d7-456c-a11c-e4938a849338.png";
+const imgBrandIsotipo = "https://www.figma.com/api/mcp/asset/8e347fb6-3a8e-4c07-9567-232a51df5e64.svg";
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = variant === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px] ${isSecondaryAndDefault ? "bg-[var(--color-subtle,#e7f3ed)]" : "bg-[var(--color-brand,#145c46)]"}`} id={isSecondaryAndDefault ? "node-4_101" : "node-4_93"}>
+      {variant === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:102">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type ManagementBusinessProps = {
+  className?: string;
+  plan?: string;
+  status?: string;
+  title?: string;
+};
+
+function ManagementBusiness({ className, plan = "S/ 100 al mes · Evento público", status = "En revisión", title = "Una noche al aire libre" }: ManagementBusinessProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] h-[196px] relative rounded-[var(--radius-16,16px)] w-[342px]"} data-node-id="44:1180" data-name="Management/Business">
+      <div className="absolute h-[76px] left-[16px] rounded-[var(--radius-12,12px)] top-[16px] w-[88px]" data-node-id="44:1181" data-name="Foto/concert">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[var(--radius-12,12px)] size-full" src={imgFotoConcert} />
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[25px] left-[120px] text-[17px] text-[color:var(--color-text,#172d28)] top-[14px] w-[206px]" data-node-id="44:1182">
+        {title}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[17px] left-[120px] text-[12px] text-[color:var(--color-brand,#145c46)] top-[72px] whitespace-nowrap" data-node-id="44:1183">
+        {status}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[16px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[108px] whitespace-nowrap" data-node-id="44:1184">
+        {plan}
+      </p>
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[16px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[134px] w-[310px]" label="Gestionar" variant="Secondary" />
+    </div>
+  );
+}
+
+function BrandIsotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[40px]"} data-node-id="4:84" data-name="Brand/Isotipo">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBrandIsotipo} />
+    </div>
+  );
+}
+
+function BrandLogotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[40px] relative w-[166px]"} data-node-id="4:85" data-name="Brand/Logotipo">
+      <BrandIsotipo className="absolute left-0 size-[40px] top-0" />
+      <p className="[word-break:break-word] absolute font-['Manrope:ExtraBold'] font-extrabold leading-[44px] left-[50px] text-[30px] text-[color:var(--color-text,#172d28)] top-[-2px] whitespace-nowrap" data-node-id="4:91">
+        eventin
+      </p>
+    </div>
+  );
+}
+
+export default function MisNegociosDesktop() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] relative size-full" data-node-id="52:380" data-name="Mis negocios · Desktop">
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-0 top-0 w-[1440px]" data-node-id="52:381" data-name="surface" />
+      <BrandLogotipo className="absolute h-[40px] left-[80px] top-[24px] w-[166px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[410px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:389">
+        Inicio
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[510px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:390">
+        Explorar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[622px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:391">
+        Organizar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[754px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:392">
+        Mapa
+      </p>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[1232px] text-[14px] text-[color:var(--color-brand,#145c46)] top-[35px] whitespace-nowrap" data-node-id="52:393">
+        <p className="leading-[20px]">Mi cuenta</p>
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[49px] left-[80px] text-[34px] text-[color:var(--color-text,#172d28)] top-[132px] w-[1280px]" data-node-id="52:394">
+        Panel de negocios
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[23px] left-[80px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[198px] whitespace-nowrap" data-node-id="52:395">
+        Todos los negocios que administras, con su estado y vigencia.
+      </p>
+      <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[1120px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[131px] w-[240px]" label="Crear negocio" />
+      <ManagementBusiness className="absolute bg-[var(--color-surface,white)] block cursor-pointer h-[196px] left-[80px] rounded-[var(--radius-16,16px)] top-[278px] w-[342px]" plan="S/ 30 al mes · Vigente" status="Publicado" title="Mesa & Momento" />
+      <ManagementBusiness className="absolute bg-[var(--color-surface,white)] block cursor-pointer h-[196px] left-[470px] rounded-[var(--radius-16,16px)] top-[278px] w-[342px]" plan="S/ 30 al mes · Sin activar" status="Borrador" title="Celebra Estudio" />
+      <div className="absolute bg-[var(--color-surface,white)] h-[380px] left-[860px] overflow-clip rounded-[var(--radius-16,16px)] top-[278px] w-[500px]" data-node-id="52:413" data-name="Trabaja con tus clientes">
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[38px] left-[24px] text-[26px] text-[color:var(--color-text,#172d28)] top-[24px] whitespace-nowrap" data-node-id="52:414">{`Mesa & Momento`}</p>
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[17px] text-[color:var(--color-secondary,#566a63)] top-[92px] w-[452px]" data-node-id="52:415">
+          <p className="leading-[25px] mb-0">Recibe solicitudes, responde con una</p>
+          <p className="leading-[25px] mb-0">propuesta y gestiona los servicios</p>
+          <p className="leading-[25px]">que se muestran en tu perfil.</p>
+        </div>
+        <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[223px] w-[452px]" label="Ver solicitudes recibidas" />
+        <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[289px] w-[452px]" label="Mi plan de S/ 30" variant="Secondary" />
+      </div>
+    </div>
+  );
+}

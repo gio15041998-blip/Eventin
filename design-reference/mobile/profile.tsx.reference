@@ -1,0 +1,217 @@
+const imgIconBell = "https://www.figma.com/api/mcp/asset/e5d3b4c8-093a-4f06-a9b4-54f8bd347be2.svg";
+const imgIconHeart = "https://www.figma.com/api/mcp/asset/803a9ed4-c483-4027-b584-5ab42572be35.svg";
+const imgIconUser = "https://www.figma.com/api/mcp/asset/c906ffae-bbf6-4231-b969-345e48bd4245.svg";
+const imgIconMap = "https://www.figma.com/api/mcp/asset/6c86100f-2910-4673-bbec-83ba8834ba12.svg";
+const imgIconArrow = "https://www.figma.com/api/mcp/asset/0fa1164d-9ab5-49a4-a91e-2eb91c419254.svg";
+const imgIconStore = "https://www.figma.com/api/mcp/asset/f2347a0c-2639-4c1b-8ddc-3838fb0a7eff.svg";
+const imgIconChevron = "https://www.figma.com/api/mcp/asset/dd1a34cd-4f84-4dc6-9026-bbeda96d494e.svg";
+const imgIconGrid = "https://www.figma.com/api/mcp/asset/35665c2f-7b86-4274-b85f-9e8f332f88c3.svg";
+const imgIconBack = "https://www.figma.com/api/mcp/asset/0165ff3c-60b9-4e92-8d6b-593bffda70ce.svg";
+const imgIconHome = "https://www.figma.com/api/mcp/asset/6dc1b5dd-a95e-4706-873b-76beec7b8d12.svg";
+const imgIconSearch = "https://www.figma.com/api/mcp/asset/54e61586-2e8b-4656-9661-857ca98d9846.svg";
+const imgIconCalendar = "https://www.figma.com/api/mcp/asset/b20368bd-15a0-4873-8fbc-7c426297189c.svg";
+
+function NavigationTouchTarget({ className }: { className?: string }) {
+  return <div className={className || "h-[72px] relative w-[77px]"} data-node-id="17:1037" data-name="Navigation/Touch target" />;
+}
+
+function IconBell({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:66" data-name="Icon/bell">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBell} />
+    </div>
+  );
+}
+
+function IconHeart({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:22" data-name="Icon/heart">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+    </div>
+  );
+}
+
+function IconUser({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:29" data-name="Icon/user">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconUser} />
+    </div>
+  );
+}
+
+function IconMap({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="31:70" data-name="Icon/map">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconMap} />
+    </div>
+  );
+}
+
+function IconArrow({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:8" data-name="Icon/arrow">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconArrow} />
+    </div>
+  );
+}
+
+function IconStore({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:63" data-name="Icon/store">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconStore} />
+    </div>
+  );
+}
+
+function IconChevron({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:57" data-name="Icon/chevron">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevron} />
+    </div>
+  );
+}
+
+function IconGrid({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:35" data-name="Icon/grid">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconGrid} />
+    </div>
+  );
+}
+
+type RowNavigationProps = {
+  className?: string;
+  label?: string;
+};
+
+function RowNavigation({ className, label = "Mis negocios" }: RowNavigationProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] h-[64px] relative w-[342px]"} data-node-id="5:134" data-name="Row/Navigation">
+      <IconGrid className="absolute left-0 size-[24px] top-[20px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[22px] left-[40px] text-[15px] text-[color:var(--color-text,#172d28)] top-[20px] whitespace-nowrap" data-node-id="5:140">
+        {label}
+      </p>
+      <IconChevron className="absolute left-[318px] size-[20px] top-[20px]" />
+      <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-[63px] w-[342px]" data-node-id="5:143" data-name="border" />
+    </div>
+  );
+}
+
+function IconBack({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="4:11" data-name="Icon/back">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBack} />
+    </div>
+  );
+}
+
+export default function PerfilMobile() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] overflow-clip relative rounded-[var(--radius-24,24px)] size-full" data-node-id="7:558" data-name="Perfil · Mobile">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[17px] left-[24px] text-[12px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-nowrap" data-node-id="7:559">
+        9:41
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[16px] left-[292px] text-[11px] text-[color:var(--color-text,#172d28)] top-[12px] whitespace-pre" data-node-id="7:560">{`5G   100%`}</p>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[24px] overflow-clip rounded-[var(--radius-12,12px)] size-[40px] top-[48px]" data-node-id="7:561" data-name="Volver">
+        <IconBack className="absolute left-[8px] size-[24px] top-[8px]" />
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[80px] text-[18px] text-[color:var(--color-text,#172d28)] top-[53px] w-[200px]" data-node-id="7:564">
+        Mi perfil
+      </p>
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] left-[24px] overflow-clip rounded-[var(--radius-999,999px)] size-[64px] top-[125px]" data-node-id="7:567" data-name="Avatar">
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[30px] left-[13px] text-[21px] text-[color:var(--color-brand,#145c46)] top-[16px] whitespace-nowrap" data-node-id="7:568">
+          GV
+        </p>
+      </div>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[35px] left-[105px] text-[24px] text-[color:var(--color-text,#172d28)] top-[126px] whitespace-nowrap" data-node-id="7:569">
+        Giovanny
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[105px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[165px] whitespace-nowrap" data-node-id="7:570">
+        Cuenta de demostración
+      </p>
+      <div className="absolute bg-[var(--color-surface,white)] h-[64px] left-[24px] top-[236px] w-[342px]" data-node-id="7:571" data-name="Row/Navigation">
+        <IconGrid className="absolute left-0 size-[24px] top-[20px]" />
+        <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:SemiBold'] font-semibold leading-[0] left-[40px] text-[15px] text-[color:var(--color-text,#172d28)] top-[20px] whitespace-nowrap" data-node-id="I7:571;5:140">
+          <p className="leading-[22px]">Mis eventos privados</p>
+        </a>
+        <IconChevron className="absolute left-[318px] size-[20px] top-[20px]" />
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-[63px] w-[342px]" data-node-id="I7:571;5:143" data-name="border" />
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] h-[64px] left-[24px] top-[300px] w-[342px]" data-node-id="7:586" data-name="Row/Navigation">
+        <IconGrid className="absolute left-0 size-[24px] top-[20px]" />
+        <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:SemiBold'] font-semibold leading-[0] left-[40px] text-[15px] text-[color:var(--color-text,#172d28)] top-[20px] whitespace-nowrap" data-node-id="I7:586;5:140">
+          <p className="leading-[22px]">Mis cotizaciones</p>
+        </a>
+        <IconChevron className="absolute left-[318px] size-[20px] top-[20px]" />
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-[63px] w-[342px]" data-node-id="I7:586;5:143" data-name="border" />
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] h-[64px] left-[24px] top-[364px] w-[342px]" data-node-id="7:596" data-name="Row/Navigation">
+        <IconGrid className="absolute left-0 size-[24px] top-[20px]" />
+        <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:SemiBold'] font-semibold leading-[0] left-[40px] text-[15px] text-[color:var(--color-text,#172d28)] top-[20px] whitespace-nowrap" data-node-id="I7:596;5:140">
+          <p className="leading-[22px]">Mis negocios</p>
+        </a>
+        <IconChevron className="absolute left-[318px] size-[20px] top-[20px]" />
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-[63px] w-[342px]" data-node-id="I7:596;5:143" data-name="border" />
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] h-[64px] left-[24px] top-[428px] w-[342px]" data-node-id="7:606" data-name="Row/Navigation">
+        <IconGrid className="absolute left-0 size-[24px] top-[20px]" />
+        <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:SemiBold'] font-semibold leading-[0] left-[40px] text-[15px] text-[color:var(--color-text,#172d28)] top-[20px] whitespace-nowrap" data-node-id="I7:606;5:140">
+          <p className="leading-[22px]">Mis eventos publicados</p>
+        </a>
+        <IconChevron className="absolute left-[318px] size-[20px] top-[20px]" />
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-[63px] w-[342px]" data-node-id="I7:606;5:143" data-name="border" />
+      </div>
+      <RowNavigation className="absolute bg-[var(--color-surface,white)] h-[64px] left-[24px] top-[492px] w-[342px]" label="Ayuda y soporte" />
+      <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[126px] left-[24px] overflow-clip rounded-[var(--radius-16,16px)] top-[595px] w-[342px]" data-node-id="7:626" data-name="Panel de negocio">
+        <IconStore className="absolute left-[20px] size-[24px] top-[20px]" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[20px] text-[18px] text-[color:var(--color-text,#172d28)] top-[58px] whitespace-nowrap" data-node-id="7:629">
+          ¿Ofreces servicios?
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[19px] left-[20px] text-[13px] text-[color:var(--color-brand,#145c46)] top-[91px] whitespace-nowrap" data-node-id="7:630">
+          Crea el perfil de tu negocio
+        </p>
+        <IconArrow className="absolute left-[297px] size-[20px] top-[88px]" />
+      </div>
+      <div className="absolute bg-[var(--color-surface,white)] h-[72px] left-0 top-[772px] w-[390px]" data-node-id="7:633" data-name="Navigation/Mobile">
+        <div className="absolute bg-[var(--color-border,#dce4df)] h-px left-0 top-0 w-[390px]" data-node-id="I7:633;5:114" data-name="border" />
+        <div className="absolute left-[29px] size-[22px] top-[12px]" data-node-id="I7:633;5:115" data-name="Icon/home">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[38.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I7:633;5:117">
+          Inicio
+        </p>
+        <div className="absolute left-[106px] size-[22px] top-[12px]" data-node-id="I7:633;5:118" data-name="Icon/search">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSearch} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[115.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I7:633;5:121">
+          Explorar
+        </p>
+        <div className="absolute left-[260px] size-[22px] top-[12px]" data-node-id="I7:633;5:122" data-name="Icon/calendar">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCalendar} />
+        </div>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[269.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I7:633;5:125">
+          Organizar
+        </p>
+        <IconMap className="absolute left-[183px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[15px] left-[192.5px] text-[10px] text-[color:var(--color-secondary,#566a63)] text-center top-[40px] w-[77px]" data-node-id="I7:633;5:128">
+          Mapa
+        </p>
+        <div className="absolute bg-[var(--color-subtle,#e7f3ed)] h-[32px] left-[319px] rounded-[var(--radius-12,12px)] top-[8px] w-[60px]" data-node-id="I7:633;5:129" data-name="subtle" />
+        <IconUser className="absolute left-[337px] size-[22px] top-[12px]" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[15px] left-[346.5px] text-[10px] text-[color:var(--color-brand,#145c46)] text-center top-[40px] w-[77px]" data-node-id="I7:633;5:133">
+          Perfil
+        </p>
+      </div>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[286px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1226" data-name="Abrir favoritos">
+        <IconHeart className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <a className="absolute bg-[var(--color-surface,white)] block cursor-pointer left-[334px] overflow-clip rounded-[var(--radius-12,12px)] size-[44px] top-[46px]" data-node-id="36:1229" data-name="Abrir notificaciones">
+        <IconBell className="absolute left-[11px] size-[22px] top-[11px]" />
+      </a>
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-0 top-[772px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[77px] top-[772px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[154px] top-[772px] w-[77px]" />
+      <NavigationTouchTarget className="absolute block cursor-pointer h-[72px] left-[231px] top-[772px] w-[77px]" />
+    </div>
+  );
+}

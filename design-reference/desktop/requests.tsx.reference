@@ -1,0 +1,117 @@
+const imgBrandIsotipo = "https://www.figma.com/api/mcp/asset/f4cd53c2-d375-4ebd-8c60-6775125070b3.svg";
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  variant?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Continuar", state = "Default", variant = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = variant === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center px-[var(--space-20,20px)] py-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] w-[160px] ${isSecondaryAndDefault ? "bg-[var(--color-subtle,#e7f3ed)]" : "bg-[var(--color-brand,#145c46)]"}`} id={isSecondaryAndDefault ? "node-4_101" : "node-4_93"}>
+      {variant === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-inverse,white)] whitespace-nowrap" data-node-id="4:94">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Manrope:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--color-brand,#145c46)] whitespace-nowrap" data-node-id="4:102">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type QuotationRequestRowProps = {
+  className?: string;
+  meta?: string;
+  state?: string;
+  title?: string;
+};
+
+function QuotationRequestRow({ className, meta = "Decoración · 19 dic. · Lima", state = "Pendiente de respuesta", title = "Cumpleaños de Valeria" }: QuotationRequestRowProps) {
+  return (
+    <div className={className || "bg-[var(--color-surface,white)] h-[186px] relative rounded-[var(--radius-16,16px)] w-[342px]"} data-node-id="43:84" data-name="Quotation/Request row">
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[26px] left-[16px] text-[18px] text-[color:var(--color-text,#172d28)] top-[16px] w-[310px]" data-node-id="43:85">
+        {title}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[19px] left-[16px] text-[13px] text-[color:var(--color-secondary,#566a63)] top-[55px] whitespace-nowrap" data-node-id="43:86">
+        {meta}
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[17px] left-[16px] text-[12px] text-[color:var(--color-brand,#145c46)] top-[86px] whitespace-nowrap" data-node-id="43:87">
+        {state}
+      </p>
+      <Button className="absolute bg-[var(--color-subtle,#e7f3ed)] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[16px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[121px] w-[310px]" label="Ver solicitud" variant="Secondary" />
+    </div>
+  );
+}
+
+function BrandIsotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "relative size-[40px]"} data-node-id="4:84" data-name="Brand/Isotipo">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBrandIsotipo} />
+    </div>
+  );
+}
+
+function BrandLogotipo({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[40px] relative w-[166px]"} data-node-id="4:85" data-name="Brand/Logotipo">
+      <BrandIsotipo className="absolute left-0 size-[40px] top-0" />
+      <p className="[word-break:break-word] absolute font-['Manrope:ExtraBold'] font-extrabold leading-[44px] left-[50px] text-[30px] text-[color:var(--color-text,#172d28)] top-[-2px] whitespace-nowrap" data-node-id="4:91">
+        eventin
+      </p>
+    </div>
+  );
+}
+
+export default function SolicitudesDelNegocioDesktop() {
+  return (
+    <div className="bg-[var(--color-background,#f6f8f7)] relative size-full" data-node-id="52:420" data-name="Solicitudes del negocio · Desktop">
+      <div className="absolute bg-[var(--color-surface,white)] h-[88px] left-0 top-0 w-[1440px]" data-node-id="52:421" data-name="surface" />
+      <BrandLogotipo className="absolute h-[40px] left-[80px] top-[24px] w-[166px]" />
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[410px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:429">
+        Inicio
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[510px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:430">
+        Explorar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[622px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:431">
+        Organizar
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Medium'] font-medium leading-[20px] left-[754px] text-[14px] text-[color:var(--color-text,#172d28)] top-[35px] whitespace-nowrap" data-node-id="52:432">
+        Mapa
+      </p>
+      <a className="[word-break:break-word] absolute block cursor-pointer font-['Manrope:Bold'] font-bold leading-[0] left-[1232px] text-[14px] text-[color:var(--color-brand,#145c46)] top-[35px] whitespace-nowrap" data-node-id="52:433">
+        <p className="leading-[20px]">Mi cuenta</p>
+      </a>
+      <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[49px] left-[80px] text-[34px] text-[color:var(--color-text,#172d28)] top-[132px] w-[1280px]" data-node-id="52:434">
+        Panel de negocios
+      </p>
+      <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[23px] left-[80px] text-[16px] text-[color:var(--color-secondary,#566a63)] top-[198px] whitespace-nowrap" data-node-id="52:435">{`Solicitudes recibidas para Mesa & Momento`}</p>
+      <QuotationRequestRow className="absolute bg-[var(--color-surface,white)] h-[186px] left-[80px] rounded-[var(--radius-16,16px)] top-[279px] w-[342px]" />
+      <QuotationRequestRow className="absolute bg-[var(--color-surface,white)] h-[186px] left-[80px] rounded-[var(--radius-16,16px)] top-[495px] w-[342px]" meta="Ambientación · 20 dic. · Lima" state="Propuesta enviada" title="Reunión de fin de año" />
+      <div className="absolute bg-[var(--color-surface,white)] h-[470px] left-[470px] overflow-clip rounded-[var(--radius-16,16px)] top-[279px] w-[890px]" data-node-id="52:449" data-name="Solicitud seleccionada">
+        <p className="[word-break:break-word] absolute font-['Manrope:Bold'] font-bold leading-[41px] left-[24px] text-[28px] text-[color:var(--color-text,#172d28)] top-[24px] whitespace-nowrap" data-node-id="52:450">
+          Cumpleaños de Valeria
+        </p>
+        <p className="[word-break:break-word] absolute font-['Manrope:SemiBold'] font-semibold leading-[25px] left-[24px] text-[17px] text-[color:var(--color-brand,#145c46)] top-[88px] whitespace-nowrap" data-node-id="52:451">
+          Decoración · 19 dic. · 40 invitados · Lima
+        </p>
+        <div className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[0] left-[24px] text-[17px] text-[color:var(--color-secondary,#566a63)] top-[152px] w-[842px] whitespace-pre-wrap" data-node-id="52:452">
+          <p className="leading-[25px] mb-0">Presupuesto estimado del cliente: S/ 500</p>
+          <p className="leading-[25px] mb-0">​</p>
+          <p className="leading-[25px] mb-0">Mensaje: busco decoración y una mesa temática</p>
+          <p className="leading-[25px]">para una celebración en familia.</p>
+        </div>
+        <Button className="absolute bg-[var(--color-brand,#145c46)] content-stretch cursor-pointer flex gap-[var(--space-8,8px)] h-[48px] items-center justify-center left-[24px] px-[var(--space-20,20px)] py-[var(--space-12,12px)] rounded-[var(--radius-12,12px)] top-[324px] w-[390px]" label="Preparar propuesta" />
+        <p className="[word-break:break-word] absolute font-['Manrope:Regular'] font-normal leading-[17px] left-[24px] text-[12px] text-[color:var(--color-secondary,#566a63)] top-[401px] whitespace-nowrap" data-node-id="52:455">
+          Datos e importes de ejemplo.
+        </p>
+      </div>
+    </div>
+  );
+}
