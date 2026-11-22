@@ -1,1 +1,48 @@
-@import '../eventin-tokens.css';*{box-sizing:border-box}body{margin:0;background:var(--color-background);color:var(--color-text);font-family:Manrope,system-ui,sans-serif}main{max-width:960px;margin:auto;padding:48px 24px}.brand{font-size:36px;font-weight:800;color:var(--color-brand);text-decoration:none}.brand span{color:var(--color-brand)}h1{font-size:clamp(32px,6vw,56px);line-height:1.12;letter-spacing:-.03em;max-width:700px;margin-top:88px}p{font-size:18px;line-height:1.6;max-width:640px}.notice{font-size:14px;color:var(--color-secondary);margin:32px 0}.button{display:inline-block;padding:14px 20px;border-radius:12px;background:var(--color-brand);color:white;text-decoration:none}a:focus-visible{outline:3px solid var(--color-text);outline-offset:4px}
+@import "tailwindcss";
+@import "../eventin-tokens.css";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    min-height: 100dvh;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
