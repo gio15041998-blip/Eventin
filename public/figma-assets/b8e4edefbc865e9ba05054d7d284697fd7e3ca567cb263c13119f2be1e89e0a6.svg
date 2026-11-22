@@ -1,0 +1,22 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="900" height="650" viewBox="0 0 900 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Map/Base ilustrativa" clip-path="url(#clip0_0_173)">
+<path id="Vector" d="M900 0H0V650H900V0Z" fill="#E8EDE7"/>
+<path id="Vector_2" d="M0 0H115V650H0V0Z" fill="#D4E8EB"/>
+<g id="Vector_3">
+<path d="M0 95L900 470ZM0 310L900 690ZM175 0L460 650ZM385 0L670 650ZM620 0L900 615Z" fill="black"/>
+<path d="M0 95L900 470M0 310L900 690M175 0L460 650M385 0L670 650M620 0L900 615" stroke-width="28" stroke="white"/>
+</g>
+<g id="Vector_4">
+<path d="M0 95L900 470ZM175 0L460 650ZM620 0L900 615Z" fill="black"/>
+<path d="M0 95L900 470M175 0L460 650M620 0L900 615" stroke-width="2" stroke="#D0D8CE"/>
+</g>
+<path id="Vector_5" d="M552 90H463C453.059 90 445 98.0589 445 108V172C445 181.941 453.059 190 463 190H552C561.941 190 570 181.941 570 172V108C570 98.0589 561.941 90 552 90Z" fill="#CBDDBB"/>
+<path id="Vector_6" d="M347 360H273C263.059 360 255 368.059 255 378V477C255 486.941 263.059 495 273 495H347C356.941 495 365 486.941 365 477V378C365 368.059 356.941 360 347 360Z" fill="#CBDDBB"/>
+<path id="Vector_7" d="M802 430H698C688.059 430 680 438.059 680 448V507C680 516.941 688.059 525 698 525H802C811.941 525 820 516.941 820 507V448C820 438.059 811.941 430 802 430Z" fill="#CBDDBB"/>
+</g>
+<defs>
+<clipPath id="clip0_0_173">
+<rect width="900" height="650" fill="white"/>
+</clipPath>
+</defs>
+</svg>
