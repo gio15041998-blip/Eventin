@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { useDemoStore } from '../../repositories/demoStore';
+import { isSafeInternalReturnTo } from '../../domain/predicates';
 import {
   AlertCircle,
   ArrowLeft,
@@ -99,7 +101,14 @@ export const GuardDenied403: React.FC<{
 }> = ({
   title = 'Acceso restringido (403)',
   description = 'Tu cuenta actual no tiene permisos para abrir este recurso privado o administrativo.',
-}) => (
+}) => {
+  const { currentUser } = useDemoStore();
+  const location = useLocation();
+  if (!currentUser) {
+    const returnTo = isSafeInternalReturnTo(location.pathname + location.search);
+    return <Navigate to={`/acceder?returnTo=${encodeURIComponent(returnTo)}`} replace />;
+  }
+  return (
   <div className="max-w-lg mx-auto my-12 bg-white border border-[#DCE4DF] rounded-[16px] p-8 text-center">
     <div className="w-12 h-12 rounded-[12px] bg-[#FDECEC] text-[#B53737] flex items-center justify-center mx-auto mb-4">
       <Lock className="w-6 h-6" aria-hidden="true" />
@@ -121,7 +130,8 @@ export const GuardDenied403: React.FC<{
       </Link>
     </div>
   </div>
-);
+  );
+};
 
 export const NotFound404: React.FC<{
   title?: string;
