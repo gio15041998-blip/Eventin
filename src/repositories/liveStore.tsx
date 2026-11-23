@@ -28,6 +28,7 @@ export const LiveStoreProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const requestNumber = useRef(0);
   const commandInFlight = useRef(false);
   const mounted = useRef(true);
+  const authUserId = useRef<string | null | undefined>(undefined);
   const client = getSupabaseClient();
 
   const refresh = useCallback(async () => {
@@ -45,8 +46,13 @@ export const LiveStoreProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     mounted.current = true;
     const load = () => { void refresh().catch(e => setError(e.message || 'No se pudo cargar Eventin.')).finally(() => setLoading(false)); };
     // The callback does no awaited Auth operations, avoiding auth-lock deadlocks.
-    const { data: subscription } = client.auth.onAuthStateChange((event) => {
+    const { data: subscription } = client.auth.onAuthStateChange((event, session) => {
       if (event === 'TOKEN_REFRESHED') return;
+      const nextUserId = session?.user.id ?? null;
+      // Supabase can emit SIGNED_IN again on window focus. Preserve open forms
+      // when the identity did not change; polling still refreshes server data.
+      if (authUserId.current === nextUserId) return;
+      authUserId.current = nextUserId;
       generation.current++;
       setState(emptyState);
       setLoading(true);
@@ -120,7 +126,6 @@ export const LiveStoreProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     },
   };
   if (loading) return <div role="status" className="min-h-dvh grid place-items-center text-[#145C46]">Cargando Eventin…</div>;
-  if (error && !state.settings) return <div role="alert">{error}</div>;
   return <DemoStoreContext.Provider value={value}>
     {error && <div role="alert" className="sticky top-0 z-50 border-b border-red-200 bg-red-50 p-3 text-center text-sm text-red-900">{error} <button type="button" className="underline ml-2" onClick={() => void refresh().catch(e => setError(e.message))}>Volver a cargar</button></div>}
     <div aria-busy={busy}>{children}</div>

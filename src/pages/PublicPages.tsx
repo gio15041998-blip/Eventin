@@ -84,7 +84,7 @@ export const HomePage: React.FC = () => {
             <MapPin className="w-[18px] h-[18px] text-[#145C46] shrink-0" aria-hidden="true" />
             <span>Lima, Perú</span>
           </Link>
-          <span className="text-[11px] font-semibold text-[#566A63]">Datos de ejemplo</span>
+          <span className="text-[11px] font-semibold text-[#566A63]">Tu celebración empieza aquí</span>
         </div>
 
         <h1 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-bold text-[#172D28] max-w-[320px]">
@@ -135,6 +135,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="space-y-4">
+            {visibleEvents.length === 0 && <p className="col-span-full rounded-[12px] border border-[#DCE4DF] bg-white p-5 text-sm text-[#566A63]">Aún no hay eventos publicados. Puedes empezar organizando tu propia celebración.</p>}
             {visibleEvents.slice(0, 1).map((ev) => {
               const fav = isFavorite('event', ev.id);
               const { day, month } = getDateParts(ev.startsAt);
@@ -181,7 +182,7 @@ export const HomePage: React.FC = () => {
                       {formatShortDate(ev.startsAt)} · {ev.zone}
                     </p>
                     <p className="text-sm font-semibold text-[#172D28] tabular-nums">
-                      {ev.isFree ? 'Entrada libre' : `Desde ${formatPen(ev.entryPricePen)}`} · Ejemplo
+                      {ev.isFree ? 'Entrada libre' : `Desde ${formatPen(ev.entryPricePen)}`}
                     </p>
                   </div>
                 </article>
@@ -344,6 +345,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {visibleEvents.length === 0 && <p className="col-span-full rounded-[12px] border border-[#DCE4DF] bg-white p-5 text-sm text-[#566A63]">Aún no hay eventos publicados. Puedes empezar organizando tu propia celebración.</p>}
             {visibleEvents.slice(0, 3).map((ev) => {
               const fav = isFavorite('event', ev.id);
               const { day, month } = getDateParts(ev.startsAt);
@@ -394,7 +396,7 @@ export const HomePage: React.FC = () => {
                       </p>
                     </div>
                     <p className="text-sm font-semibold text-[#172D28] tabular-nums pt-1">
-                      {ev.isFree ? 'Entrada libre' : `Desde ${formatPen(ev.entryPricePen)}`} · Ejemplo
+                      {ev.isFree ? 'Entrada libre' : `Desde ${formatPen(ev.entryPricePen)}`}
                     </p>
                   </div>
                 </article>
@@ -402,7 +404,7 @@ export const HomePage: React.FC = () => {
             })}
           </div>
           <p className="text-xs text-[#566A63]">
-            Contenido de demostración. Consulta disponibilidad, precios y ubicación con cada organizador.
+            Consulta disponibilidad, precios y ubicación con cada organizador.
           </p>
         </section>
 
@@ -426,6 +428,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {visibleBusinesses.length === 0 && <p className="col-span-full rounded-[12px] border border-[#DCE4DF] bg-white p-5 text-sm text-[#566A63]">Los proveedores aparecerán aquí cuando sus perfiles estén publicados.</p>}
             {visibleBusinesses.slice(0, 3).map((biz) => {
               const fav = isFavorite('provider', biz.id);
               return (

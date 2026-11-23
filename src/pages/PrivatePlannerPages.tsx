@@ -156,7 +156,7 @@ export const PrivateListPage: React.FC = () => {
                         {ev.title}
                       </h3>
                       <p className="text-[13px] text-[#566A63] tabular-nums">
-                        {formatShortDate(ev.eventDate)} · {ev.guestCount} invitados · Ejemplo
+                        {formatShortDate(ev.eventDate)} · {ev.guestCount} invitados
                       </p>
                     </div>
 
@@ -658,7 +658,7 @@ export const PrivateDetailPage: React.FC = () => {
             {event.title}
           </h1>
           <p className="text-xs text-[#566A63] tabular-nums">
-            {formatShortDate(event.eventDate)} · {event.guestCount} invitados · Datos de ejemplo
+            {formatShortDate(event.eventDate)} · {event.guestCount} invitados
           </p>
         </div>
 
@@ -940,7 +940,7 @@ export const PrivateDetailPage: React.FC = () => {
                   {event.title}
                 </h1>
                 <p className="text-[14px] text-[#566A63] mt-2 tabular-nums">
-                  {formatShortDate(event.eventDate)} · {event.guestCount} invitados · Datos de ejemplo
+                  {formatShortDate(event.eventDate)} · {event.guestCount} invitados
                 </p>
               </div>
 
@@ -1666,7 +1666,7 @@ export const PrivateInvitePage: React.FC = () => {
               required
               value={recipientEmail}
               onChange={(e) => setRecipientEmail(e.target.value)}
-              placeholder="ana@eventin.demo"
+              placeholder="amistad@ejemplo.com"
               className="w-full min-h-[44px] px-3.5 rounded-[12px] border border-[#DCE4DF] bg-[#F6F8F7] text-sm"
             />
           </div>

@@ -49,7 +49,7 @@ const AdminGuard: React.FC<{
       <AdminShell>
         <GuardDenied403
           title="Capacidad administrativa requerida (403)"
-          description={`Esta vista requiere el permiso ${capability}. Puedes cambiar de actor demostrativo en Mi cuenta para probar los distintos niveles de moderación y administración.`}
+          description={`Esta vista requiere el permiso ${capability}. Accede con una cuenta autorizada para administrar Eventin.`}
         />
       </AdminShell>
     );
@@ -80,7 +80,7 @@ export const AdminHomePage: React.FC = () => {
             Resumen administrativo
           </h1>
           <p className="text-sm text-[#566A63] mt-1">
-            Cola de moderación, comprobantes por cotejar y trazabilidad operativa en entorno demo.
+            Revisión de publicaciones, gestión de cuentas y actividad de la plataforma.
           </p>
         </div>
 
@@ -1376,135 +1376,6 @@ export const AdminAuditPage: React.FC = () => {
 };
 
 export const AdminSettingsPage: React.FC = () => {
-  const { settings, updatePlatformSettings } = useDemoStore();
-  const [businessMonthlyPen, setBusinessMonthlyPen] = useState(
-    String(settings.businessMonthlyPen)
-  );
-  const [publicEventMonthlyPen, setPublicEventMonthlyPen] = useState(
-    String(settings.publicEventMonthlyPen)
-  );
-  const [beneficiaryConfigured, setBeneficiaryConfigured] = useState(
-    settings.beneficiaryConfigured
-  );
-  const [beneficiaryName, setBeneficiaryName] = useState(settings.beneficiaryName);
-  const [beneficiaryChannel, setBeneficiaryChannel] = useState(
-    settings.beneficiaryChannel
-  );
-  const [beneficiaryAccount, setBeneficiaryAccount] = useState(
-    settings.beneficiaryAccount
-  );
-  const [saved, setSaved] = useState(false);
-
-  const handleSave = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const outcome = await updatePlatformSettings({
-      businessMonthlyPen: Number(businessMonthlyPen) || 30,
-      publicEventMonthlyPen: Number(publicEventMonthlyPen) || 100,
-      beneficiaryConfigured,
-      beneficiaryName,
-      beneficiaryChannel,
-      beneficiaryAccount,
-      beneficiaryNote: settings.beneficiaryNote,
-    });
-    if (!outcome.ok) return;
-    setSaved(true);
-  };
-
-  return (
-    <AdminGuard capability="ADMIN_CONFIG_MANAGE">
-      <div className="max-w-2xl space-y-6">
-        <div>
-          <h1 className="text-2xl font-extrabold text-[#172D28]">
-            Tarifas y canales de cobro
-          </h1>
-          <p className="text-sm text-[#566A63]">
-            Los valores de producción deberán gestionarse en backend; aquí puedes probar la vista de beneficiario configurado en demo.
-          </p>
-        </div>
-
-        {saved && (
-          <InlineNotice tone="success">
-            Configuración demostrativa actualizada y registrada en la bitácora.
-          </InlineNotice>
-        )}
-
-        <form
-          onSubmit={handleSave}
-          className="bg-white border border-[#DCE4DF] rounded-[16px] p-6 space-y-4"
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <label className="block space-y-1.5">
-              <span className="text-sm font-semibold text-[#172D28]">
-                Tarifa negocio mensual (PEN)
-              </span>
-              <input
-                type="number"
-                value={businessMonthlyPen}
-                onChange={(e) => setBusinessMonthlyPen(e.target.value)}
-                className="w-full min-h-[44px] px-3.5 rounded-[12px] border border-[#DCE4DF] text-sm tabular-nums"
-              />
-            </label>
-            <label className="block space-y-1.5">
-              <span className="text-sm font-semibold text-[#172D28]">
-                Tarifa evento mensual (PEN)
-              </span>
-              <input
-                type="number"
-                value={publicEventMonthlyPen}
-                onChange={(e) => setPublicEventMonthlyPen(e.target.value)}
-                className="w-full min-h-[44px] px-3.5 rounded-[12px] border border-[#DCE4DF] text-sm tabular-nums"
-              />
-            </label>
-          </div>
-
-          <label className="flex items-center gap-2.5 min-h-[44px] cursor-pointer">
-            <input
-              type="checkbox"
-              checked={beneficiaryConfigured}
-              onChange={(e) => setBeneficiaryConfigured(e.target.checked)}
-              className="w-4 h-4 accent-[#145C46]"
-            />
-            <span className="text-sm font-semibold text-[#172D28]">
-              Simular canal de cobro demo configurado
-            </span>
-          </label>
-
-          {beneficiaryConfigured && (
-            <div className="grid grid-cols-1 gap-3 pt-1">
-              <input
-                type="text"
-                value={beneficiaryName}
-                onChange={(e) => setBeneficiaryName(e.target.value)}
-                placeholder="Titular demo (ej. Eventin Demo SAC)"
-                className="w-full min-h-[44px] px-3.5 rounded-[12px] border border-[#DCE4DF] text-sm"
-              />
-              <input
-                type="text"
-                value={beneficiaryChannel}
-                onChange={(e) => setBeneficiaryChannel(e.target.value)}
-                placeholder="Canal (ej. Transferencia / Billetera demo)"
-                className="w-full min-h-[44px] px-3.5 rounded-[12px] border border-[#DCE4DF] text-sm"
-              />
-              <input
-                type="text"
-                value={beneficiaryAccount}
-                onChange={(e) => setBeneficiaryAccount(e.target.value)}
-                placeholder="Código demo de prueba"
-                className="w-full min-h-[44px] px-3.5 rounded-[12px] border border-[#DCE4DF] text-sm"
-              />
-            </div>
-          )}
-
-          <div className="flex justify-end">
-            <button
-              type="submit"
-              className="min-h-[44px] px-5 py-2.5 rounded-[12px] bg-[#145C46] text-white text-sm font-bold cursor-pointer"
-            >
-              Guardar configuración
-            </button>
-          </div>
-        </form>
-      </div>
-    </AdminGuard>
-  );
+  const { settings } = useDemoStore();
+  return <AdminGuard capability="ADMIN_CONFIG_MANAGE"><div className="max-w-2xl space-y-6"><h1 className="text-2xl font-extrabold text-[#172D28]">Tarifas y pagos</h1><InlineNotice tone="info">Los pagos están deshabilitados. La integración con Izipay se configurará en una próxima etapa.</InlineNotice><div className="grid sm:grid-cols-2 gap-4"><div className="rounded-[16px] bg-white border border-[#DCE4DF] p-6"><p className="text-sm text-[#566A63]">Negocio publicado por mes</p><p className="text-2xl font-bold">{formatPen(settings.businessMonthlyPen)}</p></div><div className="rounded-[16px] bg-white border border-[#DCE4DF] p-6"><p className="text-sm text-[#566A63]">Evento publicado por mes</p><p className="text-2xl font-bold">{formatPen(settings.publicEventMonthlyPen)}</p></div></div><p className="text-sm text-[#566A63]">No se realizan cargos ni se reciben comprobantes. Las revisiones de contenido siguen disponibles; aprobar contenido no confirma un pago ni activa una publicación.</p></div></AdminGuard>;
 };

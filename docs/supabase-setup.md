@@ -42,7 +42,7 @@ Los archivos `supabase/schema/*.sql` son la fuente del esquema. Las aplicaciones
 
 ## Configuración y pendientes externos
 
-- Auth debe autorizar los orígenes reales de la aplicación y los callbacks `/auth/callback` y `/restablecer-acceso`; no usar como origen la URL del editor AI Studio. Mantener confirmación de correo. No se necesita clave privada para el frontend.
+- Auth tiene configurado el origen real de la vista previa `https://ais-dev-xp7kfnba6hr6tb3ksxpoj6-247065521317.us-east1.run.app` y los retornos exactos `/auth/callback` y `/restablecer-acceso`, además de esos dos retornos en `http://localhost:3000`. Si cambia el dominio de despliegue, actualizar esas URLs. No se usa como origen la URL del editor AI Studio. No se necesita clave privada para el frontend.
 - Para correo público a usuarios, configurar un proveedor SMTP propio; el servicio de correo de desarrollo de Supabase puede limitar destinatarios y volumen. No afirmar entrega de correos hasta probarla con una cuenta del propietario.
 - Las invitaciones se comparten por enlace: no se contrató un servicio de envío de invitaciones por correo.
 - El mapa conserva la cartografía ilustrativa del diseño; geocodificación, coordenadas y distancias reales requieren una integración de mapas adicional.
