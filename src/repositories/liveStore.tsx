@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { getSupabaseClient } from '../lib/supabase';
+import { authErrorMessage } from '../lib/authError';
 import { DemoStoreContext, type DemoStoreContextValue, type DemoStoreState, type CommandResult } from './demoStore';
 import type { User } from '../domain/types';
 
@@ -101,7 +102,7 @@ export const LiveStoreProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const remote = Object.fromEntries(commandNames.map(name => [name, (...args: unknown[]) => execute(name, args)])) as unknown as RemoteActions;
   const authResult = async (operation: () => Promise<{ data: { user: { id: string } | null }; error: { message: string } | null }>): Promise<CommandResult<User>> => {
     const { data, error: failure } = await operation();
-    if (failure) return { ok: false, error: failure.message };
+    if (failure) return { ok: false, error: authErrorMessage(failure) };
     await refresh();
     return { ok: true, data: data.user ? { id: data.user.id } as User : undefined };
   };
@@ -115,7 +116,7 @@ export const LiveStoreProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     registerDemo: async (name, email, phone, password) => {
       if (!password || password.length < 8) return { ok: false, error: 'La contraseña debe tener al menos 8 caracteres.' };
       const { data, error: failure } = await client.auth.signUp({ email, password, options: { data: { name, phone }, emailRedirectTo: `${window.location.origin}/auth/callback` } });
-      if (failure) return { ok: false, error: failure.message };
+      if (failure) return { ok: false, error: authErrorMessage(failure) };
       if (data.session) await refresh();
       return { ok: true, data: data.session && data.user ? { id: data.user.id } as User : undefined };
     },

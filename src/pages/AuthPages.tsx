@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 import { isSafeInternalReturnTo } from '../domain/predicates';
 import { useDemoStore } from '../repositories/demoStore';
 import { getSupabaseClient } from '../lib/supabase';
+import { authErrorMessage } from '../lib/authError';
 import { InlineNotice } from '../components/ui/StatusBadge';
 
 const inputClass = 'w-full min-h-[44px] px-3.5 rounded-[12px] border border-[#DCE4DF] bg-[#F6F8F7] text-sm';
@@ -69,7 +70,7 @@ export const ResetPage = () => {
     try {
       const client = getSupabaseClient(); const { data: identity, error: invalid } = await client.auth.getUser();
       if (invalid || !identity.user) throw new Error('Abre un enlace de recuperación válido desde tu correo.');
-      const { error: failure } = await client.auth.updateUser({ password }); if (failure) throw failure;
+      const { error: failure } = await client.auth.updateUser({ password }); if (failure) { setError(authErrorMessage(failure)); return; }
       setPassword(''); setConfirm(''); setDone(true);
     } catch (failure) { setError((failure as Error).message || 'No se pudo cambiar la contraseña.'); }
     finally { setBusy(false); }
